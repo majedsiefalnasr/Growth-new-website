@@ -1,0 +1,46 @@
+/* Required - must loads*/
+@import url('./scrollbar.css'); /* Scrollbar */
+
+/* #region / Main */
+/*   __  __       _       
+/*  |  \/  |     (_)      
+/*  | \  / | __ _ _ _ __  
+/*  | |\/| |/ _` | | '_ \ 
+/*  | |  | | (_| | | | | |
+/*  |_|  |_|\__,_|_|_| |_|
+/*                        
+/*                         */
+/* -----------------------------------------------
+  Main > Set Default
+-------------------------------------------------*/
+html {
+  font-size: var(--root-font-size);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--root-font-family);
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: normal;
+  color: var(--color-black);
+  text-align: var(--root-text-align);
+  background-color: var(--root-bg);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Text selection */
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--color-white);
+  background: var(--color-500);
+}
+::selection {
+  color: var(--color-white);
+  background: var(--color-500);
+}
+
+/* #endregion */

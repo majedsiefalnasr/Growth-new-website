@@ -1,0 +1,45 @@
+/* #region / Main */
+/*   _   _             _                
+/*  | \ | |           | |               
+/*  |  \| | __ ___   _| |__   __ _ _ __ 
+/*  | . ` |/ _` \ \ / / '_ \ / _` | '__|
+/*  | |\  | (_| |\ V /| |_) | (_| | |   
+/*  |_| \_|\__,_| \_/ |_.__/ \__,_|_|   
+/*                                      
+/*                                       */
+/* -----------------------------------------------
+  Navbar
+-------------------------------------------------*/
+
+[navbar] {
+  margin-bottom: 3rem;
+}
+[navbar] [top] {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-200);
+}
+[navbar] [navbar-main] {
+  margin: 1.5rem 0 3rem;
+}
+[navbar] [navbar-main] .site-logo img {
+  height: 2.5rem;
+}
+[navbar] [navbar-main] [navbar-main-list] .nav-link {
+  margin: 0.5rem 1rem;
+  padding: 0;
+  color: var(--color-900);
+  font-weight: 600;
+  font-size: 1.13rem;
+  transition: all 0.15s ease-in-out;
+}
+[navbar] [navbar-main] [navbar-main-list] .nav-link:hover {
+  color: var(--color-500);
+}
+[navbar] [navbar-main] [navbar-main-list]:hover .nav-link {
+  opacity: 0.5;
+}
+[navbar] [navbar-main] [navbar-main-list]:hover .nav-link:hover {
+  opacity: 1;
+}
+
+/* #endregion */

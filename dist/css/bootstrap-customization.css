@@ -1,0 +1,56 @@
+/* #region / Bootstrap 5 - Customization */
+/*   ____              _       _                     _____           
+/*  |  _ \            | |     | |                   | ____|          
+/*  | |_) | ___   ___ | |_ ___| |_ _ __ __ _ _ __   | |__            
+/*  |  _ < / _ \ / _ \| __/ __| __| '__/ _` | '_ \  |___ \           
+/*  | |_) | (_) | (_) | |_\__ \ |_| | | (_| | |_) |  ___) |          
+/*  |____/_\___/ \___/ \__|___/\__|_|  \__,_| .__/ _|____/           
+/*   / ____|        | |                (_)  | |   | | (_)            
+/*  | |    _   _ ___| |_ ___  _ __ ___  _ __|_|_ _| |_ _  ___  _ __  
+/*  | |   | | | / __| __/ _ \| '_ ` _ \| |_  / _` | __| |/ _ \| '_ \ 
+/*  | |___| |_| \__ \ || (_) | | | | | | |/ / (_| | |_| | (_) | | | |
+/*   \_____\__,_|___/\__\___/|_| |_| |_|_/___\__,_|\__|_|\___/|_| |_|
+/*                                                                   
+/*                                                                    */
+/* -----------------------------------------------
+  Bootstrap > Buttons
+-------------------------------------------------*/
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  color: var(--color-900);
+  border-radius: 50rem !important;
+}
+.btn:hover {
+  color: var(--color-700);
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
+}
+.btn.btn-primary {
+  background-color: var(--color-500);
+  border-color: var(--color-500);
+  color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn-primary:hover {
+  background-color: var(--color-700);
+  color: var(--color-white);
+  transform: translateY(-0.25rem);
+}
+.btn.btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
+}
+.btn-ghost {
+  transition: all 0.3s ease-in-out;
+}
+.btn-ghost:hover {
+  background-color: var(--color-200);
+  color: var(--color-900);
+  transform: translateY(-0.25rem);
+}
+.btn-ghost:focus {
+  box-shadow: 0 0 0 0.25rem rgb(124 199 245 / 50%);
+}
+/* #endregion */
