@@ -21,6 +21,7 @@
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */
 @import url('./sections/hero.css'); /* Hero header */
-@import url('./sections/download-app.css'); /* DDownload Our App */
+@import url('./sections/download-app.css'); /* Download Our App */
+@import url('./sections/futures.css'); /* Futures */
 
 /* #endregion */
