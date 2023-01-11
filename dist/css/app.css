@@ -24,5 +24,8 @@
 @import url('./sections/download-app.css'); /* Download Our App */
 @import url('./sections/futures.css'); /* Futures */
 @import url('./sections/stores.css'); /* Stores */
+@import url('./sections/partners.css'); /* Partners */
+@import url('./sections/faq.css'); /* FAQ */
+@import url('./sections/cta.css'); /* CAT */
 
 /* #endregion */

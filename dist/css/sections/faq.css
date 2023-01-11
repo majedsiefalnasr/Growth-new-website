@@ -1,0 +1,29 @@
+/* #region / Main */
+/*   ______      ____  
+/*  |  ____/\   / __ \ 
+/*  | |__ /  \ | |  | |
+/*  |  __/ /\ \| |  | |
+/*  | | / ____ \ |__| |
+/*  |_|/_/    \_\___\_\
+/*                     
+/*                      */
+/* -----------------------------------------------
+  FAQ
+-------------------------------------------------*/
+
+[faq] {
+  margin-bottom: 12.5rem;
+}
+[faq] .header {
+  margin-bottom: 7.5rem;
+}
+[faq] .header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-500);
+  margin-bottom: 1.25rem;
+}
+[faq] .header .subtitle {
+  font-size: 1.5rem;
+}
+/* #endregion */
