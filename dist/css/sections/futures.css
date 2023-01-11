@@ -26,10 +26,6 @@
 [futures] .header .subtitle {
   font-size: 1.5rem;
 }
-[futures] .list {
-}
-[futures] .list .content {
-}
 [futures] .list .content .item {
   flex: 0 0 27rem;
   padding: 1.5rem 2rem;
