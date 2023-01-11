@@ -19,7 +19,8 @@
 @import url('./bootstrap-customization.css');
 
 /* Sections*/
-@import url('./navbar.css'); /* Navbar */
-@import url('./hero.css'); /* Hero header */
+@import url('./sections/navbar.css'); /* Navbar */
+@import url('./sections/hero.css'); /* Hero header */
+@import url('./sections/download-app.css'); /* DDownload Our App */
 
 /* #endregion */

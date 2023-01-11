@@ -1,0 +1,39 @@
+/* #region / Main */
+/*   _    _                
+/*  | |  | |               
+/*  | |__| | ___ _ __ ___  
+/*  |  __  |/ _ \ '__/ _ \ 
+/*  | |  | |  __/ | | (_) |
+/*  |_|  |_|\___|_|  \___/ 
+/*                         
+/*                          */
+/* -----------------------------------------------
+  Hero
+-------------------------------------------------*/
+
+[get_app] {
+  margin-bottom: 12.5rem;
+}
+[get_app] .header {
+  margin-bottom: 2.5rem;
+}
+[get_app] .header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-500);
+  margin-bottom: 1.25rem;
+}
+[get_app] .header .subtitle {
+  font-size: 1.5rem;
+}
+[get_app] .providers > * {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+[get_app] .providers > *:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+}
+/* #endregion */
