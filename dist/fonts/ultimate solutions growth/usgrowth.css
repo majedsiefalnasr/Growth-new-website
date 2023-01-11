@@ -7,8 +7,8 @@
   font-family: "ultimate-solutions-growth";
   font-style: normal;
   font-weight: 400;
-  src: url("./usgrowth.eot?1672913264305");
-  src: url("./usgrowth.eot?#iefix") format("embedded-opentype"), url("./usgrowth.woff2?1672913264305") format("woff2"), url("./usgrowth.woff?1672913264305") format("woff"), url("./usgrowth.ttf?1672913264305") format("truetype"), url("./usgrowth.svg?1672913264305#ultimate-solutions-growth") format("svg");
+  src: url("./usgrowth.eot?1673438061126");
+  src: url("./usgrowth.eot?#iefix") format("embedded-opentype"), url("./usgrowth.woff2?1673438061126") format("woff2"), url("./usgrowth.woff?1673438061126") format("woff"), url("./usgrowth.ttf?1673438061126") format("truetype"), url("./usgrowth.svg?1673438061126#ultimate-solutions-growth") format("svg");
 }
 
 [class="usg-icon"], [class^="usg-icon-"], [class*=" usg-icon-"] {
@@ -89,4 +89,8 @@
 
 .usg-icon-dislike:before {
   content: "\e010";
+}
+
+.usg-icon-video:before {
+  content: "\e011";
 }
