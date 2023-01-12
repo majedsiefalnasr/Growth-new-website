@@ -28,7 +28,10 @@
 .btn:focus {
   box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
 }
-.btn.btn-primary {
+.btn-stretch {
+  padding: 0.63rem 2.5rem;
+}
+.btn-primary {
   background-color: var(--color-500);
   border-color: var(--color-500);
   color: var(--color-white);
@@ -40,8 +43,30 @@
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
 }
-.btn.btn-primary:focus {
+.btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
+}
+.btn-secondary,
+.btn-secondary:active {
+  background-color: var(--color-100);
+  border-color: var(--color-100);
+  color: var(--color-500);
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: var(--color-200);
+  color: var(--color-500);
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
+  border: none;
+}
+.btn-secondary:focus {
+  background-color: var(--color-200);
+  color: var(--color-500);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0 0 0.25rem rgb(180 218 228 / 50%);
+  border: none;
 }
 .btn-ghost {
   transition: all 0.3s ease-in-out;
@@ -54,5 +79,42 @@
 }
 .btn-ghost:focus {
   box-shadow: 0 0 0 0.25rem rgb(124 199 245 / 50%);
+}
+
+/* -----------------------------------------------
+  Bootstrap > Accordion
+-------------------------------------------------*/
+
+.accordion-item {
+  background: transparent;
+  border: none;
+  border-radius: 1rem !important;
+  overflow: hidden;
+}
+.accordion-button {
+  background: transparent;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1.5rem 2rem;
+  transition: all 0.15s ease-in-out;
+}
+.accordion-button:not(.collapsed) {
+  background: var(--color-white);
+  color: var(--color-500);
+  font-weight: 600;
+  box-shadow: none;
+  padding: 2rem;
+}
+.accordion-button:focus {
+  border: none;
+  box-shadow: none;
+}
+.accordion-collapse .accordion-body {
+  padding: 0 2rem 2rem;
+  transition: all 0.15s ease-in-out;
+}
+.accordion-collapse.show .accordion-body,
+.accordion-collapse.collapsing .accordion-body {
+  background-color: var(--color-white);
 }
 /* #endregion */
