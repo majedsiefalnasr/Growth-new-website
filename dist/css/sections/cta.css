@@ -16,6 +16,8 @@
   border-radius: 1.5rem;
   background: linear-gradient(90deg, #ece9e6 0%, #f3f4ff 100%);
   padding: 5rem 7.5rem;
+  bottom: -140px;
+  margin-top: -140px;
   overflow: hidden;
 }
 [cta] > * {

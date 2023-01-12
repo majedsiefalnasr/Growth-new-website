@@ -21,7 +21,7 @@ html {
 body {
   font-family: var(--root-font-family);
   font-size: 1rem;
-  font-weight: normal;
+  font-variation-settings: 'wght' 400, 'opsz' 30;
   line-height: 180%;
   color: var(--color-black);
   text-align: var(--root-text-align);
@@ -30,6 +30,12 @@ body {
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+}
+body > * {
+  position: relative;
+  background-color: var(--root-bg);
+  box-shadow: 0 10px 10px #16181b;
+  z-index: 1;
 }
 
 /* Text selection */
