@@ -28,10 +28,10 @@
 .btn:focus {
   box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
 }
-.btn-stretch {
+.btn.btn-stretch {
   padding: 0.63rem 2.5rem;
 }
-.btn-primary {
+.btn.btn-primary {
   background-color: var(--color-500);
   border-color: var(--color-500);
   color: var(--color-white);
@@ -43,41 +43,41 @@
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
 }
-.btn-primary:focus {
+.btn.btn-primary:focus {
   box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
 }
-.btn-secondary,
-.btn-secondary:active {
+.btn.btn-secondary,
+.btn.btn-secondary:active {
   background-color: var(--color-100);
   border-color: var(--color-100);
   color: var(--color-500);
   transition: all 0.3s ease-in-out;
   border: none;
 }
-.btn-secondary:hover {
+.btn.btn-secondary:hover {
   background-color: var(--color-200);
   color: var(--color-500);
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
   border: none;
 }
-.btn-secondary:focus {
+.btn.btn-secondary:focus {
   background-color: var(--color-200);
   color: var(--color-500);
   transform: translateY(-0.25rem);
   box-shadow: 0 0 0 0.25rem rgb(180 218 228 / 50%);
   border: none;
 }
-.btn-ghost {
+.btn.btn-ghost {
   transition: all 0.3s ease-in-out;
 }
-.btn-ghost:hover {
+.btn.btn-ghost:hover {
   background-color: var(--color-200);
   color: var(--color-900);
   transform: translateY(-0.25rem);
   box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
 }
-.btn-ghost:focus {
+.btn.btn-ghost:focus {
   box-shadow: 0 0 0 0.25rem rgb(124 199 245 / 50%);
 }
 
