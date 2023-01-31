@@ -22,7 +22,7 @@ body {
   font-family: var(--root-font-family);
   font-size: 1rem;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 1.5;
   color: var(--color-black);
   text-align: var(--root-text-align);
   background-color: var(--root-bg);

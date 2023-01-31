@@ -26,7 +26,7 @@
 }
 [testimonials] [trustpilot] .title {
   font-size: 1.13rem;
-  font-weight: 600;
+  font-weight: 6=700;
   margin-bottom: 0.5rem;
 }
 [testimonials] [trustpilot] .stars {
@@ -45,7 +45,7 @@
 }
 [testimonials] [trustpilot] .logo {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 [testimonials] [trustpilot] .logo em {
   font-size: 1.5rem;
@@ -72,7 +72,7 @@
 }
 [testimonials] .list .content .item h4 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 [testimonials] .list .content .item .review {

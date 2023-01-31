@@ -45,7 +45,7 @@
 }
 [footer] .links-list .title {
   font-size: 1.38rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 [footer] .links-list .links {
   margin-top: 1.5rem;
@@ -90,6 +90,6 @@
 }
 [footer] [help-actions] .action .info .title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 /* #endregion */

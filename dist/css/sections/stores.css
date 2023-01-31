@@ -35,7 +35,7 @@
   overflow: hidden;
 }
 [stores] .list .content:hover .item {
-  filter: blur(4px);
+  filter: blur(2px);
 }
 [stores] .list .content .item:hover {
   box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
@@ -52,7 +52,7 @@
 }
 [stores] .list .content .item h4 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 [stores] .list .content .item .text {
   font-size: 1rem;
