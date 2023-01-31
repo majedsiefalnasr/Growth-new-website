@@ -61,6 +61,10 @@
 [footer] .links-list .links .link:hover {
   opacity: 1;
 }
+[footer] [help-actions] .action {
+  text-decoration: none;
+  color: var(--color-white);
+}
 [footer] [help-actions] .action:not(:last-child) {
   margin-bottom: 1.5rem;
 }
@@ -76,6 +80,10 @@
   color: var(--color-white);
   background-color: var(--color-800);
   transition: all 0.3s ease-in-out;
+}
+[footer] [help-actions] .action:hover .icon {
+  color: var(--color-800);
+  background-color: var(--color-white);
 }
 [footer] [help-actions] .action .info {
   font-size: 0.88rem;
