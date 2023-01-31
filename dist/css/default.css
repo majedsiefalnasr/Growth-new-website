@@ -21,7 +21,7 @@ html {
 body {
   font-family: var(--root-font-family);
   font-size: 1rem;
-  font-variation-settings: 'wght' 400, 'opsz' 30;
+  font-weight: 400;
   line-height: 180%;
   color: var(--color-black);
   text-align: var(--root-text-align);
