@@ -185,7 +185,21 @@ function splide() {
         focus: 0,
         omitEnd: true,
       };
+    } else if (element.hasAttribute('splide-testimonials')) {
+      options = {
+        perPage: 1,
+        perMove: 1,
+        direction: SUtility.getDir(),
+        gap: 64,
+        speed: 800,
+        arrows: false,
+        pagination: false,
+        lazyLoad: 'nearby',
+        focus: 0,
+        omitEnd: true,
+      };
     }
+
     var splide = new Splide('#' + id, options);
     splide.mount();
   });
