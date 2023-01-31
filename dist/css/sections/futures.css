@@ -54,4 +54,83 @@
 [futures] .list .content .item .text {
   font-size: 1.5rem;
 }
+[futures] .marquee {
+  --gap: 24px;
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  direction: ltr;
+  margin: auto -200px;
+  margin-bottom: var(--gap);
+  -webkit-mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+[futures] .marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  [futures] .marquee__group {
+    animation-play-state: paused;
+  }
+}
+[futures] .marquee--vertical {
+  --mask-direction: to bottom;
+}
+[futures] .marquee--vertical,
+[futures] .marquee--vertical .marquee__group {
+  flex-direction: column;
+}
+[futures] .marquee--vertical .marquee__group {
+  animation-name: scroll-y;
+}
+[futures] .marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}
+[futures] .marquee__group .item {
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 /* #endregion */
