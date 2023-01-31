@@ -178,7 +178,7 @@ function splide() {
         perMove: 1,
         direction: SUtility.getDir(),
         gap: 64,
-        speed: 2000,
+        speed: 800,
         arrows: false,
         pagination: false,
         lazyLoad: 'nearby',

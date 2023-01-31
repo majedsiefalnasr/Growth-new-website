@@ -26,10 +26,6 @@
 [stores] .header .subtitle {
   font-size: 1.5rem;
 }
-[stores] .list {
-}
-[stores] .list .content {
-}
 [stores] .list .content .item {
   flex: 0 0 27rem;
   border-radius: 1rem;
@@ -38,9 +34,13 @@
   cursor: pointer;
   overflow: hidden;
 }
+[stores] .list .content:hover .item {
+  filter: blur(4px);
+}
 [stores] .list .content .item:hover {
-  transform: translateY(-0.25rem);
   box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+  filter: blur(0);
+  transform: translateY(-0.25rem) scale(1.05);
 }
 [stores] .list .content .item > img {
   width: 100%;
