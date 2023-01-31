@@ -14,9 +14,9 @@
 
   /* Fonts */
   --root-font-size: 16px;
-  --root-font-family: 'SF Arabic', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue',
-    Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  --root-font-family: 'Adobe Clean', system-ui, -apple-system, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --root-text-align: start;
   --root-bg: #f1f5f6;
 
