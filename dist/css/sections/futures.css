@@ -133,4 +133,10 @@
   justify-content: center;
   align-items: center;
 }
+[futures] [splide] .splide__track {
+  overflow: visible;
+}
+[futures] [splide] .content .item {
+  flex: none;
+}
 /* #endregion */

@@ -18,6 +18,9 @@
 @import url('./default.css');
 @import url('./bootstrap-customization.css');
 
+/* Plugins */
+@import url('./plugins/drag-scroll.css'); /* Drag Scroll */
+
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */
 @import url('./sections/hero.css'); /* Hero header */

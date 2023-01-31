@@ -35,6 +35,7 @@ body > * {
   position: relative;
   background-color: var(--root-bg);
   box-shadow: 0 10px 10px #16181b;
+  overflow-x: clip;
   z-index: 1;
 }
 
