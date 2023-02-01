@@ -26,11 +26,12 @@
 @import url('./sections/hero.css'); /* Hero header */
 @import url('./sections/testimonials.css'); /* Testimonials */
 @import url('./sections/download-app.css'); /* Download Our App */
-@import url('./sections/futures.css'); /* Futures */
-@import url('./sections/stores.css'); /* Stores */
+@import url('./sections/selling-online.css'); /* Selling Online */
+@import url('./sections/showcase.css'); /* Showcase */
+@import url('./sections/add-ons.css'); /* Add ons */
 @import url('./sections/partners.css'); /* Partners */
 @import url('./sections/faq.css'); /* FAQ */
-@import url('./sections/cta.css'); /* CAT */
+@import url('./sections/footer-cta.css'); /* Footer CAT */
 @import url('./sections/footer.css'); /* Footer */
 
 /* #endregion */

@@ -1,0 +1,147 @@
+/* #region / Main */
+/*    _____      _ _ _                ____        _ _            
+/*   / ____|    | | (_)              / __ \      | (_)           
+/*  | (___   ___| | |_ _ __   __ _  | |  | |_ __ | |_ _ __   ___ 
+/*   \___ \ / _ \ | | | '_ \ / _` | | |  | | '_ \| | | '_ \ / _ \
+/*   ____) |  __/ | | | | | | (_| | | |__| | | | | | | | | |  __/
+/*  |_____/ \___|_|_|_|_| |_|\__, |  \____/|_| |_|_|_|_| |_|\___|
+/*                            __/ |                              
+/*                           |___/                                */
+/* -----------------------------------------------
+  Selling Online
+-------------------------------------------------*/
+
+#selling-online-block {
+  margin-bottom: 12.5rem;
+}
+#selling-online-block .header {
+  margin-bottom: 7.5rem;
+}
+#selling-online-block .header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-500);
+  margin-bottom: 1.25rem;
+}
+#selling-online-block .header .subtitle {
+  font-size: 1.5rem;
+}
+#selling-online-block .list .content .item {
+  flex: 0 0 27rem;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#selling-online-block .list .content:hover .item {
+  filter: blur(4px);
+}
+#selling-online-block .list .content .item:hover {
+  box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+  filter: blur(0);
+  transform: translateY(-0.25rem) scale(1.05);
+}
+#selling-online-block .list .content .item .title {
+  margin-bottom: 1.5rem;
+}
+#selling-online-block .list .content .item h3 {
+  font-size: 1.63rem;
+  font-weight: 700;
+}
+#selling-online-block .list .content .item .icon {
+  font-size: 2rem;
+  padding: 0.75rem;
+  background-color: var(--color-200);
+  border-radius: 50%;
+}
+#selling-online-block .list .content .item .text {
+  font-size: 1.5rem;
+}
+#selling-online-block .marquee {
+  --gap: 24px;
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  direction: ltr;
+  margin: auto -200px;
+  margin-bottom: var(--gap);
+  -webkit-mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+#selling-online-block .marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #selling-online-block .marquee__group {
+    animation-play-state: paused;
+  }
+}
+#selling-online-block .marquee--vertical {
+  --mask-direction: to bottom;
+}
+#selling-online-block .marquee--vertical,
+#selling-online-block .marquee--vertical .marquee__group {
+  flex-direction: column;
+}
+#selling-online-block .marquee--vertical .marquee__group {
+  animation-name: scroll-y;
+}
+#selling-online-block .marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}
+#selling-online-block .marquee__group .item {
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#selling-online-block [splide] .splide__track {
+  overflow: visible;
+}
+#selling-online-block [splide] .content .item {
+  flex: none;
+}
+/* #endregion */

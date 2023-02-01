@@ -11,28 +11,28 @@
   Partners
 -------------------------------------------------*/
 
-[partners] {
+#partners-block {
   margin-bottom: 12.5rem;
 }
-[partners] .header {
+#partners-block .header {
   margin-bottom: 7.5rem;
 }
-[partners] .header h2 {
+#partners-block .header h2 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
-[partners] .header .subtitle {
+#partners-block .header .subtitle {
   font-size: 1.5rem;
 }
-[partners] .list {
+#partners-block .list {
   display: flex;
   gap: 2rem;
   justify-content: center;
   align-items: center;
 }
-[partners] .list > * {
+#partners-block .list > * {
   max-height: 150px;
 }
 /* #endregion */

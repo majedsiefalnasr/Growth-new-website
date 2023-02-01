@@ -11,7 +11,7 @@
   Footer
 -------------------------------------------------*/
 
-[footer] {
+#footer-block {
   position: -webkit-sticky;
   position: sticky;
   top: auto;
@@ -24,10 +24,10 @@
   font-weight: 300;
   z-index: -1;
 }
-[footer] .sm-links {
+#footer-block .sm-links {
   margin: 3rem 0;
 }
-[footer] .sm-links > * {
+#footer-block .sm-links > * {
   padding: 0;
   width: 3rem;
   height: 3rem;
@@ -39,36 +39,36 @@
   background-color: var(--color-800);
   transition: all 0.3s ease-in-out;
 }
-[footer] .sm-links > *:hover {
+#footer-block .sm-links > *:hover {
   color: var(--color-800);
   background-color: var(--color-white);
 }
-[footer] .links-list .title {
+#footer-block .links-list .title {
   font-size: 1.38rem;
   font-weight: 700;
 }
-[footer] .links-list .links {
+#footer-block .links-list .links {
   margin-top: 1.5rem;
 }
-[footer] .links-list .links .link {
+#footer-block .links-list .links .link {
   color: var(--color-white);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
-[footer] .links-list .links:hover .link {
+#footer-block .links-list .links:hover .link {
   opacity: 0.5;
 }
-[footer] .links-list .links .link:hover {
+#footer-block .links-list .links .link:hover {
   opacity: 1;
 }
-[footer] [help-actions] .action {
+#footer-block [help-actions] .action {
   text-decoration: none;
   color: var(--color-white);
 }
-[footer] [help-actions] .action:not(:last-child) {
+#footer-block [help-actions] .action:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-[footer] [help-actions] .action .icon {
+#footer-block [help-actions] .action .icon {
   flex: 0 0 3rem;
   width: 3rem;
   height: 3rem;
@@ -81,14 +81,14 @@
   background-color: var(--color-800);
   transition: all 0.3s ease-in-out;
 }
-[footer] [help-actions] .action:hover .icon {
+#footer-block [help-actions] .action:hover .icon {
   color: var(--color-800);
   background-color: var(--color-white);
 }
-[footer] [help-actions] .action .info {
+#footer-block [help-actions] .action .info {
   font-size: 0.88rem;
 }
-[footer] [help-actions] .action .info .title {
+#footer-block [help-actions] .action .info .title {
   font-size: 1.25rem;
   font-weight: 700;
 }

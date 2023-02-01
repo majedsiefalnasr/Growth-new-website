@@ -87,26 +87,60 @@
 .accordion-item {
   background: transparent;
   border: none;
-  border-radius: 1rem !important;
-  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.2) !important;
+  z-index: 2;
+}
+.accordion-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 .accordion-button {
-  background: transparent;
+  padding: 32px 0;
+  background-color: transparent;
   font-size: 1.25rem;
-  font-weight: 500;
-  padding: 1.5rem 2rem;
-  transition: all 0.15s ease-in-out;
+  cursor: pointer;
 }
 .accordion-button:not(.collapsed) {
-  background: var(--color-white);
+  background: transparent;
   color: var(--color-500);
-  font-weight: 700;
   box-shadow: none;
-  padding: 2rem;
 }
 .accordion-button:focus {
   border: none;
   box-shadow: none;
+}
+.accordion-button:before,
+.accordion-button:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.694, 0, 0.335, 1);
+  transition: -webkit-transform 300ms cubic-bezier(0.694, 0, 0.335, 1);
+  -o-transition: transform 300ms cubic-bezier(0.694, 0, 0.335, 1);
+  transition: transform 300ms cubic-bezier(0.694, 0, 0.335, 1);
+  transition: transform 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    -webkit-transform 300ms cubic-bezier(0.694, 0, 0.335, 1);
+  width: 2px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: 1rem;
+}
+[dir='rtl'] .accordion-button:before,
+[dir='rtl'] .accordion-button:after {
+  left: 1rem;
+  right: unset;
+}
+.accordion-button:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.accordion-button:not(.collapsed):before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.accordion-button:not(.collapsed):after {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 .accordion-collapse .accordion-body {
   padding: 0 2rem 2rem;
@@ -114,6 +148,7 @@
 }
 .accordion-collapse.show .accordion-body,
 .accordion-collapse.collapsing .accordion-body {
-  background-color: var(--color-white);
+  padding-bottom: 80px;
+  background-color: transparent;
 }
 /* #endregion */

@@ -11,19 +11,19 @@
   FAQ
 -------------------------------------------------*/
 
-[faq] {
+#faq-block {
   margin-bottom: 12.5rem;
 }
-[faq] .header {
+#faq-block .header {
   margin-bottom: 7.5rem;
 }
-[faq] .header h2 {
+#faq-block .header h2 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
-[faq] .header .subtitle {
+#faq-block .header .subtitle {
   font-size: 1.5rem;
 }
 /* #endregion */
