@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-Light.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-Hairline.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-Hairline.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-Bold.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-Medium.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-Thin.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-ExtraBlack.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-ExtraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PF Din Text Universal';
+    src: url('fonts/PFDinTextUniversal-ExtraThin.woff2') format('woff2'),
+        url('fonts/PFDinTextUniversal-ExtraThin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

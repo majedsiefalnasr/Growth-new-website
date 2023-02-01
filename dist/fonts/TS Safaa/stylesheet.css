@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'TS Safaa';
+    src: url('fonts/TSSafaa-Bold.eot');
+    src: url('fonts/TSSafaa-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/TSSafaa-Bold.woff2') format('woff2'),
+        url('fonts/TSSafaa-Bold.woff') format('woff'),
+        url('fonts/TSSafaa-Bold.ttf') format('truetype'),
+        url('fonts/TSSafaa-Bold.svg#TSSafaa-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TS Safaa';
+    src: url('fonts/TSSafaa-Medium.eot');
+    src: url('fonts/TSSafaa-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/TSSafaa-Medium.woff2') format('woff2'),
+        url('fonts/TSSafaa-Medium.woff') format('woff'),
+        url('fonts/TSSafaa-Medium.ttf') format('truetype'),
+        url('fonts/TSSafaa-Medium.svg#TSSafaa-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TS Safaa';
+    src: url('fonts/TSSafaa-Regular.eot');
+    src: url('fonts/TSSafaa-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/TSSafaa-Regular.woff2') format('woff2'),
+        url('fonts/TSSafaa-Regular.woff') format('woff'),
+        url('fonts/TSSafaa-Regular.ttf') format('truetype'),
+        url('fonts/TSSafaa-Regular.svg#TSSafaa-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TS Safaa Ultra';
+    src: url('fonts/TSSafaa-UltraLight.eot');
+    src: url('fonts/TSSafaa-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('fonts/TSSafaa-UltraLight.woff2') format('woff2'),
+        url('fonts/TSSafaa-UltraLight.woff') format('woff'),
+        url('fonts/TSSafaa-UltraLight.ttf') format('truetype'),
+        url('fonts/TSSafaa-UltraLight.svg#TSSafaa-UltraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
