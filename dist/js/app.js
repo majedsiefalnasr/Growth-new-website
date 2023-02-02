@@ -25,6 +25,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Splide
   splide();
+
+  // Animation
+  animation();
 });
 
 //    ____                      _        _          _ _
@@ -202,5 +205,41 @@ function splide() {
 
     var splide = new Splide('#' + id, options);
     splide.mount();
+  });
+}
+
+//                  _                 _   _
+//      /\         (_)               | | (_)
+//     /  \   _ __  _ _ __ ___   __ _| |_ _  ___  _ __
+//    / /\ \ | '_ \| | '_ ` _ \ / _` | __| |/ _ \| '_ \
+//   / ____ \| | | | | | | | | | (_| | |_| | (_) | | | |
+//  /_/    \_\_| |_|_|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+//
+//
+// Animation
+function animation() {
+  // Check if view required library
+  if (!document.querySelector('[data-scrolled-into-view]')) return;
+
+  SUtility.each(document.querySelectorAll('[data-scrolled-into-view]'), function (target) {
+    actions();
+
+    document.addEventListener('scroll', (event) => {
+      actions();
+    });
+
+    function actions() {
+      if (SUtility.isPartInViewport(target))
+        SUtility.attr(target, 'data-scrolled-into-view', 'true'),
+          SUtility.attr(target, 'data-has-intersected', 'true');
+
+      if (SUtility.attr(target, 'data-scrolled-into-view') == 'false')
+        SUtility.attr(target, 'data-has-intersected', 'false');
+
+      if (SUtility.hasAttr(target, 'data-scrolled-past-view'))
+        if (window.scrollY > target.offsetTop + target.offsetHeight)
+          SUtility.attr(target, 'data-scrolled-past-view', 'true');
+        else SUtility.attr(target, 'data-scrolled-past-view', 'false');
+    }
   });
 }

@@ -1,4 +1,4 @@
-/* #region / Main */
+/* #region / FAQ */
 /*   ______      ____  
 /*  |  ____/\   / __ \ 
 /*  | |__ /  \ | |  | |
@@ -26,4 +26,29 @@
 #faq-block .header .subtitle {
   font-size: 1.5rem;
 }
+#faq_accordion[data-reveal-self] .accordion-item {
+  opacity: 0;
+  -webkit-transform: translate(-2rem, 0);
+  transform: translate(-2rem, 0);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: opacity, transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+#faq_accordion[data-reveal-self][data-has-intersected='true'] .accordion-item {
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-delay: var(--reveal-delay);
+  -o-transition-delay: var(--reveal-delay);
+  transition-delay: var(--reveal-delay);
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
 /* #endregion */

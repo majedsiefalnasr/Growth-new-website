@@ -19,6 +19,7 @@
 @import url('./bootstrap-customization.css');
 
 /* Plugins */
+@import url('./plugins/animation.css'); /* Animation */
 @import url('./plugins/drag-scroll.css'); /* Drag Scroll */
 
 /* Sections*/
