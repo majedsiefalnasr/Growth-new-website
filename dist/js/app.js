@@ -286,8 +286,6 @@ function animation() {
             transform-style: preserve-3d;
           `;
         }
-
-        console.log(window.scrollY, oldTargetTop);
       });
 
       // Current target set
