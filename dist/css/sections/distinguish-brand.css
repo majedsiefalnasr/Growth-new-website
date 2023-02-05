@@ -1,0 +1,157 @@
+/* #region / Distinguish Brand */
+/*   _____  _     _   _                   _     _       ____                      _ 
+/*  |  __ \(_)   | | (_)                 (_)   | |     |  _ \                    | |
+/*  | |  | |_ ___| |_ _ _ __   __ _ _   _ _ ___| |__   | |_) |_ __ __ _ _ __   __| |
+/*  | |  | | / __| __| | '_ \ / _` | | | | / __| '_ \  |  _ <| '__/ _` | '_ \ / _` |
+/*  | |__| | \__ \ |_| | | | | (_| | |_| | \__ \ | | | | |_) | | | (_| | | | | (_| |
+/*  |_____/|_|___/\__|_|_| |_|\__, |\__,_|_|___/_| |_| |____/|_|  \__,_|_| |_|\__,_|
+/*                             __/ |                                                
+/*                            |___/                                                  */
+/* -----------------------------------------------
+  Distinguish Brand
+-------------------------------------------------*/
+
+#distinguish-brand-block {
+  margin-bottom: 12.5rem;
+}
+#distinguish-brand-block .header {
+  margin-bottom: 7.5rem;
+}
+#distinguish-brand-block .header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-500);
+  margin-bottom: 1.25rem;
+}
+#distinguish-brand-block .header .subtitle {
+  font-size: 1.5rem;
+}
+#distinguish-brand-block .list .content .item {
+  --top: 5rem;
+  position: sticky;
+  top: var(--top);
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+#distinguish-brand-block .list .content .item > * {
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 8rem;
+}
+#distinguish-brand-block .list .content .item:nth-child(2) {
+  top: calc(var(--top) + 2 * 1rem);
+}
+#distinguish-brand-block .list .content .item:nth-child(3) {
+  top: calc(var(--top) + 4 * 1rem);
+}
+#distinguish-brand-block .list .content .item:nth-child(4) {
+  top: calc(var(--top) + 6 * 1rem);
+}
+#distinguish-brand-block .list .content .item .title {
+  margin-bottom: 1.5rem;
+}
+#distinguish-brand-block .list .content .item h3 {
+  font-size: 1.63rem;
+  font-weight: 700;
+}
+#distinguish-brand-block .list .content .item .icon {
+  font-size: 2rem;
+  padding: 0.75rem;
+  background-color: var(--color-200);
+  border-radius: 50%;
+}
+#distinguish-brand-block .list .content .item .text {
+  font-size: 1.5rem;
+}
+#distinguish-brand-block .list .content .item img {
+  max-width: 21.25rem;
+  border-radius: 1rem;
+}
+#distinguish-brand-block .marquee {
+  --gap: 24px;
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  direction: ltr;
+  margin: auto -200px;
+  margin-bottom: var(--gap);
+  -webkit-mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+#distinguish-brand-block .marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #distinguish-brand-block .marquee__group {
+    animation-play-state: paused;
+  }
+}
+#distinguish-brand-block .marquee--vertical {
+  --mask-direction: to bottom;
+}
+#distinguish-brand-block .marquee--vertical,
+#distinguish-brand-block .marquee--vertical .marquee__group {
+  flex-direction: column;
+}
+#distinguish-brand-block .marquee--vertical .marquee__group {
+  animation-name: scroll-y;
+}
+#distinguish-brand-block .marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}
+#distinguish-brand-block .marquee__group .item {
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#distinguish-brand-block [splide] .splide__track {
+  overflow: visible;
+}
+#distinguish-brand-block [splide] .content .item {
+  flex: none;
+}
+/* #endregion */

@@ -219,27 +219,79 @@ function splide() {
 // Animation
 function animation() {
   // Check if view required library
-  if (!document.querySelector('[data-scrolled-into-view]')) return;
-
-  SUtility.each(document.querySelectorAll('[data-scrolled-into-view]'), function (target) {
-    actions();
-
-    document.addEventListener('scroll', (event) => {
+  if (document.querySelector('[data-scrolled-into-view]')) {
+    SUtility.each(document.querySelectorAll('[data-scrolled-into-view]'), function (target) {
       actions();
+
+      document.addEventListener('scroll', (event) => {
+        // Main script
+        actions();
+      });
+
+      // Main script
+      function actions() {
+        if (SUtility.isPartInViewport(target))
+          SUtility.attr(target, 'data-scrolled-into-view', 'true'),
+            SUtility.attr(target, 'data-has-intersected', 'true');
+
+        if (SUtility.attr(target, 'data-scrolled-into-view') == 'false')
+          SUtility.attr(target, 'data-has-intersected', 'false');
+
+        if (SUtility.hasAttr(target, 'data-scrolled-past-view'))
+          if (window.scrollY > target.offsetTop + target.offsetHeight)
+            SUtility.attr(target, 'data-scrolled-past-view', 'true');
+          else SUtility.attr(target, 'data-scrolled-past-view', 'false');
+      }
     });
+  }
 
-    function actions() {
-      if (SUtility.isPartInViewport(target))
-        SUtility.attr(target, 'data-scrolled-into-view', 'true'),
-          SUtility.attr(target, 'data-has-intersected', 'true');
+  // Distinguish Brand
+  let distinguishBrandSection = document.getElementById('distinguish-brand-block'),
+    targets = distinguishBrandSection.querySelectorAll('.list .content .item');
 
-      if (SUtility.attr(target, 'data-scrolled-into-view') == 'false')
-        SUtility.attr(target, 'data-has-intersected', 'false');
+  if (targets) {
+    // Scroll Differences
+    let diffLength = targets.length,
+      diffSize = 0.1,
+      diffCurrent = diffLength;
 
-      if (SUtility.hasAttr(target, 'data-scrolled-past-view'))
-        if (window.scrollY > target.offsetTop + target.offsetHeight)
-          SUtility.attr(target, 'data-scrolled-past-view', 'true');
-        else SUtility.attr(target, 'data-scrolled-past-view', 'false');
-    }
-  });
+    // Loop
+    SUtility.each(targets, function (target) {
+      // Get target offset top
+      let oldTargetTop = target.offsetTop + target.offsetHeight - 80,
+        scale = 1 - (diffSize / diffLength) * diffCurrent;
+
+      // For each target
+      document.addEventListener('scroll', (event) => {
+        // set default style on scrolled to view
+        if (SUtility.isPartInViewport(target)) {
+          // set default style
+          target.style.cssText = ` 
+            will-change: transform;
+            transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+          `;
+        }
+
+        if (window.scrollY >= oldTargetTop) {
+          // set scrolled style
+          target.style.cssText =
+            ` 
+            will-change: transform;
+            transform: translate3d(0px, 0px, 0px) scale3d(` +
+            scale +
+            `, ` +
+            scale +
+            `, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+          `;
+        }
+
+        console.log(window.scrollY, oldTargetTop);
+      });
+
+      // Current target set
+      diffCurrent--;
+    });
+  }
 }

@@ -33,7 +33,6 @@
   background-color: var(--color-white);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 #selling-online-block .list .content:hover .item {
   filter: blur(4px);
