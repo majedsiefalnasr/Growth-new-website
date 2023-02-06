@@ -12,7 +12,7 @@
 -------------------------------------------------*/
 
 #hero-block {
-  margin-top: 4rem;
+  padding-top: 10rem;
   margin-bottom: 12.5rem;
 }
 #hero-block [text] h1 {
@@ -38,7 +38,7 @@
 }
 #hero-block .futures .item {
   position: relative;
-  flex: 1 0 0%;
+  width: 7.5rem;
   height: 34rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@
   opacity: 1;
 }
 #hero-block .futures .item.active {
-  flex: 1 0 50%;
+  width: 100%;
 }
 #hero-block .futures .item .content {
   position: absolute;

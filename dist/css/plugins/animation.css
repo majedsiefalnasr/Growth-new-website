@@ -231,7 +231,7 @@ body.has-reduced-motion [data-reveal-self='translate-right'] {
     transform 0s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s,
     -webkit-transform 0s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
   position: relative;
-  margin-bottom: 1rem;
+  line-height: 160%;
 }
 
 [data-reveal-parent='rotate'] [data-reveal-child] span,

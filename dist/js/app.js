@@ -28,6 +28,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Animation
   animation();
+
+  // Navbar
+  navbar();
 });
 
 //    ____                      _        _          _ _
@@ -243,5 +246,77 @@ function animation() {
           else SUtility.attr(target, 'data-scrolled-past-view', 'false');
       }
     });
+  }
+}
+
+//   _   _             _
+//  | \ | |           | |
+//  |  \| | __ ___   _| |__   __ _ _ __
+//  | . ` |/ _` \ \ / / '_ \ / _` | '__|
+//  | |\  | (_| |\ V /| |_) | (_| | |
+//  |_| \_|\__,_| \_/ |_.__/ \__,_|_|
+//
+//
+// Navbar
+function navbar() {
+  var navbar = document.querySelector('[navbar-main]'),
+    toggler = navbar.querySelector('[actions] > .toggler'),
+    background = navbar.querySelector('.background'),
+    bodyContainer = document.querySelector('body');
+
+  // run once
+  scrollAction();
+
+  // Actions on scroll
+  document.addEventListener('scroll', (event) => {
+    scrollAction();
+  });
+
+  // Toggle navbar
+  SUtility.addEvent(toggler, 'click', (event) => {
+    togglerAction();
+  });
+
+  // Toggler navbar after click outside
+  SUtility.addEvent(background, 'click', (event) => {
+    togglerAction();
+  });
+
+  // Scroll actions
+  function scrollAction() {
+    if (window.scrollY == 0) SUtility.removeClass(navbar, 'is-scrolled');
+    else SUtility.addClass(navbar, 'is-scrolled');
+  }
+
+  function togglerAction() {
+    // Browser local direction
+    let browserDir = 'right';
+    if (/^(ar|arc|dv|fa|ha|he|khw|ks|ku|ps|ur|yi)\b/.test(navigator.language)) browserDir = 'left';
+
+    if (SUtility.hasClass(navbar, 'open')) {
+      SUtility.removeClass(navbar, 'open');
+
+      // Remove style
+      bodyContainer.style.cssText = '';
+      bodyContainer.querySelector('#content-block').style.cssText = '';
+      navbar.style.cssText = '';
+    } else {
+      SUtility.addClass(navbar, 'open');
+
+      // Get prev width of navbar
+      let prevWidth = navbar.offsetWidth;
+
+      // Remove scrollbar from body
+      bodyContainer.style.overflowY = 'hidden';
+
+      // Get current width of navbar
+      let currentWidth = navbar.offsetWidth;
+
+      // add spacer value to content
+      bodyContainer.querySelector('#content-block').style.cssText =
+        ` padding-` + browserDir + `: ` + (currentWidth - prevWidth) + `px; `;
+      navbar.style.cssText =
+        ` padding-` + browserDir + `: ` + (currentWidth - prevWidth + 24) + `px; `;
+    }
   }
 }
