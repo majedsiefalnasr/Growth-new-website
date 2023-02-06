@@ -185,6 +185,10 @@ function splide() {
           1199.98: {
             perPage: 1.5,
           },
+          767.98: {
+            perPage: 1.2,
+            gap: 32,
+          },
         },
         perMove: 1,
         direction: SUtility.getDir(),
@@ -202,10 +206,16 @@ function splide() {
         perPage: 1.2,
         breakpoints: {
           991.98: {
-            perPage: 1.4,
+            focus: 'center',
           },
           767.98: {
+            focus: 'center',
             perPage: 1.1,
+            gap: 32,
+          },
+          413.98: {
+            focus: 'center',
+            gap: 16,
           },
         },
         perMove: 1,
