@@ -50,9 +50,6 @@
 #testimonials-block [trustpilot] .logo em {
   font-size: 1.5rem;
 }
-#testimonials-block [splide] {
-  margin-left: 18rem;
-}
 #testimonials-block [splide] .splide__track {
   overflow: visible;
 }
