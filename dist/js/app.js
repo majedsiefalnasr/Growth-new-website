@@ -284,7 +284,8 @@ function animation() {
 //
 // Navbar
 function navbar() {
-  var navbar = document.querySelector('[navbar-main]'),
+  var navbar = document.querySelector('[navbar]'),
+    navbarInner = navbar.querySelector('[navbar-main]'),
     toggler = navbar.querySelector('[actions] > .toggler'),
     background = navbar.querySelector('.background'),
     bodyContainer = document.querySelector('body');
@@ -329,13 +330,13 @@ function navbar() {
       SUtility.addClass(navbar, 'open');
 
       // Get prev width of navbar
-      let prevWidth = navbar.offsetWidth;
+      let prevWidth = bodyContainer.offsetWidth;
 
       // Remove scrollbar from body
       bodyContainer.style.overflowY = 'hidden';
 
       // Get current width of navbar
-      let currentWidth = navbar.offsetWidth;
+      let currentWidth = bodyContainer.offsetWidth;
 
       // add spacer value to content
       bodyContainer.querySelector('#content-block').style.cssText =
