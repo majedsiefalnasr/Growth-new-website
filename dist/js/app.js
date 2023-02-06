@@ -181,6 +181,11 @@ function splide() {
     if (element.hasAttribute('splide-futures')) {
       options = {
         perPage: 2.5,
+        breakpoints: {
+          1199.98: {
+            perPage: 1.5,
+          },
+        },
         perMove: 1,
         direction: SUtility.getDir(),
         gap: 64,
@@ -190,10 +195,19 @@ function splide() {
         lazyLoad: 'nearby',
         focus: 0,
         omitEnd: true,
+        trimSpace: false,
       };
     } else if (element.hasAttribute('splide-testimonials')) {
       options = {
-        perPage: 1,
+        perPage: 1.2,
+        breakpoints: {
+          991.98: {
+            perPage: 1.4,
+          },
+          767.98: {
+            perPage: 1.1,
+          },
+        },
         perMove: 1,
         direction: SUtility.getDir(),
         gap: 64,
@@ -203,6 +217,7 @@ function splide() {
         lazyLoad: 'nearby',
         focus: 0,
         omitEnd: true,
+        trimSpace: false,
       };
     }
 
