@@ -106,6 +106,10 @@
 /* Responsiveness */
 /* Extra Small devices (mobile phones, less than 768px) */
 @media (max-width: 413.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
   #hero-block [text] h1 {
     font-size: 2.25rem;
   }
@@ -131,10 +135,6 @@
   #hero-block .futures .item .content em {
     order: 0;
   }
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
 }
 
 /* Medium devices (tablets, less than 992px) */
