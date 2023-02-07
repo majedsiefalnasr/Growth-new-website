@@ -56,7 +56,7 @@
   border-radius: 50%;
 }
 #selling-online-block .list .content .item .text {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 #selling-online-block .marquee {
   --gap: 24px;
@@ -154,7 +154,8 @@
   #selling-online-block .header h2 {
     font-size: 2.5rem;
   }
-  #selling-online-block .header .subtitle {
+  #selling-online-block .header .subtitle,
+  #selling-online-block .list .content .item .text {
     font-size: 1.5rem;
   }
 }

@@ -192,6 +192,10 @@ function splide() {
             perPage: 1.2,
             gap: 32,
           },
+          413.98: {
+            perPage: 1.1,
+            gap: 16,
+          },
         },
         perMove: 1,
         direction: SUtility.getDir(),
