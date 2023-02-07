@@ -221,6 +221,11 @@ function splide() {
             perPage: 1.4,
             gap: 16,
           },
+          413.98: {
+            focus: 'center',
+            perPage: 1.2,
+            gap: 8,
+          },
         },
         perMove: 1,
         direction: SUtility.getDir(),

@@ -49,6 +49,10 @@
 [navbar] [navbar-main] .site-logo img {
   height: 2rem;
 }
+[navbar].is-scrolled [navbar-main] .site-logo img:not(.symbol),
+[navbar]:not(.is-scrolled) [navbar-main] .site-logo img.symbol {
+  display: none;
+}
 [navbar] [navbar-main] [navbar-main-list] {
   --reveal-delay: 0.1s;
   position: fixed;
@@ -231,6 +235,12 @@
 @media (min-width: 576px) {
   [navbar] [navbar-main] {
     max-width: calc(540px - 2 * var(--bs-gutter-x, 0.75rem));
+  }
+  [navbar] [navbar-main] .site-logo img:not(.symbol) {
+    display: block !important;
+  }
+  [navbar] [navbar-main] .site-logo img.symbol {
+    display: none;
   }
 }
 

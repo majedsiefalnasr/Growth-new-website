@@ -12,7 +12,7 @@
 -------------------------------------------------*/
 
 #download-app-block {
-  margin-bottom: 12.5rem;
+  margin-bottom: 8.75rem;
 }
 #download-app-block .header {
   margin-bottom: 2.5rem;
@@ -51,6 +51,9 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  #download-app-block {
+    margin-bottom: 12.5rem;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
