@@ -188,30 +188,37 @@
 
             <!-- Actions -->
             <div class="d-flex align-items-center gap-2" actions>
-              <!-- Sign in -->
-              <a href="#" class="btn btn-primary">تسجيل دخول</a>
+              <div class="inner-actions">
+                <div class="gap-2">
+                  <!-- Language switcher -->
+                  <div class="dropdown">
+                    <!-- Action -->
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      id="language-switcher-dropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,20">
+                      <!-- Name -->
+                      <span class="text">العربية</span>
+                      <em class="usg-icon-language"></em>
+                    </button>
 
-              <!-- Language switcher -->
-              <div class="dropdown">
-                <!-- Action -->
-                <button
-                  class="btn dropdown-toggle"
-                  type="button"
-                  id="language-switcher-dropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  data-bs-offset="0,20">
-                  <!-- Name -->
-                  <span class="text">العربية</span>
-                  <em class="usg-icon-language"></em>
-                </button>
+                    <!-- List -->
+                    <ul class="dropdown-menu" aria-labelledby="language-switcher-dropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
 
-                <!-- List -->
-                <ul class="dropdown-menu" aria-labelledby="language-switcher-dropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                  <!-- Sign in -->
+                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                </div>
+
+                <!-- Create store -->
+                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
               </div>
 
               <!-- Mobile nav toggler -->

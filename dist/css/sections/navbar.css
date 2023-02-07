@@ -95,6 +95,55 @@
 [navbar] [navbar-main] [navbar-main-list]:hover .nav-link:hover {
   opacity: 1;
 }
+[navbar] [navbar-main] [actions] > *:not(.toggler) {
+  display: none;
+}
+[navbar] [navbar-main] [navbar-main-list] [actions] > * {
+  display: block;
+}
+[navbar].is-scrolled [navbar-main] [actions] > .create-store {
+  display: block;
+  padding: 0.2rem;
+  box-shadow: none;
+  font-size: 1.13rem;
+}
+[navbar] [navbar-main] [actions] > .inner-actions {
+  display: none;
+}
+[navbar].open [navbar-main] [actions] > .inner-actions {
+  display: flex;
+}
+[navbar].is-scrolled [navbar-main] [actions] > .inner-actions {
+  display: flex;
+}
+[navbar] [navbar-main] [actions] > .inner-actions > *:not(.create-store) {
+  display: none;
+}
+[navbar].open [navbar-main] [actions] > .inner-actions > *:not(.create-store) {
+  display: flex;
+}
+[navbar].open [navbar-main] [actions] > .inner-actions > .create-store,
+[navbar].open [navbar-main] [actions] > .inner-actions > *:not(.create-store) > *:not(.dropdown) {
+  display: none;
+}
+[navbar].open:not(.is-scrolled)
+  [navbar-main]
+  [actions]
+  > .inner-actions
+  > *:not(.create-store)
+  > *.dropdown
+  .btn {
+  color: var(--color-white);
+}
+[navbar].open:not(.is-scrolled)
+  [navbar-main]
+  [actions]
+  > .inner-actions
+  > *:not(.create-store)
+  > *.dropdown
+  .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
 [navbar] [navbar-main] [actions] > .toggler {
   --reveal-delay: 0s;
   display: flex;
@@ -104,9 +153,6 @@
   transform: scale(1.5);
   transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) var(--reveal-delay),
     -webkit-transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) var(--reveal-delay);
-}
-[navbar] [navbar-main] [actions] > *:not(.toggler) {
-  display: none;
 }
 [navbar].open:not(.is-scrolled) [navbar-main] [actions] > .toggler {
   -webkit-filter: brightness(0) invert(1);
@@ -226,10 +272,12 @@
     font-size: 1.13rem;
     background-color: transparent;
   }
-  [navbar] [navbar-main] [actions] > *:not(.toggler) {
-    display: block;
+  [navbar] [navbar-main] [actions] > *:not(.toggler),
+  [navbar] [navbar-main] [actions] > .inner-actions > *:not(.create-store) {
+    display: flex;
   }
-  [navbar] [navbar-main] [actions] > .toggler {
+  [navbar] [navbar-main] [actions] > .toggler,
+  [navbar] [navbar-main] [actions] > .inner-actions > .create-store {
     display: none;
   }
 }
