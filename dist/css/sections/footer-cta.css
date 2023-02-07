@@ -65,13 +65,13 @@
   margin-bottom: 3rem;
 }
 #footer-cta-block .header h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
 #footer-cta-block .header .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 /* Responsiveness */
@@ -80,6 +80,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  #footer-cta-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #footer-cta-block .header .subtitle {
+    font-size: 1.5rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -88,6 +94,9 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  #footer-cta-block .header h2 {
+    font-size: 3rem;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */

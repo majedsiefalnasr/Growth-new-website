@@ -18,13 +18,13 @@
   margin-bottom: 7.5rem;
 }
 #add-ons-block .header h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
 #add-ons-block .header .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 #add-ons-block .marquee {
   --gap: 24px;
@@ -112,6 +112,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  #add-ons-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #add-ons-block .header .subtitle {
+    font-size: 1.5rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -122,6 +128,9 @@
 @media (min-width: 992px) {
   #add-ons-block {
     margin-bottom: 12.5rem;
+  }
+  #add-ons-block .header h2 {
+    font-size: 3rem;
   }
 }
 

@@ -18,13 +18,13 @@
   margin-bottom: 7.5rem;
 }
 #partners-block .header h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
 #partners-block .header .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 #partners-block .list {
   display: flex;
@@ -43,6 +43,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  #partners-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #partners-block .header .subtitle {
+    font-size: 1.5rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -53,6 +59,9 @@
 @media (min-width: 992px) {
   #partners-block {
     margin-bottom: 12.5rem;
+  }
+  #partners-block .header h2 {
+    font-size: 3rem;
   }
 }
 

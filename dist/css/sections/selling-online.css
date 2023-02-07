@@ -18,13 +18,13 @@
   margin-bottom: 7.5rem;
 }
 #selling-online-block .header h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-500);
   margin-bottom: 1.25rem;
 }
 #selling-online-block .header .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 #selling-online-block .list .content .item {
   flex: 0 0 27rem;
@@ -151,6 +151,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  #selling-online-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #selling-online-block .header .subtitle {
+    font-size: 1.5rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -161,6 +167,9 @@
 @media (min-width: 992px) {
   #selling-online-block {
     margin-bottom: 12.5rem;
+  }
+  #selling-online-block .header h2 {
+    font-size: 3rem;
   }
 }
 
