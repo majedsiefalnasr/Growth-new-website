@@ -210,11 +210,12 @@ function splide() {
           },
           767.98: {
             focus: 'center',
-            perPage: 1.1,
+            perPage: 1.4,
             gap: 32,
           },
-          413.98: {
+          575.98: {
             focus: 'center',
+            perPage: 1.4,
             gap: 16,
           },
         },
