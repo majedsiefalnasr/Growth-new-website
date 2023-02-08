@@ -19,6 +19,7 @@
   bottom: -140px;
   margin-top: -140px;
   overflow: hidden;
+  z-index: 0;
 }
 #footer-cta-block > * {
   position: relative;

@@ -12,7 +12,12 @@
 -------------------------------------------------*/
 
 #partners-block {
+  position: relative;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#partners-block > *:not(.background) {
+  z-index: 1;
 }
 #partners-block .header {
   margin-bottom: 5rem;

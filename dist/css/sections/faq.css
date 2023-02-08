@@ -12,7 +12,26 @@
 -------------------------------------------------*/
 
 #faq-block {
+  position: relative;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#faq-block > *:not(.background) {
+  z-index: 1;
+}
+#faq-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#faq-block > .background > .bg-dotted {
+  bottom: -100px;
+  right: -100px;
+  transform: translateY(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
 }
 #faq-block .header {
   margin-bottom: 5rem;

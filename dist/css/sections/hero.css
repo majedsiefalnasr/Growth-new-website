@@ -12,11 +12,36 @@
 -------------------------------------------------*/
 
 #hero-block {
+  position: relative;
   padding-top: 10rem;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#hero-block > *:not(.background) {
+  z-index: 1;
+}
+#hero-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#hero-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#hero-block > .background > .bg-dotted {
+  top: 100px;
+  left: 100px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
 }
 #hero-block [text] h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-500);
 }
@@ -152,6 +177,9 @@
   #hero-block [text] h1 {
     font-size: 3.5rem;
   }
+  #hero-block > .background > .bg-1 {
+    width: 200%;
+  }
   #hero-block .futures {
     flex-direction: row;
   }
@@ -189,6 +217,9 @@
 @media (min-width: 1400px) {
   #hero-block [text] h1 {
     font-size: 3.5rem;
+  }
+  #hero-block > .background > .bg-1 {
+    width: 100%;
   }
 }
 /* #endregion */

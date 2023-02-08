@@ -50,4 +50,50 @@ body > * {
   background: var(--color-500);
 }
 
+/* */
+@-webkit-keyframes floatX_dotted {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes floatX_dotted {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes floatY_dotted {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes floatY_dotted {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* #endregion */

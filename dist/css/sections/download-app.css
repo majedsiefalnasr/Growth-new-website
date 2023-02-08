@@ -12,7 +12,29 @@
 -------------------------------------------------*/
 
 #download-app-block {
+  position: relative;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#download-app-block > *:not(.background) {
+  z-index: 1;
+}
+#download-app-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#download-app-block > .background > .bg-dotted {
+  top: -100px;
+  left: -80px;
+  transform: translateY(0px);
+  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
+  animation: floatY_dotted 6s ease-in-out infinite;
+}
+#download-app-block > .background > .bg-dotted > * {
+  margin-right: auto;
 }
 #download-app-block .header {
   margin-bottom: 2.5rem;

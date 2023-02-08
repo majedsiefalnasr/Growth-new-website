@@ -12,7 +12,34 @@
 -------------------------------------------------*/
 
 #distinguish-brand-block {
+  position: relative;
   margin-bottom: 2.75rem;
+  z-index: 0;
+}
+#distinguish-brand-block > *:not(.background) {
+  z-index: 1;
+}
+#distinguish-brand-block > .background > * {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#distinguish-brand-block > .background > .bg-1 {
+  top: 0;
+  right: 0;
+  height: 200%;
+  transform: translateX(50%) translateY(-30%);
+}
+#distinguish-brand-block > .background > .bg-1 > * {
+  height: 100%;
+}
+#distinguish-brand-block > .background > .bg-dotted {
+  top: 20px;
+  left: -80px;
+  transform: translateY(0px);
+  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
+  animation: floatY_dotted 6s ease-in-out infinite;
 }
 #distinguish-brand-block .header {
   margin-bottom: 5rem;

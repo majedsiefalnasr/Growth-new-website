@@ -12,7 +12,12 @@
 -------------------------------------------------*/
 
 #showcase-block {
+  position: relative;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#showcase-block > *:not(.background) {
+  z-index: 1;
 }
 #showcase-block .header {
   margin-bottom: 5rem;

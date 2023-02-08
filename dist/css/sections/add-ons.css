@@ -12,7 +12,57 @@
 -------------------------------------------------*/
 
 #add-ons-block {
+  position: relative;
   margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#add-ons-block > *:not(.background) {
+  z-index: 1;
+}
+#add-ons-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#add-ons-block > .background > .bg-1 {
+  width: 200%;
+  top: 50%;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+#add-ons-block > .background > .bg-dotted {
+  bottom: -80px;
+  left: -40px;
+  transform: translateY(0px);
+  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
+  animation: floatY_dotted 6s ease-in-out infinite;
+}
+@-webkit-keyframes floatY_dotted {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes floatY_dotted {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+#add-ons-block > .background > .bg-dotted > * {
+  margin-right: auto;
 }
 #add-ons-block .header {
   margin-bottom: 5rem;
