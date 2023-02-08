@@ -38,8 +38,11 @@
   top: 20px;
   left: -80px;
   transform: translateY(0px);
-  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
-  animation: floatY_dotted 6s ease-in-out infinite;
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#distinguish-brand-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
 }
 #distinguish-brand-block .header {
   margin-bottom: 5rem;
@@ -194,6 +197,9 @@
   }
   #distinguish-brand-block .header .subtitle {
     font-size: 1.5rem;
+  }
+  #distinguish-brand-block > .background > .bg-dotted > * {
+    transform: scale(0.8);
   }
 }
 

@@ -39,29 +39,8 @@
   -webkit-animation: floatY_dotted 6s ease-in-out infinite;
   animation: floatY_dotted 6s ease-in-out infinite;
 }
-@-webkit-keyframes floatY_dotted {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes floatY_dotted {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 #add-ons-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
   margin-right: auto;
 }
 #add-ons-block .header {
@@ -170,6 +149,9 @@
   }
   #add-ons-block .header .subtitle {
     font-size: 1.5rem;
+  }
+  #add-ons-block > .background > .bg-dotted > * {
+    transform: scale(1);
   }
 }
 

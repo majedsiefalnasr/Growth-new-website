@@ -33,6 +33,9 @@
   -webkit-animation: floatY_dotted 6s ease-in-out infinite;
   animation: floatY_dotted 6s ease-in-out infinite;
 }
+#selling-online-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
 #selling-online-block .header {
   margin-bottom: 5rem;
 }
@@ -176,6 +179,9 @@
   #selling-online-block .header .subtitle,
   #selling-online-block .list .content .item .text {
     font-size: 1.5rem;
+  }
+  #selling-online-block > .background > .bg-dotted > * {
+    transform: scale(1);
   }
 }
 

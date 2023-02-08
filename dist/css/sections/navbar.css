@@ -55,8 +55,12 @@
   height: 2rem;
 }
 [navbar].is-scrolled [navbar-main] .site-logo img:not(.symbol),
+[navbar]:not(.is-scrolled).open [navbar-main] .site-logo img:not(.symbol),
 [navbar]:not(.is-scrolled) [navbar-main] .site-logo img.symbol {
   display: none;
+}
+[navbar]:not(.is-scrolled).open [navbar-main] .site-logo img.symbol {
+  display: block;
 }
 [navbar] [navbar-main] [navbar-main-list] {
   --reveal-delay: 0.1s;
@@ -244,7 +248,8 @@
   [navbar] [navbar-main] .site-logo img:not(.symbol) {
     display: block !important;
   }
-  [navbar] [navbar-main] .site-logo img.symbol {
+  [navbar] [navbar-main] .site-logo img.symbol,
+  [navbar]:not(.is-scrolled).open [navbar-main] .site-logo img.symbol {
     display: none;
   }
 }

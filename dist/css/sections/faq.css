@@ -33,6 +33,9 @@
   -webkit-animation: floatX_dotted 6s ease-in-out infinite;
   animation: floatX_dotted 6s ease-in-out infinite;
 }
+#faq-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
 #faq-block .header {
   margin-bottom: 5rem;
 }
@@ -89,6 +92,9 @@
   }
   #faq-block .header .subtitle {
     font-size: 1.5rem;
+  }
+  #faq-block > .background > .bg-dotted > * {
+    transform: scale(1);
   }
 }
 

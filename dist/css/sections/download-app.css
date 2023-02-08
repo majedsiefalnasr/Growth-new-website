@@ -34,6 +34,7 @@
   animation: floatY_dotted 6s ease-in-out infinite;
 }
 #download-app-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
   margin-right: auto;
 }
 #download-app-block .header {
@@ -70,6 +71,9 @@
   }
   #download-app-block .header .subtitle {
     font-size: 1.5rem;
+  }
+  #download-app-block > .background > .bg-dotted > * {
+    transform: scale(1);
   }
 }
 
