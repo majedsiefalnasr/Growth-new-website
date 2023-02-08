@@ -186,10 +186,11 @@ function splide() {
         perPage: 2.5,
         breakpoints: {
           1199.98: {
-            perPage: 1.5,
+            perPage: 2.5,
+            gap: 48,
           },
-          767.98: {
-            perPage: 1.2,
+          991.98: {
+            perPage: 1.5,
             gap: 32,
           },
           413.98: {

@@ -15,7 +15,7 @@
   margin-bottom: 8.75rem;
 }
 #selling-online-block .header {
-  margin-bottom: 7.5rem;
+  margin-bottom: 5rem;
 }
 #selling-online-block .header h2 {
   font-size: 2rem;
@@ -168,6 +168,9 @@
 @media (min-width: 992px) {
   #selling-online-block {
     margin-bottom: 12.5rem;
+  }
+  #selling-online-block .header {
+    margin-bottom: 7.5rem;
   }
   #selling-online-block .header h2 {
     font-size: 3rem;

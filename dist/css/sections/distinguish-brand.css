@@ -12,10 +12,10 @@
 -------------------------------------------------*/
 
 #distinguish-brand-block {
-  margin-bottom: 8.75rem;
+  margin-bottom: 2.75rem;
 }
 #distinguish-brand-block .header {
-  margin-bottom: 7.5rem;
+  margin-bottom: 5rem;
 }
 #distinguish-brand-block .header h2 {
   font-size: 2rem;
@@ -180,7 +180,10 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   #distinguish-brand-block {
-    margin-bottom: 12.5rem;
+    margin-bottom: 6.5rem;
+  }
+  #distinguish-brand-block .header {
+    margin-bottom: 7.5rem;
   }
   #distinguish-brand-block .header h2 {
     font-size: 3rem;
