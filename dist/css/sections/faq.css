@@ -26,6 +26,9 @@
 #faq-block .header .subtitle {
   font-size: 1.25rem;
 }
+#faq_accordion {
+  padding: 0 2rem;
+}
 #faq_accordion[data-reveal-self] .accordion-item {
   opacity: 0;
   -webkit-transform: translate(-2rem, 0);
@@ -50,6 +53,11 @@
   -webkit-transform: none;
   transform: none;
 }
+#faq_accordion .accordion-button {
+  font-size: 1.13rem;
+  line-height: 150%;
+  padding: 2rem 0 2rem 2.5rem;
+}
 
 /* Responsiveness */
 /* X-Small devices (portrait phones, less than 576px) */
@@ -67,6 +75,9 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  #faq_accordion .accordion-button {
+    font-size: 1.25rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
