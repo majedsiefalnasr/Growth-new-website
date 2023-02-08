@@ -31,8 +31,13 @@
   z-index: 101;
 }
 [navbar].is-scrolled [navbar-main] {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: saturate(180%) blur(1rem);
+  -webkit-backdrop-filter: saturate(180%) blur(1rem);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+[navbar].is-scrolled.open [navbar-main] {
+  background: rgba(255, 255, 255, 1);
 }
 [navbar].open [navbar-main] > * {
   z-index: 100;
