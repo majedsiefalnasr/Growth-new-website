@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* #region / Animation */
+/*   ______ _             _   _                            _   _                 
+/*  |  ____| |           | | (_)                 /\       | | (_)                
+/*  | |__  | | ___   __ _| |_ _ _ __   __ _     /  \   ___| |_ _  ___  _ __  ___ 
+/*  |  __| | |/ _ \ / _` | __| | '_ \ / _` |   / /\ \ / __| __| |/ _ \| '_ \/ __|
+/*  | |    | | (_) | (_| | |_| | | | | (_| |  / ____ \ (__| |_| | (_) | | | \__ \
+/*  |_|    |_|\___/ \__,_|\__|_|_| |_|\__, | /_/    \_\___|\__|_|\___/|_| |_|___/
+/*                                     __/ |                                     
+/*                                    |___/                                       */
+/* -----------------------------------------------
+  Floating Actions
+-------------------------------------------------*/
+
+#floating-actions {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-white);
+  box-shadow: none;
+  opacity: 0;
+  transform: translateY(7.5rem);
+  transition: all 500ms cubic-bezier(0.694, 0, 0.335, 1);
+  z-index: 100;
+}
+#floating-actions.view {
+  opacity: 1;
+  transform: translateY(0);
+}
+#floating-actions > * {
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 50rem;
+  color: var(--color-white);
+  background-color: var(--color-800);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#floating-actions > *:hover,
+#floating-actions > *:hover {
+  background-color: var(--color-700);
+}
+
+/* #endregion */

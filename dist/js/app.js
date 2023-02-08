@@ -34,6 +34,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Hero futures
   hero_futures();
+
+  // Floating Actions
+  floating_actions();
 });
 
 //    ____                      _        _          _ _
@@ -387,4 +390,57 @@ function hero_futures() {
       });
     });
   }
+}
+
+//   ______ _             _   _                            _   _
+//  |  ____| |           | | (_)                 /\       | | (_)
+//  | |__  | | ___   __ _| |_ _ _ __   __ _     /  \   ___| |_ _  ___  _ __  ___
+//  |  __| | |/ _ \ / _` | __| | '_ \ / _` |   / /\ \ / __| __| |/ _ \| '_ \/ __|
+//  | |    | | (_) | (_| | |_| | | | | (_| |  / ____ \ (__| |_| | (_) | | | \__ \
+//  |_|    |_|\___/ \__,_|\__|_|_| |_|\__, | /_/    \_\___|\__|_|\___/|_| |_|___/
+//                                     __/ |
+//                                    |___/
+// Floating Actions
+function floating_actions() {
+  var container = document.querySelector('#floating-actions'),
+    backToTop = container.querySelector('.back-to-top'),
+    share = container.querySelector('.share');
+
+  // Run once for view or hide Floating Actions
+  view_hide_action();
+
+  // Hide Floating Actions scroll to top ov view
+  window.addEventListener('scroll', function () {
+    view_hide_action();
+  });
+
+  // View or hide Floating Actions
+  function view_hide_action() {
+    if (window.pageYOffset > 100) container.classList.add('view');
+    else container.classList.remove('view');
+  }
+
+  // On click share action
+  SUtility.addEvent(share, 'click', () => {
+    var description = `Without technical experience and with ease, you can sell anywhere and anytime 
+      with your online store and with your commercial identity`;
+
+    if (document.querySelector('[itemprop=description]'))
+      description = document.querySelector('[itemprop=description]').content;
+    else if (document.querySelector('[name=description]'))
+      description = document.querySelector('[name=description]').content;
+
+    const shareData = {
+      title: document.title,
+      text: description,
+      url: document.URL,
+    };
+
+    navigator.share(shareData);
+  });
+
+  // On click back to top action
+  SUtility.addEvent(backToTop, 'click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
