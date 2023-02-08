@@ -15,7 +15,7 @@
   position: relative;
   border-radius: 1.5rem;
   background: linear-gradient(90deg, #ece9e6 0%, #f3f4ff 100%);
-  padding: 5rem 7.5rem;
+  padding: 2.5rem 2rem;
   bottom: -140px;
   margin-top: -140px;
   overflow: hidden;
@@ -96,6 +96,9 @@
 @media (min-width: 992px) {
   #footer-cta-block .header h2 {
     font-size: 3rem;
+  }
+  #footer-cta-block {
+    padding: 5rem 7.5rem;
   }
 }
 
