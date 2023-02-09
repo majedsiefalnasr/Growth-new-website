@@ -166,4 +166,23 @@
   padding-bottom: 80px;
   background-color: transparent;
 }
+
+/* -----------------------------------------------
+  Bootstrap > Accordion
+-------------------------------------------------*/
+
+.dropdown-menu {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: var(--color-black);
+  background-color: var(--color-100);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--color-white);
+  background-color: var(--color-500);
+}
 /* #endregion */
