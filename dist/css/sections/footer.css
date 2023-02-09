@@ -20,7 +20,7 @@
   right: 0;
   background-color: var(--color-900);
   color: var(--color-white);
-  padding: 14.5rem 0 3rem;
+  padding: 14.5rem 0 7rem;
   font-weight: 300;
   z-index: -1;
 }
@@ -115,6 +115,7 @@
   #footer-block {
     position: -webkit-sticky;
     position: sticky;
+    padding: 14.5rem 0 3rem;
   }
   #footer-block [help-actions] {
     flex-direction: column;
