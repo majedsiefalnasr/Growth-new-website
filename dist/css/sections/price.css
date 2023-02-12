@@ -1,0 +1,474 @@
+/* #region / Hero */
+/*   _____      _          
+/*  |  __ \    (_)         
+/*  | |__) | __ _  ___ ___ 
+/*  |  ___/ '__| |/ __/ _ \
+/*  | |   | |  | | (_|  __/
+/*  |_|   |_|  |_|\___\___|
+/*                         
+/*                          */
+/* -----------------------------------------------
+  Price
+-------------------------------------------------*/
+
+#price-block {
+  position: relative;
+  padding-top: 10rem;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#price-block > *:not(.background) {
+  z-index: 1;
+}
+#price-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#price-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#price-block > .background > .bg-dotted {
+  top: 100px;
+  left: 100px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#price-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+#price-block [text] h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+}
+#price-block [text] .text {
+  font-size: 1.25rem;
+}
+#price-block [text] .text.small {
+  font-size: 1rem;
+}
+#price-block [text] .text a {
+  text-decoration: none;
+  color: var(--color-600);
+}
+#price-block .switch-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 0.75rem 0.5rem;
+  margin: 2.5rem 0;
+  border-radius: 5rem;
+  background: var(--color-100);
+}
+#price-block .switch-wrapper [type='radio'] {
+  position: absolute;
+  left: -9999px;
+}
+#price-block .switch-wrapper [type='radio']:checked#monthly ~ label[for='monthly'],
+#price-block .switch-wrapper [type='radio']:checked#yearly ~ label[for='yearly'] {
+  color: var(--color-white);
+}
+#price-block .switch-wrapper [type='radio']:checked#monthly + label[for='yearly'] ~ .highlighter {
+  transform: translateX(100%);
+}
+#price-block .switch-wrapper [type='radio']:checked#yearly + label[for='monthly'] ~ .highlighter {
+  transform: none;
+}
+#price-block .switch-wrapper label {
+  font-size: 16px;
+  z-index: 1;
+  min-width: 160px;
+  line-height: 32px;
+  cursor: pointer;
+  border-radius: 30px;
+  text-align: center;
+  transition: color 0.25s ease-in-out;
+}
+#price-block .switch-wrapper .highlighter {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: calc(50% - 0.5rem);
+  height: calc(100% - 1rem);
+  border-radius: 30px;
+  background: var(--color-500);
+  transform: translateX(100%);
+  transition: transform 0.25s ease-in-out;
+}
+#price-block .plans {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  margin: 6rem 0 4rem;
+}
+#price-block .plans--table {
+  display: block;
+  margin: 0;
+  text-align: start;
+  width: 100%;
+}
+#price-block .plans > .item {
+  text-align: start;
+  padding: 2rem;
+  background: var(--color-white);
+  border-radius: 2rem;
+  box-shadow: 0px 20px 20px rgb(27 65 75 / 20%);
+}
+#price-block .plans > .item.recommended {
+  padding: 1rem 2rem 2rem;
+  border: 0.19rem solid var(--color-500);
+  transform: translateY(-3.5rem) scale(1.04);
+  box-shadow: 0px 42px 34px rgb(27 65 75 / 37%);
+}
+#price-block .plans > .item .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  border-radius: 10rem;
+  background-color: var(--color-500);
+  color: var(--color-white);
+  margin-bottom: 2rem;
+}
+#price-block .plans > .item .header .price,
+#price-block .plans--table .table--plane .table--header .price,
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price {
+  flex-direction: column;
+}
+#price-block .plans > .item .header .price .value,
+#price-block .plans--table .table--plane .table--header .price .value,
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price .value {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+#price-block .plans.yearly > .item .header .price .value.monthly,
+#price-block .plans > .item .header .price .value.yearly,
+#price-block .plans--table.yearly .table--plane .table--header .price .value.monthly,
+#price-block .plans--table .table--plane .table--header .price .value.yearly,
+#price-block .plans--table.yearly .table--all-plans .table--order-wrap .plan .price .value.monthly,
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price .value.yearly {
+  display: none;
+}
+#price-block .plans.yearly > .item .header .price .value.yearly,
+#price-block .plans--table.yearly .table--plane .table--header .price .value.yearly,
+#price-block .plans--table.yearly .table--all-plans .table--order-wrap .plan .price .value.yearly {
+  display: block;
+}
+#price-block .plans > .item .header .price .note,
+#price-block .plans--table .table--plane .table--header .price .note,
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price .note {
+  display: none;
+  color: var(--color-500);
+  background-color: var(--color-100);
+  padding: 0.25rem 1rem;
+  border-radius: 10rem;
+  text-align: center;
+  font-size: 0.88rem;
+}
+#price-block .plans.yearly > .item .header .price .note,
+#price-block .plans--table.yearly .table--plane .table--header .price .note,
+#price-block .plans--table.yearly .table--all-plans .table--order-wrap .plan .price .note {
+  display: block;
+}
+#price-block .plans > .item .header .name,
+#price-block .plans--table .table--plane .table--header .name,
+#price-block .plans--table .table--all-plans .name {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+#price-block .plans > .item .content .description {
+  margin-bottom: 0.5rem;
+}
+#price-block .plans > .item .content .futures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+#price-block .plans > .item .content .futures .item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#price-block .plans > .item .content .futures .item em {
+  background: var(--color-100);
+  color: var(--color-500);
+  padding: 0.25rem;
+  border-radius: 50%;
+}
+#price-block .plans > .item .content .btn,
+#price-block .plans--table .table--plane .table--header .btn {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: var(--color-100);
+  transition: all 0.3s ease-in-out;
+}
+#price-block .plans > .item.recommended .content .btn {
+  color: var(--color-white);
+  background-color: var(--color-500);
+}
+#price-block .plans--table .table--plane .table--header .btn {
+  width: auto;
+  padding: 0.63rem 4.25rem;
+  margin: 1.5rem 0;
+  color: var(--color-white);
+  background-color: var(--color-500);
+}
+#price-block .plans > .item .content .btn:hover,
+#price-block .plans > .item .content .btn:active,
+#price-block .plans > .item .content .btn.active {
+  background-color: var(--color-200);
+  color: var(--color-500);
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
+}
+#price-block .plans > .item.recommended .content .btn:hover,
+#price-block .plans > .item.recommended .content .btn:active,
+#price-block .plans > .item.recommended .content .btn.active,
+#price-block .plans--table .table--plane .table--header .btn:hover,
+#price-block .plans--table .table--plane .table--header .btn:active,
+#price-block .plans--table .table--plane .table--header .btn.active {
+  background-color: var(--color-700);
+  color: var(--color-white);
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+}
+#price-block .plans > .item .content .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
+}
+#price-block .plans--table .table--nav {
+  display: grid;
+  align-self: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 8.75rem;
+  border-radius: 10rem;
+  border: 1px solid var(--color-700);
+  background: var(--color-white);
+  margin-bottom: 3rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+#price-block .plans--table .table--nav > *:not(:last-child) {
+  border-left: 1px solid var(--color-700);
+}
+#price-block .plans--table .table--nav > * a {
+  position: relative;
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-500);
+  transition: all 0.3s ease-in-out;
+}
+#price-block .plans--table .table--nav > * a:hover,
+#price-block .plans--table .table--nav > * a:focus {
+  background-color: var(--color-100);
+  color: var(--color-500);
+}
+#price-block .plans--table .table--nav > * a.active,
+#price-block .plans--table .table--nav > * a:active {
+  background-color: var(--color-500);
+  color: var(--color-white);
+}
+#price-block .plans--table .table--plane {
+  padding-bottom: 3rem;
+}
+#price-block .plans--table .table--plane .table--header {
+  text-align: start;
+  margin-bottom: 1rem;
+}
+#price-block .plans--table .table--plane .table--content .table--heading,
+#price-block .plans--table .table--all-plans .table--content .table--heading {
+  padding: 1rem;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #363636;
+}
+#price-block .plans--table .table--plane .table--content .table--heading *,
+#price-block .plans--table .table--all-plans .table--content .table--heading * {
+  font-size: 1.25rem;
+  margin: 0;
+}
+#price-block .plans--table .table--plane .table--content .table--features .table--mobile,
+#price-block .plans--table .table--all-plans .table--content .table--features .table--desktop {
+  display: grid;
+  align-self: stretch;
+  grid-template-columns: minmax(160px, 65%) auto;
+}
+#price-block
+  .plans--table
+  .table--plane
+  .table--content
+  .table--features
+  .table--mobile
+  + .table--mobile,
+#price-block
+  .plans--table
+  .table--all-plans
+  .table--content
+  .table--features
+  .table--desktop
+  + .table--desktop {
+  border-top: 1px solid #807d7d;
+}
+#price-block .plans--table .table--plane .table--content .table--features .table--mobile em,
+#price-block .plans--table .table--all-plans .table--content .table--features .table--desktop em {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+#price-block .plans--table .table--plane .table--content .table--features .table--mobile > *,
+#price-block .plans--table .table--all-plans .table--content .table--features .table--desktop > * {
+  padding: 1rem;
+}
+#price-block
+  .plans--table
+  .table--plane
+  .table--content
+  .table--features
+  .table--mobile
+  > *:not(:first-child),
+#price-block
+  .plans--table
+  .table--all-plans
+  .table--content
+  .table--features
+  .table--desktop
+  > *:not(:first-child) {
+  text-align: center;
+}
+#price-block .plans--table .table--all-plans {
+  display: none;
+}
+#price-block .plans--table .table--all-plans .table--order-wrap {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 6.88rem;
+  background: rgb(241 245 246 / 10%);
+  backdrop-filter: saturate(180%) blur(1rem);
+  -webkit-backdrop-filter: saturate(180%) blur(1rem);
+  display: grid;
+  align-self: stretch;
+  grid-gap: 1rem;
+  padding: 2rem;
+  grid-template-columns: minmax(200px, 33%) repeat(3, 1fr);
+}
+#price-block .plans--table .table--all-plans .table--order-wrap .plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#price-block .plans--table .table--all-plans .table--order-wrap .plan .price > *:first-child {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+}
+#price-block .plans--table .table--all-plans .table--content .table--features .table--desktop {
+  grid-template-columns: minmax(200px, 33%) repeat(3, 1fr);
+}
+#price-block .compare {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: var(--color-600);
+}
+#price-block .pay-methods {
+  margin-top: 2rem;
+}
+#price-block .pay-methods > .title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+#price-block .pay-methods > .methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+#price-block .pay-methods > .methods > * {
+  height: 5rem;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #price-block [text] h1 {
+    font-size: 2.75rem;
+  }
+  #price-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #price-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #price-block {
+    margin-bottom: 12.5rem;
+  }
+  #price-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #price-block > .background > .bg-1 {
+    width: 200%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #price-block [text] h1 {
+    font-size: 3rem;
+  }
+  #price-block .plans--table .table--nav,
+  #price-block .plans--table .table--plane {
+    display: none;
+  }
+  #price-block .plans--table .table--all-plans {
+    display: block;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #price-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #price-block > .background > .bg-1 {
+    width: 100%;
+  }
+}
+/* #endregion */

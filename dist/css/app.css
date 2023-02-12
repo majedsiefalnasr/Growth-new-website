@@ -37,9 +37,8 @@
 @import url('./sections/footer-cta.css'); /* Footer CAT */
 @import url('./sections/footer.css'); /* Footer */
 
-/* #endregion */
+/* Pages */
+/* Price */
+@import url('./sections/price.css'); /* Price */
 
-https://stackoverflow.com/questions/67962715/how-to-make-drag-to-scroll-work-smoothly-with-scroll-snapping
-https://www.damiisdandy.com/articles/create-infinite-auto-scroll-animation-with-pure-css/
-https://splidejs.com/
-https://htmldom.dev/drag-to-scroll/
+/* #endregion */
