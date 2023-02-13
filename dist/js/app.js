@@ -555,13 +555,11 @@ function pricing_plan_switcher_actions() {
 //              |___/                                    |___/
 // Page loading animation
 function page_loading_animation() {
-  var body = document.body,
-    loader = body.querySelector('#page-loader ');
+  var body = document.body;
 
   // On window load
   window.addEventListener('load', () => {
     SUtility.removeClass(document.body, 'page-loading');
-
     SUtility.css(body, 'overflow-y', 'auto');
   });
 
