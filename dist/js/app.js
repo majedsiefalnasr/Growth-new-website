@@ -351,7 +351,7 @@ function navbar() {
       // Remove style
       bodyContainer.style.overflowY = 'auto';
       bodyContainer.querySelector('#content-block').style.cssText = '';
-      navbar.style.cssText = '';
+      navbarInner.style.cssText = '';
     } else {
       SUtility.addClass(navbar, 'open');
 
@@ -367,8 +367,7 @@ function navbar() {
       // add spacer value to content
       bodyContainer.querySelector('#content-block').style.cssText =
         ` padding-` + browserDir + `: ` + (currentWidth - prevWidth) + `px; `;
-      navbar.style.cssText =
-        ` padding-` + browserDir + `: ` + (currentWidth - prevWidth + 24) + `px; `;
+      navbarInner.style.cssText = `left : calc(50% - ` + (currentWidth - prevWidth) / 2 + `px); `;
     }
   }
 }
