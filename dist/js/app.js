@@ -503,19 +503,28 @@ function pricing_accordion_mobile() {
 
   var plans = document.querySelectorAll('#price-block .plans .item');
 
-  if (window.innerWidth < 1200) {
-    SUtility.each(plans, (plan) => {
-      SUtility.addEvent(plan, 'click', () => {
-        // Remove active state from prev element
-        container.querySelector('.item.active .content').style.height = '0px';
-        SUtility.removeClass(container.querySelector('.item.active'), 'active');
+  // Run once
+  run();
 
-        // Add active state to current element
-        plan.querySelector('.content').style.height =
-          plan.querySelector('.content').scrollHeight + 'px';
-        SUtility.addClass(plan, 'active');
+  SUtility.addEvent(window, 'resize', () => {
+    run();
+  });
+
+  function run() {
+    if (window.innerWidth < 1200) {
+      SUtility.each(plans, (plan) => {
+        SUtility.addEvent(plan, 'click', () => {
+          // Remove active state from prev element
+          container.querySelector('.item.active .content').style.height = '0px';
+          SUtility.removeClass(container.querySelector('.item.active'), 'active');
+
+          // Add active state to current element
+          plan.querySelector('.content').style.height =
+            plan.querySelector('.content').scrollHeight + 'px';
+          SUtility.addClass(plan, 'active');
+        });
       });
-    });
+    }
   }
 }
 
