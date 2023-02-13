@@ -46,6 +46,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Pricing plan mobile switcher
   pricing_plan_switcher_actions();
+
+  // Pricing accordion mobile
+  pricing_accordion_mobile();
 });
 
 //    ____                      _        _          _ _
@@ -492,6 +495,30 @@ function pricing_switcher_actions() {
   });
 }
 
+// Pricing accordion mobile
+function pricing_accordion_mobile() {
+  var container = document.querySelector('#price-block .plans');
+  // Check if target is exist
+  if (!container) return;
+
+  var plans = document.querySelectorAll('#price-block .plans .item');
+
+  if (window.innerWidth < 1200) {
+    SUtility.each(plans, (plan) => {
+      SUtility.addEvent(plan, 'click', () => {
+        // Remove active state from prev element
+        container.querySelector('.item.active .content').style.height = '0px';
+        SUtility.removeClass(container.querySelector('.item.active'), 'active');
+
+        // Add active state to current element
+        plan.querySelector('.content').style.height =
+          plan.querySelector('.content').scrollHeight + 'px';
+        SUtility.addClass(plan, 'active');
+      });
+    });
+  }
+}
+
 //   _____      _      _                     _
 //  |  __ \    (_)    (_)                   | |
 //  | |__) | __ _  ___ _ _ __   __ _   _ __ | | __ _ _ __
@@ -507,8 +534,11 @@ function pricing_switcher_actions() {
 //
 // Pricing plan mobile switcher
 function pricing_plan_switcher_actions() {
-  var container = document.querySelector('.switch-wrapper ~ .plans--table .table--nav'),
-    links = container.querySelectorAll('a[href]');
+  var container = document.querySelector('.switch-wrapper ~ .plans--table .table--nav');
+  // Check if target is exist
+  if (!container) return;
+
+  var links = container.querySelectorAll('a[href]');
 
   // Loop all switcher
   SUtility.each(links, (item) => {
