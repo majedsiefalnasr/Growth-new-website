@@ -17,6 +17,9 @@ SUtility.onDOMContentLoaded(() => {
   // Console hello message
   console_hello();
 
+  // Page loading animation
+  page_loading_animation();
+
   // Lazy load
   lazy_load();
 
@@ -544,5 +547,35 @@ function pricing_plan_switcher_actions() {
         SUtility.addClass(item, 'active');
       }
     });
+  });
+}
+
+//   _____                   _                 _ _                           _                 _   _
+//  |  __ \                 | |               | (_)                         (_)               | | (_)
+//  | |__) |_ _  __ _  ___  | | ___   __ _  __| |_ _ __   __ _    __ _ _ __  _ _ __ ___   __ _| |_ _  ___  _ __
+//  |  ___/ _` |/ _` |/ _ \ | |/ _ \ / _` |/ _` | | '_ \ / _` |  / _` | '_ \| | '_ ` _ \ / _` | __| |/ _ \| '_ \
+//  | |  | (_| | (_| |  __/ | | (_) | (_| | (_| | | | | | (_| | | (_| | | | | | | | | | | (_| | |_| | (_) | | | |
+//  |_|   \__,_|\__, |\___| |_|\___/ \__,_|\__,_|_|_| |_|\__, |  \__,_|_| |_|_|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+//               __/ |                                    __/ |
+//              |___/                                    |___/
+// Page loading animation
+function page_loading_animation() {
+  var body = document.body,
+    loader = body.querySelector('#page-loader ');
+
+  // On window load
+  window.addEventListener('load', () => {
+    SUtility.removeClass(document.body, 'page-loading');
+
+    SUtility.addEvent(loader, 'transitionend', () => {
+      SUtility.css(body, 'overflow-y', 'auto');
+      console.log('Transition ended');
+    });
+  });
+
+  // On page before unload
+  window.addEventListener('beforeunload', () => {
+    SUtility.css(body, 'overflow-y', 'hidden');
+    SUtility.addClass(document.body, 'page-reloading');
   });
 }
