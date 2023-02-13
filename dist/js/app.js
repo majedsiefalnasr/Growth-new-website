@@ -355,19 +355,15 @@ function navbar() {
     } else {
       SUtility.addClass(navbar, 'open');
 
-      // Get prev width of navbar
-      let prevWidth = bodyContainer.offsetWidth;
+      let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
       // Remove scrollbar from body
       bodyContainer.style.overflowY = 'hidden';
 
-      // Get current width of navbar
-      let currentWidth = bodyContainer.offsetWidth;
-
       // add spacer value to content
       bodyContainer.querySelector('#content-block').style.cssText =
-        ` padding-` + browserDir + `: ` + (currentWidth - prevWidth) + `px; `;
-      navbarInner.style.cssText = `left : calc(50% - ` + (currentWidth - prevWidth) / 2 + `px); `;
+        ` padding-` + browserDir + `: ` + scrollbarWidth + `px; `;
+      navbarInner.style.cssText = `left : calc(50% - ` + scrollbarWidth / 2 + `px); `;
     }
   }
 }
@@ -566,10 +562,7 @@ function page_loading_animation() {
   window.addEventListener('load', () => {
     SUtility.removeClass(document.body, 'page-loading');
 
-    SUtility.addEvent(loader, 'transitionend', () => {
-      SUtility.css(body, 'overflow-y', 'auto');
-      console.log('Transition ended');
-    });
+    SUtility.css(body, 'overflow-y', 'auto');
   });
 
   // On page before unload
