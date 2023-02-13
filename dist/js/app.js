@@ -349,7 +349,7 @@ function navbar() {
       SUtility.removeClass(navbar, 'open');
 
       // Remove style
-      bodyContainer.style.cssText = '';
+      bodyContainer.style.overflowY = 'auto';
       bodyContainer.querySelector('#content-block').style.cssText = '';
       navbar.style.cssText = '';
     } else {
