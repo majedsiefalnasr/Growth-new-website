@@ -20,6 +20,12 @@ SUtility.onDOMContentLoaded(() => {
   // Page loading animation
   page_loading_animation();
 
+  // Bootstrap Tooltip
+  bootstrap_tooltip();
+
+  // Share action
+  share_action();
+
   // Lazy load
   lazy_load();
 
@@ -119,6 +125,26 @@ function lazy_load() {
     },
     false
   );
+}
+
+//   ____              _       _                     _______          _ _   _
+//  |  _ \            | |     | |                   |__   __|        | | | (_)
+//  | |_) | ___   ___ | |_ ___| |_ _ __ __ _ _ __      | | ___   ___ | | |_ _ _ __
+//  |  _ < / _ \ / _ \| __/ __| __| '__/ _` | '_ \     | |/ _ \ / _ \| | __| | '_ \
+//  | |_) | (_) | (_) | |_\__ \ |_| | | (_| | |_) |    | | (_) | (_) | | |_| | |_) |
+//  |____/ \___/ \___/ \__|___/\__|_|  \__,_| .__/     |_|\___/ \___/|_|\__|_| .__/
+//                                          | |                              | |
+//                                          |_|                              |_|
+// Bootstrap Tooltip
+function bootstrap_tooltip() {
+  // Check if view required library
+  if (!document.querySelector('[data-bs-toggle="tooltip"]')) return;
+
+  SUtility.each(document.querySelectorAll('[data-bs-toggle="tooltip"]'), function (element) {
+    let tooltip = new bootstrap.Tooltip(element, {
+      container: document.querySelector('#content-block'),
+    });
+  });
 }
 
 //   ____                                       _ _
@@ -253,6 +279,31 @@ function splide() {
         speed: 800,
         arrows: false,
         pagination: false,
+        lazyLoad: 'nearby',
+        focus: 0,
+        omitEnd: true,
+        trimSpace: false,
+      };
+    } else if (element.hasAttribute('splide-blog-hero')) {
+      options = {
+        perPage: 1,
+        breakpoints: {
+          767.98: {
+            gap: 32,
+          },
+          575.98: {
+            gap: 16,
+          },
+          413.98: {
+            gap: 8,
+          },
+        },
+        perMove: 1,
+        direction: SUtility.getDir(),
+        gap: 64,
+        speed: 800,
+        arrows: false,
+        pagination: true,
         lazyLoad: 'nearby',
         focus: 0,
         omitEnd: true,
@@ -495,6 +546,14 @@ function pricing_switcher_actions() {
   });
 }
 
+//   _____      _      _                                           _ _                               _     _ _
+//  |  __ \    (_)    (_)                                         | (_)                             | |   (_) |
+//  | |__) | __ _  ___ _ _ __   __ _    __ _  ___ ___ ___  _ __ __| |_  ___  _ __    _ __ ___   ___ | |__  _| | ___
+//  |  ___/ '__| |/ __| | '_ \ / _` |  / _` |/ __/ __/ _ \| '__/ _` | |/ _ \| '_ \  | '_ ` _ \ / _ \| '_ \| | |/ _ \
+//  | |   | |  | | (__| | | | | (_| | | (_| | (_| (_| (_) | | | (_| | | (_) | | | | | | | | | | (_) | |_) | | |  __/
+//  |_|   |_|  |_|\___|_|_| |_|\__, |  \__,_|\___\___\___/|_|  \__,_|_|\___/|_| |_| |_| |_| |_|\___/|_.__/|_|_|\___|
+//                              __/ |
+//                             |___/
 // Pricing accordion mobile
 function pricing_accordion_mobile() {
   var container = document.querySelector('#price-block .plans');
@@ -606,5 +665,57 @@ function page_loading_animation() {
   window.addEventListener('beforeunload', () => {
     SUtility.css(body, 'overflow-y', 'hidden');
     SUtility.addClass(document.body, 'page-reloading');
+  });
+}
+
+//    _____ _                                 _   _
+//   / ____| |                               | | (_)
+//  | (___ | |__   __ _ _ __ ___    __ _  ___| |_ _  ___  _ __
+//   \___ \| '_ \ / _` | '__/ _ \  / _` |/ __| __| |/ _ \| '_ \
+//   ____) | | | | (_| | | |  __/ | (_| | (__| |_| | (_) | | | |
+//  |_____/|_| |_|\__,_|_|  \___|  \__,_|\___|\__|_|\___/|_| |_|
+//
+//
+// Share action
+function share_action() {
+  var share_containers = document.querySelectorAll('[data-share]');
+
+  // Check if target is exist
+  if (!share_containers) return;
+
+  // Loop share actions
+  SUtility.each(share_containers, (element) => {
+    let share_url = SUtility.attr(element, 'data-share-url'),
+      share_title = SUtility.attr(element, 'data-share-title'),
+      share_description = SUtility.attr(element, 'data-share-description');
+
+    // On click share action
+    SUtility.addEvent(element, 'click', () => {
+      // Check if has URL
+      if (!share_url) share_url = document.URL;
+
+      // Check if has title
+      if (!share_title) share_title = document.title;
+
+      // Check if has description
+      if (!share_description) {
+        share_description = `Without technical experience and with ease, you can sell anywhere and anytime 
+      with your online store and with your commercial identity`;
+
+        if (document.querySelector('[itemprop=description]'))
+          share_description = document.querySelector('[itemprop=description]').content;
+        else if (document.querySelector('[name=description]'))
+          share_description = document.querySelector('[name=description]').content;
+      }
+
+      // Open share dialog
+      const shareData = {
+        title: share_title,
+        text: share_description,
+        url: share_url,
+      };
+
+      navigator.share(shareData);
+    });
   });
 }
