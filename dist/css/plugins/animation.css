@@ -14,7 +14,7 @@
 
 [data-reveal-parent='translate'] [data-reveal-child],
 [data-reveal-self='translate'] {
-  --reveal-delay: 400ms;
+  --reveal-delay: 800ms;
   opacity: 0;
   -webkit-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -51,8 +51,8 @@ body.has-reduced-motion [data-reveal-self='translate'] {
 
 [data-reveal-parent='translate-up'] [data-reveal-child],
 [data-reveal-self='translate-up'] {
-  --reveal-delay: 400ms;
-  --reveal-translate-distance: 1.5vh;
+  --reveal-delay: 800ms;
+  --reveal-translate-distance: 3.5vh;
   opacity: 0;
   -webkit-transform: translateY(var(--reveal-translate-distance));
   transform: translateY(var(--reveal-translate-distance));
@@ -74,8 +74,8 @@ body.has-reduced-motion [data-reveal-self='translate'] {
 
 [data-reveal-parent='translate-down'] [data-reveal-child],
 [data-reveal-self='translate-down'] {
-  --reveal-delay: 400ms;
-  --reveal-translate-distance: -1.5vh;
+  --reveal-delay: 800ms;
+  --reveal-translate-distance: -3.5vh;
   opacity: 0;
   -webkit-transform: translateY(var(--reveal-translate-distance));
   transform: translateY(var(--reveal-translate-distance));
@@ -132,8 +132,8 @@ body.has-reduced-motion [data-reveal-self='translate-down'] {
 
 [data-reveal-parent='translate-left'] [data-reveal-child],
 [data-reveal-self='translate-left'] {
-  --reveal-delay: 400ms;
-  --reveal-translate-distance: 1.5vh;
+  --reveal-delay: 800ms;
+  --reveal-translate-distance: 3.5vh;
   opacity: 0;
   -webkit-transform: translateX(var(--reveal-translate-distance));
   transform: translateX(var(--reveal-translate-distance));
@@ -155,8 +155,8 @@ body.has-reduced-motion [data-reveal-self='translate-down'] {
 
 [data-reveal-parent='translate-right'] [data-reveal-child],
 [data-reveal-self='translate-right'] {
-  --reveal-delay: 400ms;
-  --reveal-translate-distance: -1.5vh;
+  --reveal-delay: 800ms;
+  --reveal-translate-distance: -3.5vh;
   opacity: 0;
   -webkit-transform: translateX(var(--reveal-translate-distance));
   transform: translateX(var(--reveal-translate-distance));

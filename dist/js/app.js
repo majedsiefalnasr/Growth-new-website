@@ -55,6 +55,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Pricing accordion mobile
   pricing_accordion_mobile();
+
+  // Blog actions
+  blog_actions();
 });
 
 //    ____                      _        _          _ _
@@ -286,28 +289,27 @@ function splide() {
       };
     } else if (element.hasAttribute('splide-blog-hero')) {
       options = {
+        type: 'slide',
+        autoplay: false,
         perPage: 1,
         breakpoints: {
           767.98: {
             gap: 32,
-          },
-          575.98: {
-            gap: 16,
-          },
-          413.98: {
-            gap: 8,
+            perPage: 1.2,
           },
         },
         perMove: 1,
         direction: SUtility.getDir(),
         gap: 64,
         speed: 800,
-        arrows: false,
+        arrows: true,
         pagination: true,
         lazyLoad: 'nearby',
-        focus: 0,
+        focus: 'center',
         omitEnd: true,
         trimSpace: false,
+        arrowPath:
+          'M24.7264 30.667C24.6229 30.7725 24.4994 30.8562 24.3631 30.9134C24.2269 30.9706 24.0806 31 23.9329 31C23.7851 31 23.6388 30.9706 23.5026 30.9134C23.3664 30.8562 23.2429 30.7725 23.1394 30.667C22.9332 30.4575 22.8177 30.1754 22.8177 29.8815C22.8177 29.5876 22.9332 29.3055 23.1394 29.096L31.1864 21.049L4.63237 21.049C4.01337 21.049 3.50537 20.557 3.50537 19.938C3.50537 19.319 4.01337 18.811 4.63237 18.811L31.1864 18.811L23.1394 10.779C22.7104 10.335 22.7104 9.62004 23.1394 9.19204C23.2429 9.08661 23.3664 9.00286 23.5026 8.94569C23.6388 8.88852 23.7851 8.85908 23.9329 8.85908C24.0806 8.85908 24.2269 8.88852 24.3631 8.94569C24.4994 9.00286 24.6229 9.08661 24.7264 9.19204L34.6784 19.144C34.8845 19.3535 35 19.6356 35 19.9295C35 20.2234 34.8845 20.5055 34.6784 20.715L24.7264 30.667Z',
       };
     }
 
@@ -513,8 +515,12 @@ function floating_actions() {
 //                             |___/
 // Pricing switcher
 function pricing_switcher_actions() {
-  var container = document.querySelector('.switch-wrapper'),
-    plans = document.querySelector('.switch-wrapper ~ .plans '),
+  var container = document.querySelector('.switch-wrapper');
+
+  // Check if target exist
+  if (!container) return;
+
+  var plans = document.querySelector('.switch-wrapper ~ .plans '),
     plans_table = document.querySelector('.switch-wrapper ~ .plans--table'),
     monthly = container.querySelector('#monthly'),
     yearly = container.querySelector('#yearly');
@@ -717,5 +723,53 @@ function share_action() {
 
       navigator.share(shareData);
     });
+  });
+}
+
+//   ____  _                          _   _
+//  |  _ \| |                        | | (_)
+//  | |_) | | ___   __ _    __ _  ___| |_ _  ___  _ __  ___
+//  |  _ <| |/ _ \ / _` |  / _` |/ __| __| |/ _ \| '_ \/ __|
+//  | |_) | | (_) | (_| | | (_| | (__| |_| | (_) | | | \__ \
+//  |____/|_|\___/ \__, |  \__,_|\___|\__|_|\___/|_| |_|___/
+//                  __/ |
+//                 |___/
+// Blog actions
+function blog_actions() {
+  var blog_containers = document.querySelector('#blog-block');
+
+  // Check if target is exist
+  if (!blog_containers) return;
+
+  // Change view action
+  let change_view_container = blog_containers.querySelector('.change-view'),
+    grid = change_view_container.querySelector('[grid]'),
+    list = change_view_container.querySelector('[list]'),
+    blogs = blog_containers.querySelector('.blog--list');
+
+  // Change view to grid
+  SUtility.addEvent(grid, 'click', () => {
+    // Check if active
+    if (SUtility.hasClass(grid, 'active')) return;
+
+    // Change active status
+    SUtility.addClass(grid, 'active');
+    SUtility.removeClass(list, 'active');
+
+    // Change view on blogs
+    SUtility.removeClass(blogs, 'list--view');
+  });
+
+  // Change view to list
+  SUtility.addEvent(list, 'click', () => {
+    // Check if active
+    if (SUtility.hasClass(list, 'active')) return;
+
+    // Change active status
+    SUtility.addClass(list, 'active');
+    SUtility.removeClass(grid, 'active');
+
+    // Change view on blogs
+    SUtility.addClass(blogs, 'list--view');
   });
 }

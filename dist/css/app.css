@@ -27,6 +27,7 @@
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */
 @import url('./sections/hero.css'); /* Hero header */
+@import url('./sections/blog.css'); /* Blog hero header */
 @import url('./sections/testimonials.css'); /* Testimonials */
 @import url('./sections/download-app.css'); /* Download Our App */
 @import url('./sections/selling-online.css'); /* Selling Online */
