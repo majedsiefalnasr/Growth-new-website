@@ -737,15 +737,14 @@ function share_action() {
 // Blog actions
 function blog_actions() {
   // Change view
-  var blog_containers = document.querySelector('#blog-block');
+  var change_view_container = document.querySelector('.change-view');
 
   // Check if target is exist
-  if (blog_containers) {
+  if (change_view_container) {
     // Change view action
-    let change_view_container = blog_containers.querySelector('.change-view'),
-      grid = change_view_container.querySelector('[grid]'),
+    let grid = change_view_container.querySelector('[grid]'),
       list = change_view_container.querySelector('[list]'),
-      blogs = blog_containers.querySelector('.blog--list');
+      blogs = document.querySelector('.blog--list');
 
     // Change view to grid
     SUtility.addEvent(grid, 'click', () => {
