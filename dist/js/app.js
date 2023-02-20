@@ -736,40 +736,65 @@ function share_action() {
 //                 |___/
 // Blog actions
 function blog_actions() {
+  // Change view
   var blog_containers = document.querySelector('#blog-block');
 
   // Check if target is exist
-  if (!blog_containers) return;
+  if (blog_containers) {
+    // Change view action
+    let change_view_container = blog_containers.querySelector('.change-view'),
+      grid = change_view_container.querySelector('[grid]'),
+      list = change_view_container.querySelector('[list]'),
+      blogs = blog_containers.querySelector('.blog--list');
 
-  // Change view action
-  let change_view_container = blog_containers.querySelector('.change-view'),
-    grid = change_view_container.querySelector('[grid]'),
-    list = change_view_container.querySelector('[list]'),
-    blogs = blog_containers.querySelector('.blog--list');
+    // Change view to grid
+    SUtility.addEvent(grid, 'click', () => {
+      // Check if active
+      if (SUtility.hasClass(grid, 'active')) return;
 
-  // Change view to grid
-  SUtility.addEvent(grid, 'click', () => {
-    // Check if active
-    if (SUtility.hasClass(grid, 'active')) return;
+      // Change active status
+      SUtility.addClass(grid, 'active');
+      SUtility.removeClass(list, 'active');
 
-    // Change active status
-    SUtility.addClass(grid, 'active');
-    SUtility.removeClass(list, 'active');
+      // Change view on blogs
+      SUtility.removeClass(blogs, 'list--view');
+    });
 
-    // Change view on blogs
-    SUtility.removeClass(blogs, 'list--view');
-  });
+    // Change view to list
+    SUtility.addEvent(list, 'click', () => {
+      // Check if active
+      if (SUtility.hasClass(list, 'active')) return;
 
-  // Change view to list
-  SUtility.addEvent(list, 'click', () => {
-    // Check if active
-    if (SUtility.hasClass(list, 'active')) return;
+      // Change active status
+      SUtility.addClass(list, 'active');
+      SUtility.removeClass(grid, 'active');
 
-    // Change active status
-    SUtility.addClass(list, 'active');
-    SUtility.removeClass(grid, 'active');
+      // Change view on blogs
+      SUtility.addClass(blogs, 'list--view');
+    });
+  }
 
-    // Change view on blogs
-    SUtility.addClass(blogs, 'list--view');
-  });
+  // Bookmark action
+  var bookmark = document.querySelector('#blog-hero-block [bookmark]');
+
+  // Check if target is exist
+  if (bookmark) {
+    // Add to bookmark
+    SUtility.addEvent(bookmark, 'click', () => {
+      // Mozilla Firefox Bookmark
+      if ('sidebar' in window && 'addPanel' in window.sidebar) {
+        window.sidebar.addPanel(location.href, document.title, '');
+      } else if (/*@cc_on!@*/ false) {
+        // IE Favorite
+        window.external.AddFavorite(location.href, document.title);
+      } else {
+        // webkit - safari/chrome
+        alert(
+          'Press ' +
+            (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') +
+            ' + D to bookmark this page.'
+        );
+      }
+    });
+  }
 }
