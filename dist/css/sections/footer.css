@@ -96,7 +96,6 @@
   #footer-block {
     position: -webkit-sticky;
     position: sticky;
-    padding: 14.5rem 0 3rem;
   }
   #footer-block [help-actions] {
     flex-direction: column;
@@ -109,5 +108,8 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+  #footer-block {
+    padding: 14.5rem 0 3rem;
+  }
 }
 /* #endregion */
