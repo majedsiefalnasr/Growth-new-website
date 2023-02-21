@@ -1,0 +1,163 @@
+/* #region / Hero */
+/*    _____            _             _   
+/*   / ____|          | |           | |  
+/*  | |     ___  _ __ | |_ __ _  ___| |_ 
+/*  | |    / _ \| '_ \| __/ _` |/ __| __|
+/*  | |___| (_) | | | | || (_| | (__| |_ 
+/*   \_____\___/|_| |_|\__\__,_|\___|\__|
+/*                                       
+/*                                        */
+/* -----------------------------------------------
+  Contact
+-------------------------------------------------*/
+
+#contact-hero-block {
+  position: relative;
+  padding-top: 10rem;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#contact-hero-block > *:not(.background) {
+  z-index: 1;
+}
+#contact-hero-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#contact-hero-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#contact-hero-block > .background > .bg-dotted {
+  top: 100px;
+  left: 100px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#contact-hero-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+#contact-hero-block [text] h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+}
+#contact-hero-block [text] .text {
+  font-size: 1.25rem;
+}
+#contact-hero-block [text] .crow {
+  display: flex;
+  margin: 1rem 0;
+}
+#contact-hero-block [text] .crow > * {
+  width: 5rem;
+  height: 5rem;
+  margin-left: -2rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--root-bg);
+}
+#contact-hero-block [links] {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-flow: dense;
+  gap: 2.5rem;
+}
+#contact-hero-block [links] .item {
+  height: fit-content;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+}
+#contact-hero-block [links] .item .title {
+  margin-bottom: 1.5rem;
+}
+#contact-hero-block [links] .item h3 {
+  font-size: 1.63rem;
+  font-weight: 700;
+}
+#contact-hero-block [links] .item .icon {
+  font-size: 2rem;
+  padding: 0.75rem;
+  background-color: var(--color-200);
+  border-radius: 50%;
+}
+#contact-hero-block [links] .item .text {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+#contact-hero-block [links] .item .btn {
+  padding: 0.63rem 2rem;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #contact-hero-block [text] h1 {
+    font-size: 2.75rem;
+  }
+  #contact-hero-block [text] .text {
+    font-size: 1.5rem;
+  }
+  #contact-hero-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+  #blog-block .header .subtitle {
+    font-size: 1.13rem;
+  }
+  #blog-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #contact-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #contact-hero-block {
+    margin-bottom: 12.5rem;
+  }
+  #contact-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #contact-hero-block > .background > .bg-1 {
+    width: 200%;
+  }
+  #contact-hero-block [links] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #contact-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #contact-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #contact-hero-block > .background > .bg-1 {
+    width: 100%;
+  }
+}
+/* #endregion */

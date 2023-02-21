@@ -168,7 +168,7 @@
 }
 
 /* -----------------------------------------------
-  Bootstrap > Accordion
+  Bootstrap > Dropdown
 -------------------------------------------------*/
 
 .dropdown-menu {
@@ -185,4 +185,68 @@
   color: var(--color-white);
   background-color: var(--color-500);
 }
+
+/* -----------------------------------------------
+  Bootstrap > Modal
+-------------------------------------------------*/
+
+.modal-backdrop.show {
+  opacity: 1;
+  backdrop-filter: saturate(180%) blur(1rem);
+  -webkit-backdrop-filter: saturate(180%) blur(1rem);
+  background: rgba(241, 245, 246, 0.7);
+}
+.modal-content {
+  border-radius: 1.5rem;
+  border-color: var(--color-100);
+  background-color: var(--root-bg);
+  box-shadow: rgb(0 0 0 / 10%) 0px 30px 60px -10px, rgb(0 0 0 / 13%) 0px 18px 36px -18px;
+}
+.modal-header {
+  padding: 2rem;
+  border-bottom: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.modal-header .modal-title h5 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.modal-header .modal-title .text {
+  font-size: 1.13rem;
+}
+.modal-header .modal-title .icon {
+  font-size: 2rem;
+  padding: 0.75rem;
+  background-color: var(--color-200);
+  border-radius: 50%;
+}
+.modal-body {
+  padding: 2rem;
+}
+.modal-footer {
+  padding: 2rem;
+  border-top: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* -----------------------------------------------
+  Bootstrap > Form
+-------------------------------------------------*/
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  border-color: #efefef;
+  padding: 0.5rem 1rem;
+}
+.form-select {
+  padding: 0.5rem 1rem 0.5rem 2.25rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-700);
+  box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 25%);
+}
+
 /* #endregion */

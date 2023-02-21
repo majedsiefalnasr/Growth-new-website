@@ -664,12 +664,10 @@ function page_loading_animation() {
   // On window load
   window.addEventListener('load', () => {
     SUtility.removeClass(document.body, 'page-loading');
-    SUtility.css(body, 'overflow-y', 'auto');
   });
 
   // On page before unload
   window.addEventListener('beforeunload', () => {
-    SUtility.css(body, 'overflow-y', 'hidden');
     SUtility.addClass(document.body, 'page-reloading');
   });
 }

@@ -12,7 +12,7 @@
   Page Loading Animation
 -------------------------------------------------*/
 
-body {
+body.page-loading {
   overflow-y: hidden;
 }
 #page-loader {
@@ -34,7 +34,7 @@ body {
 }
 body:not(.page-loading) #page-loader {
   opacity: 0;
-  transition: opacity 0.8s ease-in 1s;
+  transition: opacity 0.4s ease-in 0.4s;
 }
 #page-loader .loading-container img.logo {
   max-height: 3rem;

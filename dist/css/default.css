@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-body > *:not(.tooltip) {
+body > *:not(.tooltip):not(.modal-backdrop):not(.modal) {
   position: relative;
   background-color: var(--root-bg);
   box-shadow: 0 10px 10px #16181b;
