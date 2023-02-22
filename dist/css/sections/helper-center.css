@@ -1,0 +1,342 @@
+/* #region / Hero */
+/*   _    _      _          _____           _            
+/*  | |  | |    | |        / ____|         | |           
+/*  | |__| | ___| |_ __   | |     ___ _ __ | |_ ___ _ __ 
+/*  |  __  |/ _ \ | '_ \  | |    / _ \ '_ \| __/ _ \ '__|
+/*  | |  | |  __/ | |_) | | |___|  __/ | | | ||  __/ |   
+/*  |_|  |_|\___|_| .__/   \_____\___|_| |_|\__\___|_|   
+/*                | |                                    
+/*                |_|                                     */
+/* -----------------------------------------------
+  Help Center
+-------------------------------------------------*/
+
+#help-center-hero-block {
+  position: relative;
+  padding-top: 10rem;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#help-center-hero-block > *:not(.background) {
+  z-index: 1;
+}
+#help-center-hero-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#help-center-hero-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#help-center-hero-block > .background > .bg-dotted {
+  top: 100px;
+  left: 100px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#help-center-hero-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+#help-center-hero-block [text] h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+}
+#help-center-hero-block [text] .text {
+  font-size: 1.25rem;
+}
+#help-center-hero-block [text] .search-bar {
+  position: relative;
+  margin-top: 2rem;
+}
+#help-center-hero-block [text] .search-bar .icon {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+#help-center-hero-block [text] .search-bar input {
+  height: 55px;
+  border-radius: 1.13rem;
+  padding-right: 3.5rem;
+}
+#help-center-hero-block [topics] {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  user-select: none;
+}
+#help-center-hero-block [topics] .item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: start;
+}
+#help-center-hero-block [topics] .item h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+#help-center-hero-block [topics] .item img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.13rem;
+}
+#help-center-hero-block [topics] .item .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+#help-center-hero-block [topics] .item .links > * {
+  position: relative;
+  padding: 0.75rem 1.5rem 0.75rem 3rem;
+  background-color: var(--color-white);
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 1.13rem;
+  border: 2px solid var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+#help-center-hero-block [topics] .item .links > *:before {
+  content: '\e039';
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+#help-center-hero-block [topics] .item .links > *:hover,
+#help-center-hero-block
+  [topics]
+  .item
+  .links
+  > *:active
+  #help-center-hero-block
+  [topics]
+  .item
+  .links
+  > *.active {
+  border-color: var(--color-500);
+}
+#help-center-hero-block [topics] .item .links > *:hover:before {
+  left: 1rem;
+}
+#help-center-hero-block [topics] .item > .btn,
+#help-center-hero-block [topics] .item > .btn:active {
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+#help-center-hero-block [topics] .item > .btn:hover {
+  background-color: var(--color-100);
+  color: var(--color-500);
+  box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
+  border: none;
+}
+
+#related-topics-block {
+  position: relative;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#related-topics-block > *:not(.background) {
+  z-index: 1;
+}
+#related-topics-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#related-topics-block > .background > .bg-1 {
+  width: 200%;
+  top: 50%;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+#related-topics-block > .background > .bg-dotted {
+  top: -80px;
+  right: -40px;
+  transform: translateY(0px);
+  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
+  animation: floatY_dotted 6s ease-in-out infinite;
+}
+#related-topics-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+  margin-left: auto;
+}
+#related-topics-block .header {
+  margin-bottom: 5rem;
+}
+#related-topics-block .header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+}
+#related-topics-block .topics--list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  user-select: none;
+  text-align: start;
+}
+#related-topics-block .topics--list .item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+  position: relative;
+  padding: 1.5rem 2rem 1.5rem 1rem;
+  background-color: var(--color-white);
+  border-radius: 1.13rem;
+  border: 2px solid var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+#related-topics-block .topics--list .item:hover,
+#related-topics-block .topics--list .item:focus,
+#related-topics-block .topics--list .item.active {
+  border-color: var(--color-500);
+}
+#related-topics-block .topics--list .item a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#related-topics-block .topics--list .item h3 {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding-left: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+#related-topics-block .topics--list .item h3:before {
+  content: '\e039';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+#related-topics-block .topics--list .item:hover h3:before {
+  left: 0.5rem;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #help-center-hero-block [text] h1 {
+    font-size: 2.75rem;
+  }
+  #help-center-hero-block [text] .text {
+    font-size: 1.5rem;
+  }
+  #help-center-hero-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+
+  #related-topics-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+  #related-topics-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #related-topics-block .header .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #help-center-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+  #help-center-hero-block [topics] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    gap: 2.5rem;
+    user-select: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #help-center-hero-block {
+    margin-bottom: 12.5rem;
+  }
+  #help-center-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #help-center-hero-block > .background > .bg-1 {
+    width: 200%;
+  }
+  #help-center-hero-block [topics] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #related-topics-block {
+    margin-bottom: 12.5rem;
+  }
+  #related-topics-block .header {
+    margin-bottom: 7.5rem;
+  }
+  #related-topics-block .header h2 {
+    font-size: 3rem;
+  }
+  #related-topics-block .topics--list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #help-center-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #help-center-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #help-center-hero-block > .background > .bg-1 {
+    width: 100%;
+  }
+}
+/* #endregion */
