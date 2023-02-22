@@ -14,7 +14,7 @@
 #help-center-hero-block {
   position: relative;
   padding-top: 10rem;
-  margin-bottom: 8.75rem;
+  margin-bottom: 6rem;
   z-index: 0;
 }
 #help-center-hero-block > *:not(.background) {
@@ -68,35 +68,40 @@
   border-radius: 1.13rem;
   padding-right: 3.5rem;
 }
-#help-center-hero-block [topics] {
+#help-center-topics-block {
+  position: relative;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#help-center-topics-block [topics] {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   user-select: none;
 }
-#help-center-hero-block [topics] .item {
+#help-center-topics-block [topics] .item {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: start;
 }
-#help-center-hero-block [topics] .item h3 {
+#help-center-topics-block [topics] .item h3 {
   font-weight: 700;
   font-size: 1.25rem;
 }
-#help-center-hero-block [topics] .item img {
+#help-center-topics-block [topics] .item img {
   height: 15rem;
   width: 100%;
   object-fit: cover;
   border-radius: 1.13rem;
 }
-#help-center-hero-block [topics] .item .links {
+#help-center-topics-block [topics] .item .links {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
 }
-#help-center-hero-block [topics] .item .links > * {
+#help-center-topics-block [topics] .item .links > * {
   position: relative;
   padding: 0.75rem 1.5rem 0.75rem 3rem;
   background-color: var(--color-white);
@@ -107,7 +112,7 @@
   border: 2px solid var(--color-white);
   transition: all 0.3s ease-in-out;
 }
-#help-center-hero-block [topics] .item .links > *:before {
+#help-center-topics-block [topics] .item .links > *:before {
   content: '\e039';
   position: absolute;
   top: 50%;
@@ -125,7 +130,7 @@
   pointer-events: none;
   transition: all 0.3s ease-in-out;
 }
-#help-center-hero-block [topics] .item .links > *:hover,
+#help-center-topics-block [topics] .item .links > *:hover,
 #help-center-hero-block
   [topics]
   .item
@@ -138,15 +143,15 @@
   > *.active {
   border-color: var(--color-500);
 }
-#help-center-hero-block [topics] .item .links > *:hover:before {
+#help-center-topics-block [topics] .item .links > *:hover:before {
   left: 1rem;
 }
-#help-center-hero-block [topics] .item > .btn,
-#help-center-hero-block [topics] .item > .btn:active {
+#help-center-topics-block [topics] .item > .btn,
+#help-center-topics-block [topics] .item > .btn:active {
   transition: all 0.3s ease-in-out;
   border: none;
 }
-#help-center-hero-block [topics] .item > .btn:hover {
+#help-center-topics-block [topics] .item > .btn:hover {
   background-color: var(--color-100);
   color: var(--color-500);
   box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
@@ -264,10 +269,7 @@
   #help-center-hero-block [text] .text {
     font-size: 1.5rem;
   }
-  #help-center-hero-block > .background > .bg-dotted > * {
-    transform: scale(1);
-  }
-
+  #help-center-hero-block > .background > .bg-dotted > *,
   #related-topics-block > .background > .bg-dotted > * {
     transform: scale(1);
   }
@@ -284,7 +286,7 @@
   #help-center-hero-block [text] h1 {
     font-size: 3rem;
   }
-  #help-center-hero-block [topics] {
+  #help-center-topics-block [topics] {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: dense;
@@ -295,18 +297,16 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  #help-center-hero-block {
-    margin-bottom: 12.5rem;
-  }
   #help-center-hero-block [text] h1 {
     font-size: 3.5rem;
   }
   #help-center-hero-block > .background > .bg-1 {
     width: 200%;
   }
-  #help-center-hero-block [topics] {
+  #help-center-topics-block [topics] {
     grid-template-columns: repeat(3, 1fr);
   }
+  #help-center-topics-block,
   #related-topics-block {
     margin-bottom: 12.5rem;
   }
