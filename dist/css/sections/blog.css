@@ -283,23 +283,6 @@
 #blog-block .change-view {
   display: none !important;
 }
-#blog-hero-block .btn[bookmark],
-#blog-block .change-view .btn {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
-  padding: 0;
-}
-#blog-hero-block .btn[bookmark].active,
-#blog-hero-block .btn[bookmark]:hover,
-#blog-block .change-view .btn.active,
-#blog-block .change-view .btn:hover {
-  background-color: var(--color-200);
-  color: var(--color-500);
-  transform: translateY(0);
-  box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
-  border: none;
-}
 .blog--list {
   display: flex;
   flex-direction: column;

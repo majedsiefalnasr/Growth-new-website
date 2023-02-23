@@ -124,6 +124,21 @@
 .btn.btn-back:active:before {
   right: 0.75rem;
 }
+.btn.btn-icon {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.btn.btn-icon:hover,
+.btn.btn-icon:active,
+.btn.btn-icon.active {
+  background-color: var(--color-200);
+  color: var(--color-500);
+  transform: translateY(0);
+  box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
+  border: none;
+}
 
 /* -----------------------------------------------
   Bootstrap > Accordion
