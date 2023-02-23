@@ -245,30 +245,28 @@
 #help-center-topics-block .side--nav .topic--nav .links .content > *.active:before {
   left: 1rem;
 }
-#help-center-topics-block .topic--content {
-}
-#help-center-topics-block .topic--content h4 {
+#help-center-topics-block .topic--category-content h4 {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
-#help-center-topics-block .topic--content > *:not(h4):not(:last-child) {
+#help-center-topics-block .topic--category-content > *:not(h4):not(:last-child) {
   margin-bottom: 1.5rem;
 }
-#help-center-topics-block .topic--content > * h5 {
+#help-center-topics-block .topic--category-content > * h5 {
   font-weight: 400;
   font-size: 1.13rem;
   color: #989898;
   margin-bottom: 0.75rem;
 }
-#help-center-topics-block .topic--content > * .links {
+#help-center-topics-block .topic--category-content > * .links {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 0.75rem;
   width: 100%;
 }
-#help-center-topics-block .topic--content > * .links > * {
+#help-center-topics-block .topic--category-content > * .links > * {
   position: relative;
   padding-right: 2rem;
   color: inherit;
@@ -278,7 +276,7 @@
   border-radius: 1.13rem;
   transition: all 0.3s ease-in-out;
 }
-#help-center-topics-block .topic--content > * .links > *:before {
+#help-center-topics-block .topic--category-content > * .links > *:before {
   content: '\e039';
   position: absolute;
   top: 50%;
@@ -296,12 +294,12 @@
   pointer-events: none;
   transition: all 0.3s ease-in-out;
 }
-#help-center-topics-block .topic--content > * .links > *:hover,
-#help-center-topics-block .topic--content > * .links > *:active {
+#help-center-topics-block .topic--category-content > * .links > *:hover,
+#help-center-topics-block .topic--category-content > * .links > *:active {
   text-decoration: underline;
 }
-#help-center-topics-block .topic--content > * .links > *:hover:before,
-#help-center-topics-block .topic--content > * .links > *:active:before {
+#help-center-topics-block .topic--category-content > * .links > *:hover:before,
+#help-center-topics-block .topic--category-content > * .links > *:active:before {
   right: 0.5rem;
 }
 
