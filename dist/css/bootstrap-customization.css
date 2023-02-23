@@ -94,6 +94,36 @@
 .btn.btn-ghost:focus {
   box-shadow: 0 0 0 0.25rem rgb(124 199 245 / 50%);
 }
+.btn.btn-back {
+  position: relative;
+  padding: 0.63rem 2.5rem 0.63rem 1.5rem;
+}
+.btn.btn-back:hover,
+.btn.btn-back:active {
+  transform: translateY(0);
+}
+.btn.btn-back:before {
+  content: '\e038';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn-back:hover:before,
+.btn.btn-back:active:before {
+  right: 0.75rem;
+}
 
 /* -----------------------------------------------
   Bootstrap > Accordion
