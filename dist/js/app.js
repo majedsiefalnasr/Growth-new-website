@@ -58,6 +58,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Blog actions
   blog_actions();
+
+  // Help Center actions
+  help_center_actions();
 });
 
 //    ____                      _        _          _ _
@@ -768,6 +771,59 @@ function blog_actions() {
 
       // Change view on blogs
       SUtility.addClass(blogs, 'list--view');
+    });
+  }
+
+  // Bookmark action
+  var bookmark = document.querySelector('#blog-hero-block [bookmark]');
+
+  // Check if target is exist
+  if (bookmark) {
+    // Add to bookmark
+    SUtility.addEvent(bookmark, 'click', () => {
+      // Mozilla Firefox Bookmark
+      if ('sidebar' in window && 'addPanel' in window.sidebar) {
+        window.sidebar.addPanel(location.href, document.title, '');
+      } else if (/*@cc_on!@*/ false) {
+        // IE Favorite
+        window.external.AddFavorite(location.href, document.title);
+      } else {
+        // webkit - safari/chrome
+        alert(
+          'Press ' +
+            (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') +
+            ' + D to bookmark this page.'
+        );
+      }
+    });
+  }
+}
+
+//   _    _      _          _____           _                         _   _
+//  | |  | |    | |        / ____|         | |                       | | (_)
+//  | |__| | ___| |_ __   | |     ___ _ __ | |_ ___ _ __    __ _  ___| |_ _  ___  _ __  ___
+//  |  __  |/ _ \ | '_ \  | |    / _ \ '_ \| __/ _ \ '__|  / _` |/ __| __| |/ _ \| '_ \/ __|
+//  | |  | |  __/ | |_) | | |___|  __/ | | | ||  __/ |    | (_| | (__| |_| | (_) | | | \__ \
+//  |_|  |_|\___|_| .__/   \_____\___|_| |_|\__\___|_|     \__,_|\___|\__|_|\___/|_| |_|___/
+//                | |
+//                |_|
+// Help Center actions
+function help_center_actions() {
+  // Toggle Topic nav links
+  var topic_nav_container = document.querySelector(
+    '#help-center-topics-block .side--nav .topic--nav'
+  );
+
+  // Check if target is exist
+  if (topic_nav_container) {
+    // Toggle action
+    let toggle_action = topic_nav_container.querySelector('[links-toggler]'),
+      toggle_links = topic_nav_container.querySelector('.links');
+
+    SUtility.addEvent(toggle_action, 'click', () => {
+      // Toggle action class
+      SUtility.toggleClass(toggle_action, 'open');
+      SUtility.toggleClass(toggle_links, 'open');
     });
   }
 

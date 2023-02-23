@@ -157,6 +157,153 @@
   box-shadow: 0px 3px 8px 0rem rgb(180 218 228 / 20%);
   border: none;
 }
+#help-center-topics-block .side--nav > .btn {
+  position: relative;
+  padding: 0.63rem 2.5rem 0.63rem 1.25rem;
+  margin-bottom: 3rem;
+}
+#help-center-topics-block .side--nav > .btn:hover {
+  transform: translateY(0);
+}
+#help-center-topics-block .side--nav > .btn em {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+#help-center-topics-block .side--nav > .btn:hover em {
+  right: 0.75rem;
+}
+#help-center-topics-block .side--nav .topic--nav {
+  display: flex;
+  flex-direction: column;
+}
+#help-center-topics-block .side--nav .topic--nav h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+#help-center-topics-block .side--nav .topic--nav [links-toggler].open [open],
+#help-center-topics-block .side--nav .topic--nav [links-toggler]:not(.open) [close] {
+  display: none;
+}
+#help-center-topics-block .side--nav .topic--nav .links {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+#help-center-topics-block .side--nav .topic--nav .links.open {
+  max-height: 2000px;
+}
+#help-center-topics-block .side--nav .topic--nav .links > .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+#help-center-topics-block .side--nav .topic--nav .links .content > * {
+  position: relative;
+  padding: 0.75rem 1.5rem 0.75rem 3rem;
+  background-color: var(--color-white);
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 1.13rem;
+  border: 2px solid var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+#help-center-topics-block .side--nav .topic--nav .links .content > *:before {
+  content: '\e039';
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+#help-center-topics-block .side--nav .topic--nav .links .content > *:hover,
+#help-center-topics-block .side--nav .topic--nav .links .content > *:active,
+#help-center-topics-block .side--nav .topic--nav .links .content > *.active {
+  border-color: var(--color-500);
+}
+#help-center-topics-block .side--nav .topic--nav .links .content > *.active {
+  pointer-events: none;
+}
+#help-center-topics-block .side--nav .topic--nav .links .content > *:hover:before,
+#help-center-topics-block .side--nav .topic--nav .links .content > *:active:before,
+#help-center-topics-block .side--nav .topic--nav .links .content > *.active:before {
+  left: 1rem;
+}
+#help-center-topics-block .topic--content {
+}
+#help-center-topics-block .topic--content h4 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+#help-center-topics-block .topic--content > *:not(h4):not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+#help-center-topics-block .topic--content > * h5 {
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: #989898;
+  margin-bottom: 0.75rem;
+}
+#help-center-topics-block .topic--content > * .links {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.75rem;
+  width: 100%;
+}
+#help-center-topics-block .topic--content > * .links > * {
+  position: relative;
+  padding-right: 2rem;
+  color: inherit;
+  font-size: 1.13rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 1.13rem;
+  transition: all 0.3s ease-in-out;
+}
+#help-center-topics-block .topic--content > * .links > *:before {
+  content: '\e039';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+#help-center-topics-block .topic--content > * .links > *:hover,
+#help-center-topics-block .topic--content > * .links > *:active {
+  text-decoration: underline;
+}
+#help-center-topics-block .topic--content > * .links > *:hover:before,
+#help-center-topics-block .topic--content > * .links > *:active:before {
+  right: 0.5rem;
+}
 
 #related-topics-block {
   position: relative;
@@ -320,6 +467,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: dense;
+  }
+  #help-center-topics-block .side--nav .topic--nav .links {
+    max-height: 2000px;
   }
 }
 
