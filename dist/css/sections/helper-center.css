@@ -303,7 +303,18 @@
 #help-center-topics-block .topic--category-content > * .links > *:active:before {
   right: 0.5rem;
 }
-
+#help-center-topic-block .toc--container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10rem;
+}
+#help-center-topic-block .toc--container > .title {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  padding-right: 1rem;
+  opacity: 0.6;
+}
 #related-topics-block {
   position: relative;
   margin-bottom: 8.75rem;
@@ -400,6 +411,127 @@
 }
 #related-topics-block .topics--list .item:hover h3:before {
   left: 0.5rem;
+}
+[feedback] {
+  margin: 5rem 0;
+  user-select: none;
+}
+[feedback] .smart-feedback-form {
+  background: var(--color-white);
+  border-radius: 1.13rem;
+}
+[feedback] .smart-feedback-form > * {
+  max-width: 48rem;
+  margin: auto;
+}
+[feedback] .smart-feedback-begin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  max-height: 100rem;
+  padding: 2rem 3rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+[feedback].helpful .smart-feedback-begin,
+[feedback].not-helpful .smart-feedback-begin,
+[feedback].thanks .smart-feedback-begin {
+  max-height: 0;
+  padding: 0;
+}
+[feedback] .smart-feedback-begin > .title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+[feedback] .smart-feedback-begin .feedback-buttons > * {
+  font-size: 2rem;
+  border: none;
+  padding: 0;
+  margin: 0.63rem 1.25rem;
+  transition: all 0.3s ease-in-out;
+}
+[feedback] .smart-feedback-begin .feedback-buttons > *:hover,
+[feedback] .smart-feedback-begin .feedback-buttons > *:focus {
+  border: none;
+  box-shadow: none;
+}
+[feedback] .smart-feedback-reply {
+  max-height: 0;
+  padding: 0rem 3rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+[feedback].helpful .smart-feedback-reply,
+[feedback].not-helpful .smart-feedback-reply {
+  max-height: 100rem;
+  padding: 3rem;
+}
+[feedback]:not(.helpful) .smart-feedback-reply .title .helpful,
+[feedback]:not(.not-helpful) .smart-feedback-reply .title .not-helpful {
+  display: none;
+}
+[feedback] .smart-feedback-reply > .title strong {
+  font-weight: 500;
+}
+[feedback] .feedback-group {
+  margin-top: 1.25rem;
+}
+[feedback] .smart-feedback-experience > .title {
+  font-size: 1rem;
+  float: none;
+}
+[feedback] .smart-feedback-experience > *:not(.title) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: dense;
+  gap: 0.5rem;
+}
+[feedback]:not(.helpful) .smart-feedback-experience .helpful,
+[feedback]:not(.not-helpful) .smart-feedback-experience .not-helpful {
+  display: none;
+}
+[feedback] .smart-feedback-verbatim textarea {
+  resize: none;
+  border: 2px solid #efefef;
+}
+[feedback] .smart-feedback-verbatim textarea:focus,
+[feedback] .smart-feedback-verbatim textarea.active {
+  box-shadow: none;
+  border: 2px solid var(--color-700);
+}
+[feedback] .smart-feedback-submit {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+[feedback] .smart-feedback-submit .btn:hover {
+  transform: translateY(0);
+}
+[feedback] .feedback-thank-you {
+  text-align: center;
+  max-height: 0;
+  padding: 0rem 3rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+[feedback].thanks .feedback-thank-you {
+  max-height: 100rem;
+  padding: 3rem;
+}
+[feedback] .feedback-thank-you h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+[feedback] .feedback-thank-you em {
+  font-size: 2rem;
 }
 
 /* Responsiveness */

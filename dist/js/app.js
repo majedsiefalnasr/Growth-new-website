@@ -867,4 +867,101 @@ function help_center_actions() {
         scrollTo: 160,
       });
   })(jQuery);
+
+  // Feedback
+  var feedback_container = document.querySelector('[feedback]');
+
+  // Check if target is exist
+  if (feedback_container) {
+    let feedback_action_thumbs_up = feedback_container.querySelector('[thumbs-up]'),
+      feedback_action_thumbs_down = feedback_container.querySelector('[thumbs-down]'),
+      feedback_action_submit = feedback_container.querySelector('#buttonFeedbackVerbatimSubmit'),
+      feedback_action_cancel = feedback_container.querySelector('#buttonFeedbackVerbatimCancel');
+
+    // Helpful action
+    SUtility.addEvent(feedback_action_thumbs_up, 'click', () => {
+      // add
+      SUtility.addClass(feedback_container, 'helpful');
+      SUtility.removeClass(feedback_container, 'not-helpful');
+
+      // Reset checkboxes
+      reset_checkboxes();
+    });
+
+    // Not helpful action
+    SUtility.addEvent(feedback_action_thumbs_down, 'click', () => {
+      SUtility.addClass(feedback_container, 'not-helpful');
+      SUtility.removeClass(feedback_container, 'helpful');
+
+      // Reset checkboxes
+      reset_checkboxes();
+    });
+
+    // Submit action
+    SUtility.addEvent(feedback_action_submit, 'click', () => {
+      SUtility.addClass(feedback_container, 'thanks');
+      SUtility.removeClass(feedback_container, 'not-helpful');
+      SUtility.removeClass(feedback_container, 'helpful');
+
+      // Reset checkboxes
+      reset_checkboxes();
+    });
+
+    // Cancel action
+    SUtility.addEvent(feedback_action_cancel, 'click', () => {
+      SUtility.addClass(feedback_container, 'thanks');
+      SUtility.removeClass(feedback_container, 'not-helpful');
+      SUtility.removeClass(feedback_container, 'helpful');
+
+      // Reset checkboxes
+      reset_checkboxes();
+    });
+
+    // Get all checkboxes and verbatim feedback
+    let checkboxes = feedback_container.querySelectorAll('.experience-option input'),
+      verbatimFeedback = feedback_container.querySelector('#verbatimFeedback');
+
+    // Enable submit action
+    let submit_action = feedback_container.querySelector('[type="submit"]');
+    // Checkboxes
+    SUtility.each(checkboxes, (el) => {
+      SUtility.addEvent(el, 'change', () => {
+        if (el.checked) submit_action.disabled = false;
+        else if (check_checkboxes()) submit_action.disabled = false;
+        else if (verbatimFeedback.value.length != 0) submit_action.disabled = false;
+        else submit_action.disabled = true;
+      });
+    });
+    // Verbatim feedback
+    SUtility.addEvent(verbatimFeedback, 'keyup', () => {
+      // Set active state
+      verbatimFeedback.value.length != 0
+        ? SUtility.addClass(verbatimFeedback, 'active')
+        : SUtility.removeClass(verbatimFeedback, 'active');
+
+      // Enable submit action
+      if (verbatimFeedback.value.length != 0) submit_action.disabled = false;
+      else if (check_checkboxes()) submit_action.disabled = false;
+      else submit_action.disabled = true;
+    });
+
+    // Reset checkboxes
+    var reset_checkboxes = function () {
+      SUtility.each(checkboxes, (el) => {
+        el.checked = false;
+      });
+    };
+
+    // Check if any checkbox is checked
+    var check_checkboxes = function () {
+      // Default state
+      let checked = false;
+
+      SUtility.each(checkboxes, (el) => {
+        if (el.checked) checked = true;
+      });
+
+      return checked;
+    };
+  }
 }

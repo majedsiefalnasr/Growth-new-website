@@ -716,8 +716,220 @@
 
             <!-- Side nav -->
             <div class="col-12 col-lg-3 mb-5 mb-lg-0">
-              <!-- Topic nav -->
-              <nav id="toc"></nav>
+              <!-- TOC container -->
+              <div class="toc--container">
+                <!-- Title -->
+                <div class="title">في هذا الدليل</div>
+
+                <!-- Topic nav -->
+                <nav id="toc" aria-label="Table of content"></nav>
+              </div>
+            </div>
+
+            <!-- Feedback -->
+            <div class="col-12">
+              <!-- Feedback -->
+              <div class="feedback" feedback>
+                <!-- Feedback form -->
+                <form
+                  class="smart-feedback-form"
+                  action="javascript:void(0);"
+                  name="smartFeedbackForm">
+                  <!-- Content -->
+                  <div
+                    class="smart-feedback-begin"
+                    aria-label="Provide feedback about this article">
+                    <!-- Title -->
+                    <h2 class="title">هل وجدت المعلومات التي كنت تبحث عنها؟</h2>
+
+                    <!-- Feedback Actions -->
+                    <div class="feedback-buttons">
+                      <!-- Article Helpful -->
+                      <button
+                        class="btn"
+                        thumbs-up
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="المحتوي مفيد">
+                        <em class="ph-icon-thumbsup"></em>
+                      </button>
+
+                      <!-- Article Not Helpful -->
+                      <button
+                        class="btn"
+                        thumbs-down
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="المحتوي غير مفيد">
+                        <em class="ph-icon-thumbsdown"></em>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Extended Feedback -->
+                  <div class="smart-feedback-reply">
+                    <!-- Header -->
+                    <div class="title">
+                      <!-- Article Helpful -->
+                      <label for="feedbackText" class="helpful">
+                        <strong aria-hidden="true"> شكرًا لك! هل هناك المزيد من التعليقات؟ </strong>
+                        (كلما أخبرتنا أكثر كلما استطعنا المساعدة.)
+                      </label>
+
+                      <!-- Article Not Helpful -->
+                      <label for="feedbackText" class="not-helpful">
+                        <strong aria-hidden="true"> هل يمكنك مساعدتنا على التحسن؟ </strong>
+                        (كلما أخبرتنا أكثر كلما استطعنا المساعدة.)
+                      </label>
+                    </div>
+
+                    <!-- Article Experience -->
+                    <fieldset class="smart-feedback-experience feedback-group">
+                      <!-- Title -->
+                      <legend class="title">ما الذي أثر على تجربتك؟</legend>
+
+                      <!-- Article Helpful -->
+                      <div class="helpful">
+                        <!-- Option -->
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_0" />
+                          <label class="form-check-label" for="helpful_0"> تم حل مشكلتي </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_1" />
+                          <label class="form-check-label" for="helpful_1"> إرشادات واضحة </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_2" />
+                          <label class="form-check-label" for="helpful_2"> سهل المتابعة </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_3" />
+                          <label class="form-check-label" for="helpful_3"> لغة واضحة </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_4" />
+                          <label class="form-check-label" for="helpful_4"> ساعدت الصور </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input class="form-check-input" type="checkbox" value id="helpful_5" />
+                          <label class="form-check-label" for="helpful_5"> آخر </label>
+                        </div>
+                      </div>
+
+                      <!-- Article Not Helpful -->
+                      <div class="not-helpful">
+                        <!-- Option -->
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_0" />
+                          <label class="form-check-label" for="not_helpful_0">
+                            لم يتطابق مع شاشتي
+                          </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_1" />
+                          <label class="form-check-label" for="not_helpful_1">
+                            تعليمات غير صحيحة
+                          </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_2" />
+                          <label class="form-check-label" for="not_helpful_2"> تقني للغاية </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_3" />
+                          <label class="form-check-label" for="not_helpful_3">
+                            لا توجد معلومات كافية
+                          </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_4" />
+                          <label class="form-check-label" for="not_helpful_4">
+                            لا توجد صور كافية
+                          </label>
+                        </div>
+
+                        <div class="experience-option form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value
+                            id="not_helpful_5" />
+                          <label class="form-check-label" for="not_helpful_5"> آخر </label>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <!-- Feedback Verbatim -->
+                    <div class="smart-feedback-verbatim feedback-group">
+                      <label for="verbatimFeedback" class="form-label">
+                        أي ملاحظات إضافية؟ (اختياري)
+                      </label>
+                      <textarea
+                        id="verbatimFeedback"
+                        class="form-control"
+                        name="feedbackText"
+                        rows="6"
+                        cols="40"
+                        maxlength="250"
+                        placeholder="لحماية خصوصيتك ، لا تقدم أي معلومات شخصية مثل عنوان البريد الإلكتروني أو رقم الهاتف أو مفتاح المنتج أو كلمة المرور أو رقم بطاقة الائتمان."></textarea>
+                    </div>
+
+                    <!-- Feedback Submit -->
+                    <div class="smart-feedback-submit feedback-group">
+                      <!-- Submit -->
+                      <button
+                        id="buttonFeedbackVerbatimSubmit"
+                        class="btn btn-primary"
+                        type="submit"
+                        disabled>
+                        إرسال ملاحظات
+                      </button>
+
+                      <!-- Cancel -->
+                      <button id="buttonFeedbackVerbatimCancel" class="btn btn-secondary">
+                        الغاء
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="feedback-thank-you" aria-label="شكرا لك على ملاحظاتك!" role="alert">
+                    <h2>
+                      <em class="ph-icon-heart"></em>
+                      شكرا لك على ملاحظاتك!
+                    </h2>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -1004,11 +1216,7 @@
       crossorigin="anonymous"></script>
 
     <!-- jquery.tocify -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"
-      integrity="sha512-MmdBVZj8VMd7kbchsQ1w3BiRpmk5SpL4AdsnskA2IQEkEoV/2hQnb4NpCaq3BILglhK95AqT818/Yl9HtJ0eew=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
+    <script src="./dist/js/plugins/jquery.tocify.min.js"></script>
 
     <!-- Global Javascript Bundle(used by all pages) -->
     <script type="module" src="./dist/js/app.js" name="app"></script>
