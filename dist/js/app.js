@@ -865,7 +865,6 @@ function help_center_actions() {
         hashGenerator: 'pretty',
         ignoreSelector: '.toc-ignore',
         scrollTo: 160,
-        extendPageOffset: 200,
       });
   })(jQuery);
 }
