@@ -869,7 +869,7 @@ function help_center_actions() {
   })(jQuery);
 
   // Feedback
-  var feedback_container = document.querySelector('[feedback]');
+  var feedback_container = document.querySelector('[topic-feedback]');
 
   // Check if target is exist
   if (feedback_container) {
