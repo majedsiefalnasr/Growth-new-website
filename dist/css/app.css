@@ -24,6 +24,7 @@
 @import url('./plugins/animation.css'); /* Animation */
 @import url('./plugins/drag-scroll.css'); /* Drag Scroll */
 @import url('./plugins/socialmedia-links.css'); /* Social media */
+@import url('./plugins/toc.css'); /* TOC */
 
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */

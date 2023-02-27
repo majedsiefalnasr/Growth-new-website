@@ -1,0 +1,63 @@
+/* #region / Main */
+/*   _______ ____   _____ 
+/*  |__   __/ __ \ / ____|
+/*     | | | |  | | |     
+/*     | | | |  | | |     
+/*     | | | |__| | |____ 
+/*     |_|  \____/ \_____|
+/*                        
+/*                         */
+/* -----------------------------------------------
+  TOC
+-------------------------------------------------*/
+
+.tocify {
+  display: none;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10rem;
+}
+.tocify .tocify-item {
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.25rem 1rem 0.25rem 0.5rem;
+  border-right: 2px solid #ddd;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+.tocify .tocify-item.active {
+  border-color: var(--color-500);
+  opacity: 1;
+}
+.tocify .tocify-subheader .tocify-item {
+  padding-right: 2rem;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .tocify {
+    display: block;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+/* #endregion */

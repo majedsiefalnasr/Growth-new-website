@@ -850,4 +850,22 @@ function help_center_actions() {
       }
     });
   }
+
+  // TOC (Table of content generator)
+  (function ($) {
+    // TOC (Table of content generator)
+    var toc_container = $('#toc-content');
+
+    // Check if target is exist
+    if (toc_container)
+      //Calls the tocify method on your HTML div.
+      $('#toc').tocify({
+        context: '#toc-content',
+        selectors: 'h2,h3',
+        hashGenerator: 'pretty',
+        ignoreSelector: '.toc-ignore',
+        scrollTo: 160,
+        extendPageOffset: 200,
+      });
+  })(jQuery);
 }

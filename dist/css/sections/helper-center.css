@@ -68,7 +68,8 @@
   border-radius: 1.13rem;
   padding-right: 3.5rem;
 }
-#help-center-topics-block {
+#help-center-topics-block,
+#help-center-topic-block {
   position: relative;
   margin-bottom: 8.75rem;
   z-index: 0;
