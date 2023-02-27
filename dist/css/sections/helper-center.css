@@ -520,7 +520,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
   max-height: 100rem;
   padding: 2rem 3rem;
   overflow: hidden;
@@ -700,6 +700,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: dense;
+  }
+  [topic-feedback] .smart-feedback-begin {
+    gap: 4rem;
   }
   [topic-feedback] .smart-feedback-experience > *:not(.title) {
     display: grid;
