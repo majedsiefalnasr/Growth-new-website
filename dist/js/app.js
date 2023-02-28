@@ -56,6 +56,9 @@ SUtility.onDOMContentLoaded(() => {
   // Pricing accordion mobile
   pricing_accordion_mobile();
 
+  // Bookmark actions
+  bookmark_actions();
+
   // Blog actions
   blog_actions();
 
@@ -727,6 +730,60 @@ function share_action() {
   });
 }
 
+//   ____              _                         _                 _   _
+//  |  _ \            | |                       | |               | | (_)
+//  | |_) | ___   ___ | | ___ __ ___   __ _ _ __| | __   __ _  ___| |_ _  ___  _ __  ___
+//  |  _ < / _ \ / _ \| |/ / '_ ` _ \ / _` | '__| |/ /  / _` |/ __| __| |/ _ \| '_ \/ __|
+//  | |_) | (_) | (_) |   <| | | | | | (_| | |  |   <  | (_| | (__| |_| | (_) | | | \__ \
+//  |____/ \___/ \___/|_|\_\_| |_| |_|\__,_|_|  |_|\_\  \__,_|\___|\__|_|\___/|_| |_|___/
+//
+//
+// Bookmark actions
+function bookmark_actions() {
+  // Bookmark action
+  var bookmark = document.querySelector('[bookmark]');
+
+  // Check if target is exist
+  if (bookmark) {
+    // Add to bookmark
+    SUtility.addEvent(bookmark, 'click', () => {
+      if (window.sidebar && window.sidebar.addPanel) {
+        // Firefox <23
+        window.sidebar.addPanel(document.title, window.location.href, '');
+      } else if (window.external && 'AddFavorite' in window.external) {
+        // Internet Explorer
+        window.external.AddFavorite(location.href, document.title);
+      } else if (
+        (window.opera && window.print) ||
+        (window.sidebar && !(window.sidebar instanceof Node))
+      ) {
+        // Opera <15 and Firefox >23
+        /**
+         * For Firefox <23 and Opera <15, no need for JS to add to bookmarks
+         * The only thing needed is a `title` and a `rel="sidebar"`
+         * To ensure that the bookmarked URL doesn't have a complementary `#` from our trigger's href
+         * we force the current URL
+         */
+        triggerBookmark
+          .attr('rel', 'sidebar')
+          .attr('title', document.title)
+          .attr('href', window.location.href);
+        return true;
+      } else {
+        // For the other browsers (mainly WebKit) we use a simple alert to inform users that they can add to bookmarks with ctrl+D/cmd+D
+
+        alert(
+          'You can add this page to your bookmarks by pressing ' +
+            (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') +
+            ' + D on your keyboard.'
+        );
+      }
+      // If you have something in the `href` of your trigger
+      return false;
+    });
+  }
+}
+
 //   ____  _                          _   _
 //  |  _ \| |                        | | (_)
 //  | |_) | | ___   __ _    __ _  ___| |_ _  ___  _ __  ___
@@ -774,33 +831,8 @@ function blog_actions() {
     });
   }
 
-  // Bookmark action
-  var bookmark = document.querySelector('#blog-hero-block [bookmark]');
-
-  // Check if target is exist
-  if (bookmark) {
-    // Add to bookmark
-    SUtility.addEvent(bookmark, 'click', () => {
-      // Mozilla Firefox Bookmark
-      if ('sidebar' in window && 'addPanel' in window.sidebar) {
-        window.sidebar.addPanel(location.href, document.title, '');
-      } else if (/*@cc_on!@*/ false) {
-        // IE Favorite
-        window.external.AddFavorite(location.href, document.title);
-      } else {
-        // webkit - safari/chrome
-        alert(
-          'Press ' +
-            (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') +
-            ' + D to bookmark this page.'
-        );
-      }
-    });
-  }
-
   // AnchorJS
   // Add deep anchor links to Help Center Topics
-  // Bookmark action
   var anchors_HCT = document.querySelector('#blog-block .blog--content');
 
   // Check if target is exist
@@ -843,30 +875,6 @@ function help_center_actions() {
       // Toggle action class
       SUtility.toggleClass(toggle_action, 'open');
       SUtility.toggleClass(toggle_links, 'open');
-    });
-  }
-
-  // Bookmark action
-  var bookmark = document.querySelector('#blog-hero-block [bookmark]');
-
-  // Check if target is exist
-  if (bookmark) {
-    // Add to bookmark
-    SUtility.addEvent(bookmark, 'click', () => {
-      // Mozilla Firefox Bookmark
-      if ('sidebar' in window && 'addPanel' in window.sidebar) {
-        window.sidebar.addPanel(location.href, document.title, '');
-      } else if (/*@cc_on!@*/ false) {
-        // IE Favorite
-        window.external.AddFavorite(location.href, document.title);
-      } else {
-        // webkit - safari/chrome
-        alert(
-          'Press ' +
-            (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') +
-            ' + D to bookmark this page.'
-        );
-      }
     });
   }
 
