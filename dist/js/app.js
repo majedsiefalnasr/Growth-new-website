@@ -839,8 +839,7 @@ function blog_actions() {
   if (anchors_HCT) {
     // Set options
     anchors.options = {
-      placement: 'left',
-      icon: '#',
+      placement: 'right',
     };
 
     // Init anchor
@@ -1020,8 +1019,7 @@ function help_center_actions() {
   if (anchors_HCT) {
     // Set options
     anchors.options = {
-      placement: 'left',
-      icon: '#',
+      placement: 'right',
     };
 
     // Init anchor
