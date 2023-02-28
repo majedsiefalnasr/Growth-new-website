@@ -900,7 +900,7 @@ function help_center_actions() {
         // scroll to the last table of contents item, then the page height is increased
         extendPage: false,
         // Set's the first TOC item as active if no other TOC item is active.
-        highlightDefault: false,
+        highlightDefault: true,
         // Adds a hash to the page url to maintain history
         history: false,
       });
