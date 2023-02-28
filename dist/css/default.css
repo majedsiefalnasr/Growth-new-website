@@ -95,5 +95,8 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal) {
     transform: translateY(0px);
   }
 }
+[id] {
+  scroll-margin-top: calc(var(--navbar-top-height) + var(--scroll-margin-top));
+}
 
 /* #endregion */

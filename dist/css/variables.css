@@ -45,6 +45,10 @@
   --color-700: #286171;
   --color-800: #1b414b;
   --color-900: #0d2026;
+
+  /* Scroll margin */
+  --navbar-top-height: 7.5rem;
+  --scroll-margin-top: 2rem;
 }
 
 /* #endregion */
