@@ -50,7 +50,7 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal) {
   background: var(--color-500);
 }
 
-/* */
+/* Float dotted */
 @-webkit-keyframes floatX_dotted {
   0% {
     transform: translateX(0px);
@@ -95,8 +95,30 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal) {
     transform: translateY(0px);
   }
 }
+
+/* Scroll margin */
 [id] {
   scroll-margin-top: calc(var(--navbar-top-height) + var(--scroll-margin-top));
+}
+
+/* Mask image */
+[mask-image] {
+  margin: 0 -20rem;
+  padding: 2rem 20rem;
+  -webkit-mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
 }
 
 /* #endregion */
