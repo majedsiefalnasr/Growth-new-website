@@ -27,6 +27,7 @@
 @import url('./plugins/toc.css'); /* TOC */
 @import url('./plugins/anchor-js.css'); /* AnchorJS */
 @import url('./plugins/breadcrumb.css'); /* Breadcrumb */
+@import url('./plugins/fancy-link.css'); /* Fancy Link */
 
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */
