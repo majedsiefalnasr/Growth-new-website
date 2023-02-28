@@ -1,0 +1,86 @@
+/* #region / Main */
+/*   ____                     _                           _     
+/*  |  _ \                   | |                         | |    
+/*  | |_) |_ __ ___  __ _  __| | ___ _ __ _   _ _ __ ___ | |__  
+/*  |  _ <| '__/ _ \/ _` |/ _` |/ __| '__| | | | '_ ` _ \| '_ \ 
+/*  | |_) | | |  __/ (_| | (_| | (__| |  | |_| | | | | | | |_) |
+/*  |____/|_|  \___|\__,_|\__,_|\___|_|   \__,_|_| |_| |_|_.__/ 
+/*                                                              
+/*                                                               */
+/* -----------------------------------------------
+  Breadcrumb
+-------------------------------------------------*/
+
+[breadcrumb] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  user-select: none;
+  --bs-breadcrumb-divider: '\\';
+}
+[breadcrumb] .btn-back {
+  width: 100%;
+}
+[breadcrumb] .breadcrumb {
+  margin: 0;
+  padding: 1rem 2rem;
+}
+[breadcrumb] .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--color-900);
+}
+[breadcrumb] .breadcrumb-item.active {
+  opacity: 0.8;
+  pointer-events: none;
+}
+[breadcrumb] .breadcrumb-item a {
+  text-decoration: none;
+  color: var(--color-900);
+}
+[breadcrumb] .breadcrumb-item a:hover {
+  color: var(--color-500);
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  [breadcrumb] {
+    width: auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  [breadcrumb] {
+    flex-direction: row;
+  }
+  [breadcrumb] .btn-back {
+    width: auto;
+  }
+  [breadcrumb] .breadcrumb {
+    padding: 0 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .tocify {
+    display: block;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+/* #endregion */

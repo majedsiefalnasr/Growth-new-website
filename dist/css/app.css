@@ -26,6 +26,7 @@
 @import url('./plugins/socialmedia-links.css'); /* Social media */
 @import url('./plugins/toc.css'); /* TOC */
 @import url('./plugins/anchor-js.css'); /* AnchorJS */
+@import url('./plugins/breadcrumb.css'); /* Breadcrumb */
 
 /* Sections*/
 @import url('./sections/navbar.css'); /* Navbar */
