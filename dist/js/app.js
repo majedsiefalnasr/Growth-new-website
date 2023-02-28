@@ -1012,6 +1012,7 @@ function help_center_actions() {
   if (anchors_HCT) {
     // Set options
     anchors.options = {
+      placement: 'left',
       icon: '#',
     };
 

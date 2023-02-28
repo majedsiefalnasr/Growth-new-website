@@ -12,10 +12,10 @@
 -------------------------------------------------*/
 
 *:hover > .anchorjs-link {
-  margin-right: -2rem !important;
+  margin-right: -1.5em !important;
 }
 .anchorjs-link {
-  margin-right: -1rem !important;
+  margin-right: -0.5em !important;
   margin-left: 0 !important;
   color: inherit;
   transform: scale(0.8);
