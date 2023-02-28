@@ -860,11 +860,30 @@ function help_center_actions() {
     if (toc_container)
       //Calls the tocify method on your HTML div.
       $('#toc').tocify({
+        // The container element that holds all of the elements used to generate
+        // the table of contents
         context: '#toc-content',
+        // The element's used to generate the table of contents. The order is very
+        // important since it will determine the table of content's nesting structure.
         selectors: 'h2,h3',
+        // Used to hide any of the table of contents nested items.
+        hideEffect: 'slideUp',
+        // How the URL hash value get's generated.
         hashGenerator: 'pretty',
+        // Elements that you do not want to be used to generate the table of contents
         ignoreSelector: '.toc-ignore',
+        // The amount of space between the top of page and the selected table of contents
+        // item after the page has been scrolled.
         scrollTo: 160,
+        // The offset distance in pixels to trigger the next active table of contents item
+        highlightOffset: 160,
+        // If a user scrolls to the bottom of the page and the page is not tall enough to
+        // scroll to the last table of contents item, then the page height is increased
+        extendPage: false,
+        // Set's the first TOC item as active if no other TOC item is active.
+        highlightDefault: false,
+        // Adds a hash to the page url to maintain history
+        history: false,
       });
   })(jQuery);
 
