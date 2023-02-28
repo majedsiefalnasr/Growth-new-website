@@ -51,9 +51,6 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .tocify {
-    display: block;
-  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
