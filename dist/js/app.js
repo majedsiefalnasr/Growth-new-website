@@ -797,6 +797,25 @@ function blog_actions() {
       }
     });
   }
+
+  // AnchorJS
+  // Add deep anchor links to Help Center Topics
+  // Bookmark action
+  var anchors_HCT = document.querySelector('#blog-block .blog--content');
+
+  // Check if target is exist
+  if (anchors_HCT) {
+    // Set options
+    anchors.options = {
+      placement: 'left',
+      icon: '#',
+    };
+
+    // Init anchor
+    anchors.add('#blog-block .blog--content h2:not(.no-anchor)');
+    anchors.add('#blog-block .blog--content h3:not(.no-anchor)');
+    anchors.add('#blog-block .blog--content h4:not(.no-anchor)');
+  }
 }
 
 //   _    _      _          _____           _                         _   _
@@ -982,5 +1001,23 @@ function help_center_actions() {
 
       return checked;
     };
+  }
+
+  // AnchorJS
+  // Add deep anchor links to Help Center Topics
+  // Bookmark action
+  var anchors_HCT = document.querySelector('#help-center-topic-block .topic--content');
+
+  // Check if target is exist
+  if (anchors_HCT) {
+    // Set options
+    anchors.options = {
+      icon: '#',
+    };
+
+    // Init anchor
+    anchors.add('#help-center-topic-block .topic--content h2:not(.no-anchor)');
+    anchors.add('#help-center-topic-block .topic--content h3:not(.no-anchor)');
+    anchors.add('#help-center-topic-block .topic--content h4:not(.no-anchor)');
   }
 }

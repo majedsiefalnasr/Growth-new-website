@@ -1,0 +1,55 @@
+/* #region / Main */
+/*                       _                    _  _____ 
+/*      /\              | |                  | |/ ____|
+/*     /  \   _ __   ___| |__   ___  _ __    | | (___  
+/*    / /\ \ | '_ \ / __| '_ \ / _ \| '__|   | |\___ \ 
+/*   / ____ \| | | | (__| | | | (_) | | | |__| |____) |
+/*  /_/    \_\_| |_|\___|_| |_|\___/|_|  \____/|_____/ 
+/*                                                     
+/*                                                      */
+/* -----------------------------------------------
+  AnchorJS
+-------------------------------------------------*/
+
+*:hover > .anchorjs-link {
+  margin-right: -2rem !important;
+}
+.anchorjs-link {
+  margin-right: -1rem !important;
+  margin-left: 0 !important;
+  color: inherit;
+  transform: scale(0.8);
+  transition: all 0.25s linear;
+}
+.anchorjs-link:hover {
+  color: var(--color-500);
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .tocify {
+    display: block;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+/* #endregion */
