@@ -23,6 +23,12 @@ SUtility.onDOMContentLoaded(() => {
   // Bootstrap Tooltip
   bootstrap_tooltip();
 
+  // Cuberto Mouse Followe
+  mouse_followe();
+
+  // Magnetic
+  magnetic();
+
   // Share action
   share_action();
 
@@ -1026,5 +1032,171 @@ function help_center_actions() {
     anchors.add('#help-center-topic-block .topic--content h2:not(.no-anchor)');
     anchors.add('#help-center-topic-block .topic--content h3:not(.no-anchor)');
     anchors.add('#help-center-topic-block .topic--content h4:not(.no-anchor)');
+  }
+}
+
+//   __  __                        ______    _ _
+//  |  \/  |                      |  ____|  | | |
+//  | \  / | ___  _   _ ___  ___  | |__ ___ | | | _____      _____
+//  | |\/| |/ _ \| | | / __|/ _ \ |  __/ _ \| | |/ _ \ \ /\ / / _ \
+//  | |  | | (_) | |_| \__ \  __/ | | | (_) | | | (_) \ V  V /  __/
+//  |_|  |_|\___/ \__,_|___/\___| |_|  \___/|_|_|\___/ \_/\_/ \___|
+//
+//
+// Mouse Followe
+function mouse_followe() {
+  // Get all magnetic elements
+  var mouseFollowe = document.querySelector('[data-cursor]');
+
+  // Check if target is exist
+  if (mouseFollowe) {
+    var cursor = null;
+
+    // Run once
+    if (!cursor && window.innerWidth >= 992) cursor = init();
+
+    // Attaching the event listener function to window's resize event
+    window.addEventListener('resize', () => {
+      // Run only on desktop
+      if (!cursor && window.innerWidth >= 992) cursor = init();
+      else if (window.innerWidth < 992) cursor = destroy(cursor);
+    });
+  }
+
+  // Init
+  function init() {
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: 'g-cursor',
+      innerClassName: 'g-cursor-inner',
+      textClassName: 'g-cursor-text',
+      mediaClassName: 'g-cursor-media',
+      mediaBoxClassName: 'g-cursor-media-box',
+      iconSvgClassName: 'g-svgsprite',
+      iconSvgNamePrefix: '-',
+      iconSvgSrc: '',
+      dataAttr: 'cursor',
+      hiddenState: '-hidden',
+      textState: '-text',
+      iconState: '-icon',
+      activeState: '-active',
+      mediaState: '-media',
+      stateDetection: {
+        '-stick': '[data-cursor-stick]',
+        '-stick -magnetic': '[data-cursor-stick][data-magnetic]',
+        '-magnify -color-burn': 'h1[data-cursor], h2[data-cursor], h3[data-cursor]',
+        '-magnify-sm -color-burn':
+          '.nav-link[data-cursor], .link[data-cursor], btn[data-cursor], site-logo[data-cursor]',
+        '-hidden': 'iframe',
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 0.6,
+      ease: 'expo.out',
+      overwrite: true,
+      skewing: 0,
+      skewingText: 2,
+      skewingIcon: 3,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+
+    return cursor;
+  }
+
+  // Destroy
+  function destroy(cursor) {
+    if (cursor) cursor.destroy();
+    return null;
+  }
+}
+
+//   __  __                        _   _
+//  |  \/  |                      | | (_)
+//  | \  / | __ _  __ _ _ __   ___| |_ _  ___
+//  | |\/| |/ _` |/ _` | '_ \ / _ \ __| |/ __|
+//  | |  | | (_| | (_| | | | |  __/ |_| | (__
+//  |_|  |_|\__,_|\__, |_| |_|\___|\__|_|\___|
+//                 __/ |
+//                |___/
+// Magnetic
+function magnetic() {
+  // Get all magnetic elements
+  var magnetic_elements = document.querySelectorAll('[data-magnetic]');
+
+  // Check if target is exist
+  if (magnetic_elements) {
+    (function ($) {
+      // Loop all magnetic element to add action
+      magnetic_elements.forEach(function (elem) {
+        $(document).on('mousemove touch', function (e) {
+          var elelel = new Magnetic(elem, {});
+          // magnetize(elem, e);
+        });
+      });
+    })(jQuery);
+  }
+
+  class Magnetic {
+    constructor(el, options = {}) {
+      this.el = $(el);
+      this.options = $.extend(
+        true,
+        {
+          y: 0.2,
+          x: 0.2,
+          s: 0.15,
+          rs: 0.5,
+        },
+        this.el.data('magnetic') || options
+      );
+
+      this.y = 0;
+      this.x = 0;
+      this.width = 0;
+      this.height = 0;
+
+      if (this.el.data('magnetic-init')) return;
+      this.el.data('magnetic-init', true);
+
+      this.bind();
+    }
+
+    bind() {
+      this.el.on('mouseenter', () => {
+        this.y = this.el.offset().top - window.pageYOffset;
+        this.x = this.el.offset().left - window.pageXOffset;
+        this.width = this.el.outerWidth();
+        this.height = this.el.outerHeight();
+      });
+
+      this.el.on('mousemove', (e) => {
+        const y = (e.clientY - this.y - this.height / 2) * this.options.y;
+        const x = (e.clientX - this.x - this.width / 2) * this.options.x;
+
+        this.move(x, y, this.options.s);
+      });
+
+      this.el.on('mouseleave', (e) => {
+        this.move(0, 0, this.options.rs);
+      });
+    }
+
+    move(x, y, speed) {
+      gsap.to(this.el, {
+        y: y,
+        x: x,
+        force3D: true,
+        overwrite: true,
+        duration: speed,
+      });
+    }
   }
 }

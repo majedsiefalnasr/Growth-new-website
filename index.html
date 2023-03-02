@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading">
+  <body class="page-loading" hide-cursor data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -191,10 +191,10 @@
               <!-- Main navbar -->
               <div class="d-flex" navbar-main-list>
                 <!-- Item -->
-                <a href="#" class="nav-link">الاكاديمية</a>
-                <a href="./price.html" class="nav-link">الباقات</a>
-                <a href="./blog.html" class="nav-link">المدونة</a>
-                <a href="./contact.html" class="nav-link">تواصل معنا</a>
+                <a href="#" class="nav-link" data-cursor>الاكاديمية</a>
+                <a href="./price.html" class="nav-link" data-cursor>الباقات</a>
+                <a href="./blog.html" class="nav-link" data-cursor>المدونة</a>
+                <a href="./contact.html" class="nav-link" data-cursor>تواصل معنا</a>
               </div>
             </div>
 
@@ -266,6 +266,7 @@
                 text>
                 <h1
                   class="mb-5"
+                  data-cursor
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -299,7 +300,9 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Action -->
-                  <a href="#" class="btn btn-primary btn-lg">أنشئ متجرك الآن</a>
+                  <a href="#" class="btn btn-primary btn-lg" data-cursor-stick data-magnetic>
+                    أنشئ متجرك الآن
+                  </a>
                   <!-- Note -->
                   <p>مجانًا لمدة 14 يوم بدون بطاقة بنكية أو مصاريف خفية</p>
                 </div>
@@ -395,6 +398,7 @@
               id="splidy_testimonials"
               splide
               splide-testimonials
+              data-cursor-text="Drag"
               data-reveal-self="translate"
               data-reveal-delay="5"
               data-scrolled-into-view="false"
@@ -584,6 +588,7 @@
                   id="splidy_futures"
                   splide
                   splide-futures
+                  data-cursor-text="Drag"
                   data-reveal-self="translate-up"
                   data-reveal-delay="4"
                   data-scrolled-into-view="false"
@@ -854,6 +859,7 @@
                   id="splide_stores"
                   splide
                   splide-futures
+                  data-cursor-text="Drag"
                   data-reveal-self="translate"
                   data-reveal-delay="4"
                   data-scrolled-into-view="false"
@@ -1350,7 +1356,7 @@
               data-reveal-delay="4"
               data-scrolled-into-view="false"
               data-scrolled-past-view="false">
-              <div>هل لديك أي سؤال؟</div>
+              <div data-magnetic>هل لديك أي سؤال؟</div>
 
               <!-- Action -->
               <a href="./contact.html" class="btn btn-secondary btn-stretch mt-4"> تواصل معنا </a>
@@ -1420,6 +1426,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -1558,6 +1565,16 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
+
+    <!-- gsap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+
+    <!-- Cuberto Mouse Followe -->
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
 
     <!-- vanilla-lazyload -->
     <script

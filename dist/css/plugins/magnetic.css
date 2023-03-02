@@ -1,0 +1,28 @@
+/* #region / Main */
+/*   __  __                        _   _      
+/*  |  \/  |                      | | (_)     
+/*  | \  / | __ _  __ _ _ __   ___| |_ _  ___ 
+/*  | |\/| |/ _` |/ _` | '_ \ / _ \ __| |/ __|
+/*  | |  | | (_| | (_| | | | |  __/ |_| | (__ 
+/*  |_|  |_|\__,_|\__, |_| |_|\___|\__|_|\___|
+/*                 __/ |                      
+/*                |___/                        */
+/* -----------------------------------------------
+  Magnetic
+-------------------------------------------------*/
+
+[data-magnetic] {
+  position: relative;
+  transition: none !important;
+}
+[data-magnetic]:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
+}
+
+/* #endregion */

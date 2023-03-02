@@ -20,6 +20,8 @@
 
 /* Plugins */
 @import url('./plugins/page-loading.css'); /* Page loading animation */
+@import url('./plugins/mouse-followe.css'); /* Mouse Followe */
+@import url('./plugins/magnetic.css'); /* Magnetic */
 @import url('./plugins/floating-actions.css'); /* Floating Actions */
 @import url('./plugins/animation.css'); /* Animation */
 @import url('./plugins/drag-scroll.css'); /* Drag Scroll */
