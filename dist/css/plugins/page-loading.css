@@ -28,13 +28,14 @@ body.page-loading {
   z-index: 800;
   pointer-events: none;
   opacity: 1;
-  background: rgba(241, 245, 246, 0.7);
-  backdrop-filter: saturate(180%) blur(1rem);
-  -webkit-backdrop-filter: saturate(180%) blur(1rem);
+  background: #e1eaed;
+  box-shadow: none;
+  transform: translate3d(0px, 0%, 0px);
+  transition: transform 0.3s ease-in;
 }
 body:not(.page-loading) #page-loader {
-  opacity: 0;
-  transition: opacity 0.4s ease-in 0.4s;
+  transform: translate3d(0px, -100%, 0px);
+  transform-style: preserve-3d;
 }
 #page-loader .loading-container img.logo {
   max-height: 3rem;
