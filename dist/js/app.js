@@ -1095,7 +1095,7 @@ function mouse_followe() {
       speed: 0.6,
       ease: 'expo.out',
       overwrite: true,
-      skewing: 0,
+      skewing: 3,
       skewingText: 2,
       skewingIcon: 3,
       skewingMedia: 2,
