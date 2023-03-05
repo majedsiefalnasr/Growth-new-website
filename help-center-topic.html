@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -180,7 +180,7 @@
             <!-- Navbar -->
             <div class="d-flex gap-5 align-items-center">
               <!-- Site logo -->
-              <a href="./index.html" class="site-logo">
+              <a href="./index.html" class="site-logo" data-cursor>
                 <img src="./dist/images/logo.png" alt="Growth - your shopping partner" />
                 <img
                   class="symbol"
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,11 +227,13 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
               <!-- Mobile nav toggler -->
@@ -263,7 +266,7 @@
             <div class="col-12 col-lg-8">
               <div class="d-flex flex-column align-items-start" text>
                 <!-- Breadcrumb -->
-                <div breadcrumb>
+                <div breadcrumb data-cursor-hidden>
                   <!-- Back action -->
                   <a href="./help-center-category.html" class="btn btn-secondary btn-back">
                     عودة
@@ -288,6 +291,7 @@
 
                 <!-- Title -->
                 <h1
+                  data-cursor-magnify
                   class="mb-4"
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
@@ -343,20 +347,34 @@
 
                   <p>
                     يشير
-                    <a class="underline" href="/middleeast-ar/erp/">تخطيط موارد المؤسسات </a>إلى نوع
-                    البرامج التي تستعين بها المؤسسات لإدارة أنشطة الأعمال اليومية، مثل
-                    <a class="underline" href="/middleeast-ar/erp/financials/">المحاسبة</a>،
-                    <a class="underline" href="/middleeast-ar/erp/procurement/">والمشتريات</a>،
+                    <a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/erp/"
+                      >تخطيط موارد المؤسسات </a
+                    >إلى نوع البرامج التي تستعين بها المؤسسات لإدارة أنشطة الأعمال اليومية، مثل
+                    <a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/erp/financials/"
+                      >المحاسبة</a
+                    >،
+                    <a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/erp/procurement/"
+                      >والمشتريات</a
+                    >،
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       href="/middleeast-ar/erp/project-portfolio-management-cloud/"
                       >وإدارة المشروعات</a
                     >،
-                    <a class="underline" href="/middleeast-ar/erp/risk-management/"
+                    <a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="/middleeast-ar/erp/risk-management/"
                       >وإدارة المخاطر والامتثال</a
-                    >، <a class="underline" href="/middleeast-ar/scm/">وعمليات سلسلة التوريد</a>.
-                    تشتمل مجموعة تخطيط موارد المؤسسات الكاملة أيضًا على
-                    <a class="underline" href="/middleeast-ar/performance-management/"
+                    >،
+                    <a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/scm/"
+                      >وعمليات سلسلة التوريد</a
+                    >. تشتمل مجموعة تخطيط موارد المؤسسات الكاملة أيضًا على
+                    <a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="/middleeast-ar/performance-management/"
                       >إدارة أداء المؤسسة</a
                     >، وهو برنامج يساعد على التخطيط وإعداد الميزانية والتنبؤ وإعداد التقارير حول
                     النتائج المالية لمؤسسة ما.
@@ -413,7 +431,11 @@
                   </p>
                   <p>
                     وتستخدم برمجيات الماليات قدرات الإبلاغ والتحليل للامتثال لمتطلبات الإبلاغ لهيئات
-                    الإدارة، مثل<a class="underline" href="https://www.ifrs.org/" target="_blank">
+                    الإدارة، مثل<a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="https://www.ifrs.org/"
+                      target="_blank">
                       المؤسسة الدولية لمعايير</a
                     >
                     إعداد التقارير المالية، ومجلس معايير المحاسبة المالية للمبادئ المحاسبية المقبولة
@@ -423,20 +445,23 @@
                   <p>
                     وبالنسبة للمنظمات العامة، يتعين أن تكون البرمجيات المالية قادرة على إصدار بيانات
                     مالية دورية للجهات التنظيمية، مثل لجنة الأوراق المالية<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       href="https://www.sec.gov/"
                       target="_blank">
                       والبورصة</a
                     >
                     في الولايات المتحدة (مع تقارير فصلية مثل 10 Q و10 K سنويًا)، والهيئة الأوروبية
                     للأوراق<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       href="https://www.esma.europa.eu/"
                       target="_blank"></a>
                     المالية والأسواق، وغيرها. وبالنسبة لهذه الأنواع من التقارير المالية، يتم استخدام
                     أداة
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       href="/middleeast-ar/performance-management/narrative-reporting/"
                       >للإبلاغ السردي</a
                     >. والشخص المسؤول في نهاية المطاف عن الشؤون المالية هو المسؤول المالي.
@@ -444,25 +469,39 @@
                   <p>
                     في حين أن الماليات تتعامل مع مجال واحد من مجالات العمل، يتضمن ERP مجموعة واسعة
                     من عمليات الأعمال - بما فيها الماليات. قد يتضمن برنامج ERP إمكانيات
-                    <a class="underline" href="/middleeast-ar/erp/procurement/">لإدارة المشتريات</a>
-                    و<a class="underline" href="/middleeast-ar/scm">إدارة سلسلة التوريد،</a>
+                    <a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/erp/procurement/"
+                      >لإدارة المشتريات</a
+                    >
+                    و<a class="magnify" data-cursor-magnify-sm href="/middleeast-ar/scm"
+                      >إدارة سلسلة التوريد،</a
+                    >
                     والمخزون، والتصنيع، والصيانة، وإدارة الطلبات، وإدارة المشاريع، والخدمات
                     اللوجستية، وإدارة دورة حياة المنتجات،
-                    <a class="underline" href="/middleeast-ar/erp/risk-management/"
+                    <a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="/middleeast-ar/erp/risk-management/"
                       >وإدارة المخاطر،</a
                     >
-                    و<a class="underline" href="/middleeast-ar/performance-management/"
+                    و<a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="/middleeast-ar/performance-management/"
                       >وإدارة أداء المؤسسة</a
                     >
                     (EPM)
-                    <a class="underline" href="/middleeast-ar/human-capital-management/"
+                    <a
+                      class="magnify"
+                      data-cursor-magnify-sm
+                      href="/middleeast-ar/human-capital-management/"
                       >وإدارة الموارد البشرية/رأس المال البشري</a
                     >.
                   </p>
                   <p>
                     يتكامل نظام ERP أيضًا مع تطبيقات المكاتب الأمامية لإنشاء عروض شاملة للعملاء، بما
                     في ذلك حلول إدارة علاقات العملاء (<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="cx-what-is-crm-xlnk"
                       href="/middleeast-ar/cx/what-is-crm/"
                       >إدارة علاقات العملاء</a
@@ -477,14 +516,16 @@
                   <p>
                     غالبًا ما يتم تضمين تطبيقات ERP المستندة إلى السحابة مع تقنيات الجيل التالي، مثل
                     إنترنت الأشياء<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="what-is-iot-xlnk"
                       href="/middleeast-ar/internet-of-things/what-is-iot/">
                       (IoT)</a
                     >
                     وتقنية
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="what-is-blockchain-xlnk"
                       href="/middleeast-ar/blockchain/what-is-blockchain/"
                       >البلوك تشين</a
@@ -594,7 +635,8 @@
                   <p>
                     <strong>من البطاقات الورقية إلى الأجهزة المحمولة‬‏‫</strong><br />
                     ‏‫يعود<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       href="https://en.wikipedia.org/wiki/Enterprise_resource_planning"
                       target="_blank">
                       تاريخ ERP إلى أكثر من 100 عامًا.</a
@@ -626,14 +668,16 @@
                     <strong>النشئة التاريخية لـ ERP من التسعينات حتى الألفية الجديدة</strong
                     ><br />من تسعينيات القرن العشرين حتى بدء القرن
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="wikipedia-erp-xlnk"
                       href="https://en.wikipedia.org/wiki/Oracle_Enterprise_Resource_Planning_Cloud"
                       target="_blank"
                       >الحادي والعشرين، زاد اعتماد حل تخطيط الموارد المؤسسية (ERP) سريعًا.</a
                     >. وفي الوقت نفسه، بدأت تكاليف تنفيذ
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="terrillium-best-erp-practices-xlnk"
                       href="https://terillium.com/best-practices-for-an-oracle-erp-cloud-implementation/"
                       target="_blank"
@@ -657,7 +701,8 @@
                   <h2>Cloud ERPنموذج جديد لتسليم نظام ERP</h2>
                   <p>
                     <strong>البرامج كخدمة</strong><br />أدخل السحابة — وخاصة،<a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="apps-xlnk"
                       href="/middleeast-ar/applications/">
                       نموذج تسليم البرامج كخدمة</a
@@ -680,7 +725,8 @@
                   <p>
                     بالنسبة إلى الشركات من جميع الأحجام، بما في ذلك المؤسسات
                     <a
-                      class="underline"
+                      class="magnify"
+                      data-cursor-magnify-sm
                       data-lbl="smb-erp-xlnk"
                       href="/middleeast-ar/erp/what-is-erp/smb-erp/"
                       >ابتداءً من الصغيرة إلى المتوسطة الحجم</a
@@ -771,6 +817,7 @@
             <!-- Search -->
             <div class="col-12 col-lg-8" topic-search>
               <h2
+                data-cursor-magnify-sm-inner
                 class="mb-4"
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
@@ -780,6 +827,7 @@
 
               <!-- Search form -->
               <div
+                data-cursor-hidden
                 class="search-bar d-flex form-inputs"
                 data-reveal-self="translate-up"
                 data-reveal-delay="3"
@@ -831,6 +879,7 @@
                     <button
                       class="btn"
                       thumbs-up
+                      data-cursor-magnify
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       title="المحتوي مفيد">
@@ -841,6 +890,7 @@
                     <button
                       class="btn"
                       thumbs-down
+                      data-cursor-magnify
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       title="المحتوي غير مفيد">
@@ -1003,6 +1053,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -1029,11 +1080,11 @@
               data-scrolled-past-view="false">
               <div class="providers d-flex gap-4 justify-content-center">
                 <!-- Google Play -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/google-play.svg" alt="Google Play" />
                 </a>
                 <!-- App Store -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/app-store.svg" alt="App Store" />
                 </a>
               </div>
@@ -1060,6 +1111,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -1085,7 +1137,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -1103,6 +1157,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -1201,7 +1256,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>

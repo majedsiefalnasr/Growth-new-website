@@ -1046,7 +1046,7 @@ function help_center_actions() {
 // Mouse Followe
 function mouse_followe() {
   // Get all magnetic elements
-  var mouseFollowe = document.querySelector('[data-cursor]');
+  var mouseFollowe = document.querySelector('body[data-cursor]');
 
   // Check if target is exist
   if (mouseFollowe) {
@@ -1083,19 +1083,42 @@ function mouse_followe() {
       activeState: '-active',
       mediaState: '-media',
       stateDetection: {
-        '-stick': '[data-cursor-stick]',
+        '-stick': `
+            [data-cursor-stick], 
+            .splide__arrows--rtl .splide__arrow, 
+            .splide__pagination,
+            .categories .item,
+            .blog--pagination .pagination .page-link,
+            .sm-links > *,
+            #floating-actions > *,
+            .anchorjs-link,
+            [topics] .item .links > *,
+            [topics] .item > .btn,
+            .topic--nav .links .content > *,
+            [more-topics] .links > *`,
         '-stick -magnetic': '[data-cursor-stick][data-magnetic]',
-        '-magnify -color-burn': 'h1[data-cursor], h2[data-cursor], h3[data-cursor]',
-        '-magnify-sm -color-burn':
-          '.nav-link[data-cursor], .link[data-cursor], btn[data-cursor], site-logo[data-cursor]',
-        '-hidden': 'iframe',
+        '-magnify -color-burn': `
+            [data-cursor-magnify], 
+            [data-cursor-magnify-inner] > *,
+            .site-logo`,
+        '-magnify-sm -color-burn': `
+            [data-cursor-magnify-sm], 
+            [data-cursor-magnify-sm-inner] > *, 
+            [navbar] [navbar-main] [navbar-main-list] .nav-link,
+            .links-list .links .link,
+            .topic--category-content > * .links > *,
+            #toc .tocify-item a`,
+        '-magnify-lg -color-burn': `
+            [data-cursor-magnify-lg],
+            [data-cursor-magnify-lg-inner] > *`,
+        '-hidden': 'iframe, [data-cursor-hidden]',
       },
       visible: true,
       visibleOnState: false,
       speed: 0.6,
       ease: 'expo.out',
       overwrite: true,
-      skewing: 3,
+      skewing: 4,
       skewingText: 2,
       skewingIcon: 3,
       skewingMedia: 2,

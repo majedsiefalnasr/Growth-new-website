@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -191,10 +191,10 @@
               <!-- Main navbar -->
               <div class="d-flex" navbar-main-list>
                 <!-- Item -->
-                <a href="#" class="nav-link" data-cursor>الاكاديمية</a>
-                <a href="./price.html" class="nav-link" data-cursor>الباقات</a>
-                <a href="./blog.html" class="nav-link" data-cursor>المدونة</a>
-                <a href="./contact.html" class="nav-link" data-cursor>تواصل معنا</a>
+                <a href="#" class="nav-link">الاكاديمية</a>
+                <a href="./price.html" class="nav-link">الباقات</a>
+                <a href="./blog.html" class="nav-link">المدونة</a>
+                <a href="./contact.html" class="nav-link">تواصل معنا</a>
               </div>
             </div>
 
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor-magnify-sm
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,14 +227,16 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
-              <!-- Mobile nav toggler -->
+              <!-- Mobile nav toggler 3279*24-->
               <div class="toggler">
                 <svg viewBox="0 0 100 100" width="80">
                   <path
@@ -266,7 +269,7 @@
                 text>
                 <h1
                   class="mb-5"
-                  data-cursor
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -286,6 +289,7 @@
                 <!-- Introduction video - play -->
                 <button
                   class="btn btn-play d-flex gap-2 align-items-center my-4"
+                  data-cursor-stick
                   data-reveal-self="translate-up"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -300,9 +304,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Action -->
-                  <a href="#" class="btn btn-primary btn-lg" data-cursor-stick data-magnetic>
-                    أنشئ متجرك الآن
-                  </a>
+                  <a href="#" class="btn btn-primary btn-lg" data-cursor-stick> أنشئ متجرك الآن </a>
                   <!-- Note -->
                   <p>مجانًا لمدة 14 يوم بدون بطاقة بنكية أو مصاريف خفية</p>
                 </div>
@@ -505,6 +507,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -531,11 +534,11 @@
               data-scrolled-past-view="false">
               <div class="providers d-flex gap-4 justify-content-center">
                 <!-- Google Play -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/google-play.svg" alt="Google Play" />
                 </a>
                 <!-- App Store -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/app-store.svg" alt="App Store" />
                 </a>
               </div>
@@ -561,6 +564,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -701,6 +705,7 @@
             <div class="header col-12 col-lg-8 text-center">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -832,6 +837,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -1029,6 +1035,7 @@
             <div class="header col-12 col-lg-8 text-center">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -1053,6 +1060,7 @@
             <!-- Futures list -->
             <div
               class="list col-12"
+              data-cursor-magnify
               data-reveal-self="translate"
               data-reveal-delay="4"
               data-scrolled-into-view="false"
@@ -1199,6 +1207,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -1221,6 +1230,7 @@
             <div class="col-12">
               <div
                 class="list"
+                data-cursor-magnify-lg
                 data-reveal-self="translate"
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
@@ -1248,6 +1258,7 @@
             <div class="header col-12 col-lg-8 text-center">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -1275,7 +1286,7 @@
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
                 <div class="accordion-item" style="--reveal-delay: calc(1 * 0.05s + 0.2s)">
-                  <h2 class="accordion-header" id="headingOne">
+                  <h3 class="accordion-header" id="headingOne" data-cursor-magnify-sm>
                     <button
                       class="accordion-button collapsed"
                       type="button"
@@ -1285,7 +1296,7 @@
                       aria-controls="collapseOne">
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseOne"
                     class="accordion-collapse collapse"
@@ -1299,7 +1310,7 @@
                   </div>
                 </div>
                 <div class="accordion-item" style="--reveal-delay: calc(2 * 0.05s + 0.2s)">
-                  <h2 class="accordion-header" id="headingTwo">
+                  <h3 class="accordion-header" id="headingTwo" data-cursor-magnify-sm>
                     <button
                       class="accordion-button collapsed"
                       type="button"
@@ -1309,7 +1320,7 @@
                       aria-controls="collapseTwo">
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseTwo"
                     class="accordion-collapse collapse"
@@ -1323,7 +1334,7 @@
                   </div>
                 </div>
                 <div class="accordion-item" style="--reveal-delay: calc(3 * 0.05s + 0.2s)">
-                  <h2 class="accordion-header" id="headingThree">
+                  <h3 class="accordion-header" id="headingThree" data-cursor-magnify-sm>
                     <button
                       class="accordion-button collapsed"
                       type="button"
@@ -1333,7 +1344,7 @@
                       aria-controls="collapseThree">
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseThree"
                     class="accordion-collapse collapse"
@@ -1356,10 +1367,12 @@
               data-reveal-delay="4"
               data-scrolled-into-view="false"
               data-scrolled-past-view="false">
-              <div data-magnetic>هل لديك أي سؤال؟</div>
+              <div>هل لديك أي سؤال؟</div>
 
               <!-- Action -->
-              <a href="./contact.html" class="btn btn-secondary btn-stretch mt-4"> تواصل معنا </a>
+              <a href="./contact.html" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
+                تواصل معنا
+              </a>
             </div>
           </div>
 
@@ -1383,6 +1396,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -1408,7 +1422,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -1525,7 +1541,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>

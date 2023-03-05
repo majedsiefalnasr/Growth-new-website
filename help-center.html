@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor-magnify-sm
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,11 +227,13 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
               <!-- Mobile nav toggler -->
@@ -263,6 +266,7 @@
             <div class="col-12 col-lg-8">
               <div class="d-flex flex-column" text>
                 <h1
+                  data-cursor-magnify-inner
                   class="mb-4"
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
@@ -281,6 +285,7 @@
 
                 <!-- Search form -->
                 <div
+                  data-cursor-hidden
                   class="search-bar d-flex form-inputs"
                   data-reveal-self="translate-up"
                   data-reveal-delay="3"
@@ -327,9 +332,11 @@
                   <h3>كيف تبدأ</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex1.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex1.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -352,9 +359,11 @@
                   <h3>محرر Growth</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex2.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex2.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -376,9 +385,11 @@
                   <h3>الفواتير</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex3.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex3.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -400,9 +411,11 @@
                   <h3>إدارة موقعك</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex4.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex4.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -424,9 +437,11 @@
                   <h3>محرر الجوال</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex5.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex5.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -448,9 +463,11 @@
                   <h3>الأداء والمشكلات الفنية</h3>
 
                   <!-- Thumbnail -->
-                  <img
-                    src="./dist/images/help-center/help-center-ex6.png"
-                    alt="Help Center example" />
+                  <a href="./help-center-category.html" data-cursor-hidden>
+                    <img
+                      src="./dist/images/help-center/help-center-ex6.png"
+                      alt="Help Center example" />
+                  </a>
 
                   <!-- Links -->
                   <div class="links">
@@ -471,7 +488,9 @@
                 data-reveal-delay="2"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <button class="btn btn-secondary btn-stretch mt-5">عرض المزيد</button>
+                <button class="btn btn-secondary btn-stretch mt-5" data-cursor-stick>
+                  عرض المزيد
+                </button>
               </div>
             </div>
           </div>
@@ -489,6 +508,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -508,7 +528,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -524,7 +547,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -539,7 +565,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -554,7 +583,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -569,7 +601,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -584,7 +619,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -599,7 +637,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -614,7 +655,10 @@
                   data-scrolled-past-view="false">
                   <div class="type">مقال</div>
                   <!-- Title -->
-                  <a href="./help-center-topic.html" class="title stretched-link">
+                  <a
+                    href="./help-center-topic.html"
+                    class="title stretched-link"
+                    data-cursor-hidden>
                     <h3>
                       هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
                       مولد النص العربى.
@@ -649,6 +693,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -674,7 +719,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -829,6 +876,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -877,9 +925,9 @@
 
                 <!-- Links -->
                 <div class="links">
-                  <a href="./help-center.html" class="link external current" target="_blank">
-                    مركز المساعدة
-                  </a>
+                  <a href="./help-center.html" class="link external" target="_blank"
+                    >مركز المساعدة</a
+                  >
                   <a href="./hire-expert.html" class="link">توظيف خبير</a>
                   <a href="./faq.html" class="link">الأسئلة الشائعة</a>
                 </div>
@@ -927,7 +975,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>

@@ -42,6 +42,9 @@
 .btn:focus {
   box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 50%);
 }
+.btn.stretched-link:hover {
+  transform: none !important;
+}
 .btn.btn-stretch {
   padding: 0.63rem 2.5rem;
 }

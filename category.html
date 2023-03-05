@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor-magnify-sm
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,11 +227,13 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
               <!-- Mobile nav toggler -->
@@ -263,7 +266,7 @@
             <div class="col-12 col-lg-8 mb-5">
               <div class="d-flex flex-column align-items-start" text>
                 <!-- Breadcrumb -->
-                <div breadcrumb>
+                <div breadcrumb data-cursor-hidden>
                   <!-- Back action -->
                   <a href="./blog.html" class="btn btn-secondary btn-back"> عودة للمدونة </a>
 
@@ -283,6 +286,7 @@
 
                 <!-- Title -->
                 <h1
+                  data-cursor-magnify-inner
                   class="mb-4"
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
@@ -317,7 +321,7 @@
                     <!-- Item -->
                     <div class="item splide__slide">
                       <!-- Image -->
-                      <a href="./single-blog.html" class="thumbnail">
+                      <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                         <img src="./dist/images/blog/blog-ex1.png" alt="Blog" />
                       </a>
 
@@ -325,17 +329,20 @@
                       <div class="content">
                         <!-- Categories -->
                         <div class="categories">
-                          <a class="item" href="./category.html">تصنيف</a>
-                          <a class="item" href="./category.html">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
                         </div>
 
                         <!-- Header -->
                         <div class="header">
                           <!-- Title -->
                           <h3>
-                            <a href="./single-blog.html" class="title stretched-link"
-                              >مرحبا بك في منصة حلول!</a
-                            >
+                            <a
+                              href="./single-blog.html"
+                              class="title stretched-link"
+                              data-cursor-text="عرض المقالة">
+                              مرحبا بك في منصة حلول!
+                            </a>
                           </h3>
 
                           <!-- Subtitle -->
@@ -367,7 +374,7 @@
 
                     <div class="item splide__slide">
                       <!-- Image -->
-                      <a href="./single-blog.html" class="thumbnail">
+                      <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                         <img src="./dist/images/blog/blog-ex2.png" alt="Blog" />
                       </a>
 
@@ -375,16 +382,21 @@
                       <div class="content">
                         <!-- Categories -->
                         <div class="categories">
-                          <a class="item" href="./category.html">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
                         </div>
 
                         <!-- Header -->
                         <div class="header">
                           <!-- Title -->
                           <h3>
-                            <a href="./single-blog.html" class="title stretched-link"
-                              >مرحبا بك في منصة حلول!</a
-                            >
+                            <a
+                              href="./single-blog.html"
+                              class="title stretched-link"
+                              data-cursor-text="عرض المقالة">
+                              مرحبا بك في منصة حلول!
+                            </a>
                           </h3>
 
                           <!-- Subtitle -->
@@ -415,7 +427,7 @@
                     </div>
                     <div class="item splide__slide">
                       <!-- Image -->
-                      <a href="./single-blog.html" class="thumbnail">
+                      <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                         <img src="./dist/images/blog/blog-ex3.png" alt="Blog" />
                       </a>
 
@@ -423,18 +435,19 @@
                       <div class="content">
                         <!-- Categories -->
                         <div class="categories">
-                          <a class="item" href="./category.html">تصنيف</a>
-                          <a class="item" href="./category.html">تصنيف</a>
-                          <a class="item" href="./category.html">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
                         </div>
 
                         <!-- Header -->
                         <div class="header">
                           <!-- Title -->
                           <h3>
-                            <a href="./single-blog.html" class="title stretched-link"
-                              >مرحبا بك في منصة حلول!</a
-                            >
+                            <a
+                              href="./single-blog.html"
+                              class="title stretched-link"
+                              data-cursor-text="عرض المقالة">
+                              مرحبا بك في منصة حلول!
+                            </a>
                           </h3>
 
                           <!-- Subtitle -->
@@ -465,7 +478,7 @@
                     </div>
                     <div class="item splide__slide">
                       <!-- Image -->
-                      <a href="./single-blog.html" class="thumbnail">
+                      <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                         <img src="./dist/images/blog/blog-ex4.png" alt="Blog" />
                       </a>
 
@@ -473,17 +486,20 @@
                       <div class="content">
                         <!-- Categories -->
                         <div class="categories">
-                          <a class="item" href="./category.html">تصنيف</a>
-                          <a class="item" href="./category.html">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
+                          <a class="item" href="#">تصنيف</a>
                         </div>
 
                         <!-- Header -->
                         <div class="header">
                           <!-- Title -->
                           <h3>
-                            <a href="./single-blog.html" class="title stretched-link"
-                              >مرحبا بك في منصة حلول!</a
-                            >
+                            <a
+                              href="./single-blog.html"
+                              class="title stretched-link"
+                              data-cursor-text="عرض المقالة">
+                              مرحبا بك في منصة حلول!
+                            </a>
                           </h3>
 
                           <!-- Subtitle -->
@@ -551,10 +567,10 @@
                   <div class="d-flex flex-wrap gap-4 align-items-center justify-content-between">
                     <!-- Change view -->
                     <div class="change-view d-flex gap-2 align-items-center ms-auto">
-                      <button grid class="btn btn-secondary active">
+                      <button grid class="btn btn-secondary btn-icon active" data-cursor-stick>
                         <em class="ph-icon-squaresfour"></em>
                       </button>
-                      <button list class="btn btn-secondary">
+                      <button list class="btn btn-secondary btn-icon" data-cursor-stick>
                         <em class="ph-icon-rows"></em>
                       </button>
                     </div>
@@ -574,7 +590,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex1.png" alt="Blog" />
                   </a>
 
@@ -582,18 +598,19 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -630,7 +647,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex2.png" alt="Blog" />
                   </a>
 
@@ -638,17 +655,20 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -684,7 +704,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex3.png" alt="Blog" />
                   </a>
 
@@ -692,18 +712,21 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -739,7 +762,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex4.png" alt="Blog" />
                   </a>
 
@@ -747,16 +770,20 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -792,7 +819,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex5.png" alt="Blog" />
                   </a>
 
@@ -800,16 +827,20 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -845,7 +876,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex6.png" alt="Blog" />
                   </a>
 
@@ -853,17 +884,19 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -899,7 +932,7 @@
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
                   <!-- Image -->
-                  <a href="./single-blog.html" class="thumbnail">
+                  <a href="./single-blog.html" class="thumbnail" data-cursor-text="عرض المقالة">
                     <img src="./dist/images/blog/blog-ex7.png" alt="Blog" />
                   </a>
 
@@ -907,17 +940,19 @@
                   <div class="content">
                     <!-- Categories -->
                     <div class="categories">
-                      <a class="item" href="./category.html">تصنيف</a>
-                      <a class="item" href="./category.html">تصنيف</a>
+                      <a class="item" href="#">تصنيف</a>
                     </div>
 
                     <!-- Header -->
                     <div class="header">
                       <!-- Title -->
                       <h3>
-                        <a href="./single-blog.html" class="title stretched-link"
-                          >مرحبا بك في منصة حلول!</a
-                        >
+                        <a
+                          href="./single-blog.html"
+                          class="title stretched-link"
+                          data-cursor-text="عرض المقالة">
+                          مرحبا بك في منصة حلول!
+                        </a>
                       </h3>
 
                       <!-- Subtitle -->
@@ -1006,6 +1041,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -1031,7 +1067,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -1049,6 +1087,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -1147,7 +1186,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>
@@ -1156,9 +1197,9 @@
     <!-- Floating actions -->
     <div id="floating-actions">
       <!-- Share -->
-      <button class="share btn btn-secondary" data-share data-bs-toggle="tooltip" title="مشاركة">
+      <div class="share">
         <em class="ph-icon-sharenetwork"></em>
-      </button>
+      </div>
 
       <!-- Back to top -->
       <div class="back-to-top">

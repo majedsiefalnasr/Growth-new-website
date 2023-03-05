@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor-magnify-sm
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,11 +227,13 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
               <!-- Mobile nav toggler -->
@@ -263,6 +266,7 @@
             <div class="col-12 col-lg-8">
               <div class="d-flex flex-column" text>
                 <h1
+                  data-cursor-magnify
                   class="mb-4"
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
@@ -281,6 +285,7 @@
 
                 <!-- Search form -->
                 <div
+                  data-cursor-hidden
                   class="search-bar d-flex form-inputs"
                   data-reveal-self="translate-up"
                   data-reveal-delay="3"
@@ -317,7 +322,9 @@
             <div class="col-12 col-lg-3 mb-5 mb-lg-0">
               <div class="side--nav">
                 <!-- Back action -->
-                <a href="./help-center.html" class="btn btn-secondary btn-back"> كل المواضيع </a>
+                <a href="./help-center.html" class="btn btn-secondary btn-back" data-cursor-stick>
+                  كل المواضيع
+                </a>
 
                 <!-- Topic nav -->
                 <div
@@ -408,6 +415,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -434,11 +442,11 @@
               data-scrolled-past-view="false">
               <div class="providers d-flex gap-4 justify-content-center">
                 <!-- Google Play -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/google-play.svg" alt="Google Play" />
                 </a>
                 <!-- App Store -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/app-store.svg" alt="App Store" />
                 </a>
               </div>
@@ -465,6 +473,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -490,7 +499,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -508,6 +519,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -606,7 +618,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>

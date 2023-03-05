@@ -143,7 +143,7 @@
     <link href="./dist/css/app.css" rel="stylesheet" />
     <!-- #endregion -->
   </head>
-  <body class="page-loading" hide-cursor data-cursor>
+  <body class="page-loading" data-cursor>
     <!-- Page loader -->
     <div id="page-loader">
       <div class="loading-container">
@@ -210,6 +210,7 @@
                       type="button"
                       id="language-switcher-dropdown"
                       data-bs-toggle="dropdown"
+                      data-cursor-magnify-sm
                       aria-expanded="false"
                       data-bs-offset="0,20">
                       <!-- Name -->
@@ -226,11 +227,13 @@
                   </div>
 
                   <!-- Sign in -->
-                  <a href="#" class="btn btn-primary">تسجيل دخول</a>
+                  <a href="#" class="btn btn-primary" data-cursor-stick>تسجيل دخول</a>
                 </div>
 
                 <!-- Create store -->
-                <a href="#" class="btn btn-primary create-store">أنشئ متجرك الآن</a>
+                <a href="#" class="btn btn-primary create-store" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
 
               <!-- Mobile nav toggler -->
@@ -263,6 +266,7 @@
             <div class="col-12 col-lg-8 mb-5">
               <div class="d-flex flex-column" text>
                 <h1
+                  data-cursor-magnify-inner
                   class="mb-4"
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
@@ -326,7 +330,7 @@
               <!-- Links -->
               <div class="links" links>
                 <!-- Item -->
-                <div class="item">
+                <div class="item position-relative">
                   <!-- Title -->
                   <div
                     class="title d-flex flex-md-column gap-4 align-items-center align-items-md-start">
@@ -342,10 +346,15 @@
                   </div>
 
                   <!-- Action -->
-                  <a href="./help-center.html" class="btn btn-primary mt-auto">مركز المساعدة</a>
+                  <a
+                    href="./help-center.html"
+                    class="btn btn-primary mt-auto stretched-link"
+                    data-cursor-stick>
+                    مركز المساعدة
+                  </a>
                 </div>
 
-                <div class="item">
+                <div class="item position-relative">
                   <!-- Title -->
                   <div
                     class="title d-flex flex-md-column gap-4 align-items-center align-items-md-start">
@@ -361,11 +370,14 @@
                   </div>
 
                   <!-- Action -->
-                  <a href="mailto:example@ultimatesolutions.com" class="btn btn-primary mt-auto"
-                    >راسلنا</a
-                  >
+                  <a
+                    href="mailto:example@ultimatesolutions.com"
+                    class="btn btn-primary mt-auto stretched-link"
+                    data-cursor-stick>
+                    راسلنا
+                  </a>
                 </div>
-                <div class="item">
+                <div class="item position-relative">
                   <!-- Title -->
                   <div
                     class="title d-flex flex-md-column gap-4 align-items-center align-items-md-start">
@@ -382,9 +394,10 @@
 
                   <!-- Action -->
                   <div
-                    class="btn btn-primary mt-auto"
+                    class="btn btn-primary mt-auto stretched-link"
                     data-bs-toggle="modal"
-                    data-bs-target="#contact_modal">
+                    data-bs-target="#contact_modal"
+                    data-cursor-stick>
                     كلمنا الآن
                   </div>
                 </div>
@@ -415,6 +428,7 @@
             <div class="header col-12 col-lg-8">
               <!-- Title -->
               <h2
+                data-cursor-magnify-inner
                 data-reveal-self="rotate"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
@@ -441,11 +455,11 @@
               data-scrolled-past-view="false">
               <div class="providers d-flex gap-4 justify-content-center">
                 <!-- Google Play -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/google-play.svg" alt="Google Play" />
                 </a>
                 <!-- App Store -->
-                <a href="#">
+                <a href="#" data-cursor-magnify>
                   <img src="./dist/images/apps/app-store.svg" alt="App Store" />
                 </a>
               </div>
@@ -472,6 +486,7 @@
               <div class="header">
                 <!-- Title -->
                 <h2
+                  data-cursor-magnify-inner
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
@@ -497,7 +512,9 @@
                 data-reveal-delay="4"
                 data-scrolled-into-view="false"
                 data-scrolled-past-view="false">
-                <a href="#" class="btn btn-primary btn-stretch btn-lg"> أنشئ متجرك الآن </a>
+                <a href="#" class="btn btn-primary btn-stretch btn-lg" data-cursor-stick>
+                  أنشئ متجرك الآن
+                </a>
               </div>
             </div>
           </div>
@@ -531,7 +548,7 @@
 
                 <div>
                   <!-- Title -->
-                  <h5>اتصل بنا</h5>
+                  <h5 data-cursor-magnify>اتصل بنا</h5>
 
                   <!-- subtitle -->
                   <div class="text">
@@ -652,6 +669,7 @@
     <!-- Footer -->
     <footer
       id="footer-block"
+      data-cursor="-inverse"
       data-section="footer"
       data-scrolled-into-view="false"
       data-scrolled-past-view="false">
@@ -689,7 +707,7 @@
                   <a href="#" class="link external" target="_blank">الاكاديمية</a>
                   <a href="./terms-of-Service.html" class="link">شروط الخدمة</a>
                   <a href="./privacy.html" class="link">سياسة الخصوصية</a>
-                  <a href="./contact.html" class="link current">تواصل معنا</a>
+                  <a href="./contact.html" class="link">تواصل معنا</a>
                 </div>
               </div>
 
@@ -750,7 +768,9 @@
             </div>
 
             <!-- Site logo -->
-            <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            <a href="#" class="site-logo d-inline-block">
+              <img class="m-auto" src="./dist/images/logo-dark.png" alt="Growth" />
+            </a>
           </div>
         </div>
       </div>
