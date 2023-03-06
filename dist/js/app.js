@@ -931,6 +931,12 @@ function help_center_actions() {
 
     // Helpful action
     SUtility.addEvent(feedback_action_thumbs_up, 'click', () => {
+      // Scroll to view
+      window.scrollTo({
+        top: feedback_container.getBoundingClientRect().top + window.pageYOffset - 160,
+        behavior: 'smooth',
+      });
+
       // add
       SUtility.addClass(feedback_container, 'helpful');
       SUtility.removeClass(feedback_container, 'not-helpful');
@@ -941,6 +947,13 @@ function help_center_actions() {
 
     // Not helpful action
     SUtility.addEvent(feedback_action_thumbs_down, 'click', () => {
+      // Scroll to view
+      window.scrollTo({
+        top: feedback_container.getBoundingClientRect().top + window.pageYOffset - 160,
+        behavior: 'smooth',
+      });
+
+      // add
       SUtility.addClass(feedback_container, 'not-helpful');
       SUtility.removeClass(feedback_container, 'helpful');
 
@@ -950,6 +963,7 @@ function help_center_actions() {
 
     // Submit action
     SUtility.addEvent(feedback_action_submit, 'click', () => {
+      //add
       SUtility.addClass(feedback_container, 'thanks');
       SUtility.removeClass(feedback_container, 'not-helpful');
       SUtility.removeClass(feedback_container, 'helpful');
@@ -960,6 +974,7 @@ function help_center_actions() {
 
     // Cancel action
     SUtility.addEvent(feedback_action_cancel, 'click', () => {
+      // add
       SUtility.addClass(feedback_container, 'thanks');
       SUtility.removeClass(feedback_container, 'not-helpful');
       SUtility.removeClass(feedback_container, 'helpful');
