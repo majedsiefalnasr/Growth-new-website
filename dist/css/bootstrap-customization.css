@@ -233,6 +233,26 @@
   color: var(--color-white);
   background-color: var(--color-500);
 }
+.dropdown-toggle::after {
+  content: '\e03a';
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  margin-right: 0.255em;
+  vertical-align: 0;
+  font-family: 'phosphor' !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
 
 /* -----------------------------------------------
   Bootstrap > Modal
