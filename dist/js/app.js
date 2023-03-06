@@ -1126,7 +1126,7 @@ function mouse_followe() {
         '-magnify-lg -color-burn': `
             [data-cursor-magnify-lg],
             [data-cursor-magnify-lg-inner] > *`,
-        '-hidden': 'iframe, [data-cursor-hidden]',
+        '-hidden': 'iframe, [data-cursor-hidden], .form-control, .form-select',
       },
       visible: true,
       visibleOnState: false,
