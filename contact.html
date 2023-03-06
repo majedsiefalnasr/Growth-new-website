@@ -349,7 +349,7 @@
                   <a
                     href="./help-center.html"
                     class="btn btn-primary mt-auto stretched-link"
-                    data-cursor-stick>
+                    data-cursor-hidden>
                     مركز المساعدة
                   </a>
                 </div>
@@ -373,7 +373,7 @@
                   <a
                     href="mailto:example@ultimatesolutions.com"
                     class="btn btn-primary mt-auto stretched-link"
-                    data-cursor-stick>
+                    data-cursor-hidden>
                     راسلنا
                   </a>
                 </div>
@@ -397,7 +397,7 @@
                     class="btn btn-primary mt-auto stretched-link"
                     data-bs-toggle="modal"
                     data-bs-target="#contact_modal"
-                    data-cursor-stick>
+                    data-cursor-hidden>
                     كلمنا الآن
                   </div>
                 </div>
@@ -657,10 +657,20 @@
             </form>
           </div>
           <div class="modal-footer flex-nowrap">
-            <button type="button" class="btn btn-primary btn-stretch w-100" type="submit">
+            <button
+              type="button"
+              class="btn btn-primary btn-stretch w-100"
+              type="submit"
+              data-cursor-stick>
               إرسال
             </button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              data-cursor-stick>
+              الغاء
+            </button>
           </div>
         </div>
       </div>
