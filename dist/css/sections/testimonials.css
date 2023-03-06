@@ -62,6 +62,7 @@
   padding: 2rem 2rem 1.5rem;
   border-radius: 1rem;
   background-color: var(--color-white);
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 #testimonials-block .list .content .item.is-active:hover {
