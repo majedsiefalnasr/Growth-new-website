@@ -13,7 +13,7 @@
 /*                                                                   
 /*                                                                    */
 /* -----------------------------------------------
-  Bootstrap > Buttons
+  Bootstrap > Container
 -------------------------------------------------*/
 
 .container,
@@ -286,16 +286,22 @@
 .form-control,
 .form-select {
   border-radius: 0.5rem;
-  border-color: #efefef;
   padding: 0.5rem 1rem;
 }
 .form-select {
   padding: 0.5rem 1rem 0.5rem 2.25rem;
 }
+.form-control,
+.form-select,
+.form-check-input {
+  border: 2px solid #efefef;
+  transition: border-color 0.15s ease-in-out;
+}
 .form-control:focus,
-.form-select:focus {
-  border-color: var(--color-700);
-  box-shadow: 0 0 0 0.25rem rgb(30 72 84 / 25%);
+.form-select:focus,
+.form-check-input:focus {
+  box-shadow: none;
+  border: 2px solid var(--color-700);
 }
 
 /* -----------------------------------------------
