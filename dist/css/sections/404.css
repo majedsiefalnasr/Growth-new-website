@@ -1,0 +1,184 @@
+/* #region / Hero */
+/*   _  _    ___  _  _   
+/*  | || |  / _ \| || |  
+/*  | || |_| | | | || |_ 
+/*  |__   _| | | |__   _|
+/*     | | | |_| |  | |  
+/*     |_|  \___/   |_|  
+/*                       
+/*                        */
+/* -----------------------------------------------
+  404
+-------------------------------------------------*/
+
+#error-hero-block {
+  position: relative;
+  padding-top: 10rem;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#error-hero-block > *:not(.background) {
+  z-index: 1;
+}
+#error-hero-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#error-hero-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#error-hero-block > .background > .bg-dotted {
+  top: 100px;
+  left: 100px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#error-hero-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+#error-hero-block [text] h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+}
+#error-hero-block [text] .text {
+  font-size: 1.25rem;
+}
+#error-hero-block [data-parallax] {
+  position: relative;
+  width: 100%;
+  height: 26.3rem;
+  margin-bottom: 2rem;
+}
+#error-hero-block [data-parallax] > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+#error-hero-block [data-parallax] > *.shopping-cart {
+}
+#error-hero-block [data-parallax] > *.bg {
+  top: 90%;
+  width: 100%;
+  opacity: 0.1;
+}
+#error-hero-block [data-parallax] > *.dotted-1 {
+  top: 40%;
+  left: 64%;
+}
+#error-hero-block [data-parallax] > *.dotted-2 {
+  top: 84%;
+  left: 40%;
+}
+#error-hero-block [data-parallax] > *.dotted-3 {
+  top: 27%;
+  left: 20%;
+}
+#error-hero-block [data-parallax] > *.arrow {
+  top: 73%;
+  left: 64%;
+  z-index: 1;
+}
+#error-hero-block [data-parallax] > *.line-1 {
+  top: 95%;
+  left: 60%;
+}
+#error-hero-block [data-parallax] > *.line-2 {
+  top: 20%;
+  left: 56%;
+}
+#error-hero-block [data-parallax] > *.line-3 {
+  top: 84%;
+  left: 27%;
+}
+#error-hero-block [data-parallax] > *.line-4 {
+  top: 90%;
+  left: 72%;
+}
+#error-hero-block [data-parallax] > *.line-5 {
+  top: 89%;
+  left: 38%;
+}
+#error-hero-block [data-parallax] > *.package-1 {
+  top: 65%;
+  left: 24%;
+  z-index: 1;
+}
+#error-hero-block [data-parallax] > *.package-2 {
+  top: 55%;
+  left: 77%;
+  transform: translate(-50%, -50%) scale(1.6);
+  z-index: 1;
+}
+#error-hero-block [data-parallax] > *.spark {
+  top: 39%;
+  left: 85%;
+}
+#error-hero-block [data-parallax] > *.time {
+  top: 20%;
+  left: 26%;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #error-hero-block [text] h1 {
+    font-size: 2.75rem;
+  }
+  #error-hero-block [text] .text {
+    font-size: 1.5rem;
+  }
+  #error-hero-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #error-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #error-hero-block {
+    margin-bottom: 12.5rem;
+  }
+  #error-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #error-hero-block > .background > .bg-1 {
+    width: 200%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #error-hero-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #error-hero-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #error-hero-block > .background > .bg-1 {
+    width: 100%;
+  }
+}
+/* #endregion */
