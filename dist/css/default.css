@@ -127,4 +127,36 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal):not(.g-cursor) {
   cursor: none !important;
 }
 
+/* Rotate */
+[rotate-1] {
+  transform: rotate(1deg);
+}
+[rotate-2] {
+  transform: rotate(2deg);
+}
+[rotate-3] {
+  transform: rotate(3deg);
+}
+[rotate-4] {
+  transform: rotate(4deg);
+}
+[rotate-5] {
+  transform: rotate(5deg);
+}
+[rotate-reverse-1] {
+  transform: rotate(-1deg);
+}
+[rotate-reverse-2] {
+  transform: rotate(-2deg);
+}
+[rotate-reverse-3] {
+  transform: rotate(-3deg);
+}
+[rotate-reverse-4] {
+  transform: rotate(-4deg);
+}
+[rotate-reverse-5] {
+  transform: rotate(-5deg);
+}
+
 /* #endregion */
