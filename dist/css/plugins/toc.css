@@ -29,6 +29,9 @@
   border-color: var(--color-500);
   opacity: 1;
 }
+.tocify .tocify-item + .tocify-subheader {
+  display: none;
+}
 .tocify .tocify-subheader .tocify-item {
   padding-right: 2rem;
 }
