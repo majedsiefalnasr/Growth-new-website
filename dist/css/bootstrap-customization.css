@@ -303,6 +303,12 @@
   Bootstrap > Form
 -------------------------------------------------*/
 
+[type='email'],
+[type='number'],
+[type='tel'],
+[type='url'] {
+  direction: rtl;
+}
 .form-control,
 .form-select {
   border-radius: 0.5rem;
@@ -322,6 +328,30 @@
 .form-check-input:focus {
   box-shadow: none;
   border: 2px solid var(--color-700);
+}
+.invalid-feedback {
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+}
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: #efefef;
+  background-image: none;
+}
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
+  border-color: var(--color-700);
+  box-shadow: none;
+}
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: #f6b9bf;
+  background-image: none;
+}
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
+  border-color: #dc3545;
+  box-shadow: none;
 }
 
 /* -----------------------------------------------

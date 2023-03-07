@@ -1,0 +1,272 @@
+/* #region / Hero */
+/*   ______                       
+/*  |  ____|                      
+/*  | |__ ___  _ __ _ __ ___  ___ 
+/*  |  __/ _ \| '__| '_ ` _ \/ __|
+/*  | | | (_) | |  | | | | | \__ \
+/*  |_|  \___/|_|  |_| |_| |_|___/
+/*                                
+/*                                 */
+/* -----------------------------------------------
+  Forms
+-------------------------------------------------*/
+
+#forms-block {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  box-shadow: none;
+  overflow-x: visible;
+}
+#forms-block > *:not(.background) {
+  min-height: 100%;
+  z-index: 1;
+}
+#forms-block > .background > * {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+#forms-block > .background > .bg-1 {
+  width: 300%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#forms-block > .background > .bg-dotted {
+  bottom: 20px;
+  left: 10px;
+  transform: translateX(0px);
+  -webkit-animation: floatX_dotted 6s ease-in-out infinite;
+  animation: floatX_dotted 6s ease-in-out infinite;
+}
+#forms-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+#forms-block [side] {
+  background: var(--color-500);
+  box-shadow: inset 0px 0px 100px rgb(0 0 0 / 24%), inset 20px 0px 30px rgb(0 0 0 / 40%);
+  border-radius: 0 0 25px 25px;
+  margin-bottom: 4rem;
+  color: var(--color-white);
+  overflow: hidden;
+}
+#forms-block [side] > * {
+  padding: 3.75rem 2.5rem 2.5rem;
+}
+#forms-block [side] [text] h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+#forms-block [side] [text] .text {
+  font-size: 1.25rem;
+  color: var(--color-300);
+}
+#forms-block [side] [navbar-main-list] {
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+#forms-block [side] [navbar-main-list] .nav-link {
+  color: var(--color-white);
+  padding: 0;
+  border-radius: 5rem;
+  margin: 0;
+  transition: all 0.15s ease-in-out;
+}
+#forms-block [side] #testimonials-block {
+  margin: auto 0;
+  padding: 3rem 0;
+  width: 100%;
+}
+#forms-block [side] #testimonials-block > .content {
+  flex-direction: column;
+  gap: 2rem;
+}
+#forms-block [side] #testimonials-block [trustpilot] .stars > * {
+  font-size: 2rem;
+}
+#forms-block [side] #testimonials-block [splide] .splide__track {
+  color: var(--color-black);
+}
+#forms-block [side] .download-app .header {
+  margin-bottom: 1.5rem;
+}
+#forms-block [side] .download-app .header h3 {
+  font-size: 1.25rem;
+}
+#forms-block [side] .download-app .header .subtitle {
+  color: var(--color-300);
+}
+#forms-block [side] .download-app .providers > * {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+#forms-block [side] .download-app .providers > *:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+}
+#forms-block [side] .download-app .providers > * img {
+  height: 2rem;
+}
+#forms-block [form] {
+  padding: 2.5rem 0;
+}
+#forms-block [form] > * {
+  position: sticky;
+  top: 2.5rem;
+}
+#forms-block [form] .btn:hover {
+  transform: none;
+}
+#forms-block [form] .note a,
+#forms-block [form] .invalid-feedback a {
+  text-decoration: none;
+  color: var(--color-600);
+}
+#forms-block [form] .header h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: var(--color-500);
+}
+#forms-block [form] .header .text {
+  font-weight: 400;
+  font-size: 1rem;
+}
+#forms-block [form] .providers {
+  display: flex;
+  gap: 1rem;
+}
+#forms-block [form] .providers > * {
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+#forms-block [form] .providers > *:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 8px 0rem rgb(30 72 84 / 20%);
+}
+#forms-block [form] .providers > * img {
+  width: 1.5rem;
+}
+#forms-block [form] .separator {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  font-weight: 400;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+#forms-block [form] .separator:after {
+  content: '';
+  background: #c5c5c5;
+  width: 100%;
+  height: 0.06rem;
+  opacity: 0.5;
+}
+#forms-block [form] .separator > * {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--color-100);
+  color: var(--color-500);
+  border-radius: 50rem;
+}
+#forms-block [form] form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#forms-block [form] form .is-invalid:not(.is-empty) ~ .invalid-feedback > [empty],
+#forms-block [form] form .is-empty ~ .invalid-feedback > *:not([empty]) {
+  display: none;
+}
+#forms-block [form] form .note {
+  margin: 0.63rem 0;
+  color: var(--color-black);
+}
+#forms-block [form] form .note strong {
+  font-weight: 500;
+}
+#forms-block [form] form .note.big {
+  font-size: 1.13rem;
+}
+#forms-block [form] form [body] [actions] .btn {
+  padding: 0.5rem 1.25rem;
+}
+#forms-block [form] form [body][email] [actions] .btn[email],
+#forms-block [form] form [body][phone] [actions] .btn[phone],
+#forms-block [form] form [body] [actions] .btn.active {
+  background-color: var(--color-100);
+  border-color: var(--color-100);
+  color: var(--color-500);
+  pointer-events: none;
+}
+#forms-block [form] form [body][email] .phone,
+#forms-block [form] form [body][phone] .email {
+  display: none;
+}
+#forms-block [form] form [body] .form-control,
+.form-select {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+}
+#forms-block [form] form [footer] [type='submit'] {
+  width: 100%;
+  margin: 1rem 0 0.5rem;
+}
+
+/* Responsiveness */
+/************************************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #forms-block [text] h1 {
+    font-size: 2.75rem;
+  }
+  #forms-block > .background > .bg-dotted > * {
+    transform: scale(1);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #forms-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #forms-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #forms-block > .background > .bg-1 {
+    width: 200%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #forms-block [text] h1 {
+    font-size: 3rem;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #forms-block [text] h1 {
+    font-size: 3.5rem;
+  }
+  #forms-block > .background > .bg-1 {
+    width: 100%;
+  }
+}
+/* #endregion */

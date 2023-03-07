@@ -56,6 +56,9 @@ body.page-loading .g-cursor {
 .g-cursor.-inverse {
   color: #fff;
 }
+.g-cursor.-inverse.-reverse {
+  color: var(--color-500);
+}
 .g-cursor.-quaternary {
   color: #c9ffc5;
 }
@@ -103,7 +106,8 @@ body.page-loading .g-cursor {
   }
 }
 @supports (mix-blend-mode: color-burn) {
-  .g-cursor.-color-burn {
+  .g-cursor.-color-burn,
+  .g-cursor.-color-burn.-inverse.-reverse {
     mix-blend-mode: color-burn;
   }
 }

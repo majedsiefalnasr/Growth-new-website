@@ -73,6 +73,9 @@ SUtility.onDOMContentLoaded(() => {
 
   // Parallax
   parallax();
+
+  // Forms
+  forms();
 });
 
 //    ____                      _        _          _ _
@@ -302,6 +305,34 @@ function splide() {
         omitEnd: true,
         trimSpace: false,
       };
+    } else if (element.hasAttribute('splide-testimonials-small')) {
+      options = {
+        perPage: 1.2,
+        breakpoints: {
+          767.98: {
+            perPage: 1.2,
+            gap: 32,
+          },
+          575.98: {
+            perPage: 1.4,
+            gap: 16,
+          },
+          413.98: {
+            perPage: 1.2,
+            gap: 8,
+          },
+        },
+        perMove: 1,
+        direction: SUtility.getDir(),
+        gap: 64,
+        speed: 800,
+        arrows: false,
+        pagination: false,
+        lazyLoad: 'nearby',
+        focus: 'center',
+        omitEnd: true,
+        trimSpace: false,
+      };
     } else if (element.hasAttribute('splide-blog-hero')) {
       options = {
         type: 'slide',
@@ -381,8 +412,12 @@ function animation() {
 //
 // Navbar
 function navbar() {
-  var navbar = document.querySelector('[navbar]'),
-    navbarInner = navbar.querySelector('[navbar-main]'),
+  var navbar = document.querySelector('[navbar]');
+
+  // Check if exist
+  if (!navbar) return;
+
+  var navbarInner = navbar.querySelector('[navbar-main]'),
     toggler = navbar.querySelector('[actions] > .toggler'),
     background = navbar.querySelector('.background'),
     bodyContainer = document.querySelector('body');
@@ -477,8 +512,12 @@ function hero_futures() {
 //                                    |___/
 // Floating Actions
 function floating_actions() {
-  var container = document.querySelector('#floating-actions'),
-    backToTop = container.querySelector('.back-to-top'),
+  var container = document.querySelector('#floating-actions');
+
+  // Check if exist
+  if (!container) return;
+
+  var backToTop = container.querySelector('.back-to-top'),
     share = container.querySelector('.share');
 
   // Run once for view or hide Floating Actions
@@ -1122,7 +1161,7 @@ function mouse_followe() {
         '-magnify-sm -color-burn': `
             [data-cursor-magnify-sm], 
             [data-cursor-magnify-sm-inner] > *, 
-            [navbar] [navbar-main] [navbar-main-list] .nav-link,
+            [navbar-main-list] .nav-link,
             .links-list .links .link,
             .topic--category-content > * .links > *,
             #toc .tocify-item a`,
@@ -1290,5 +1329,106 @@ function parallax() {
         }
       });
     })();
+  }
+}
+
+//   ______
+//  |  ____|
+//  | |__ ___  _ __ _ __ ___  ___
+//  |  __/ _ \| '__| '_ ` _ \/ __|
+//  | | | (_) | |  | | | | | \__ \
+//  |_|  \___/|_|  |_| |_| |_|___/
+//
+//
+// Forms
+function forms() {
+  // Get parallax container
+  var forms_container = document.querySelector('#forms-block [form] form');
+
+  // Check if target is exist
+  if (forms_container) {
+    // Change form Email/Phone
+    let form_body = forms_container.querySelector('[body]'),
+      email_switcher = forms_container.querySelector('[body] [actions] [email]'),
+      phone_switcher = forms_container.querySelector('[body] [actions] [phone]');
+
+    // Email switcher click
+    SUtility.addEvent(email_switcher, 'click', () => {
+      // Add email state to form body
+      SUtility.attr(form_body, 'email', '');
+      // Enable form inputs helper
+      enable_form_helper(forms_container.querySelector('[body] > .email'));
+
+      // Remove phone state from form body
+      SUtility.removeAttr(form_body, 'phone');
+      // Disable form inputs helper
+      disable_form_helper(forms_container.querySelector('[body] > .phone'));
+    });
+
+    // Email switcher click
+    SUtility.addEvent(phone_switcher, 'click', () => {
+      // Add phone state to form body
+      SUtility.attr(form_body, 'phone', '');
+      // Enable form inputs helper
+      enable_form_helper(forms_container.querySelector('[body] > .phone'));
+
+      // Remove email state from form body
+      SUtility.removeAttr(form_body, 'email');
+      // Disable form inputs helper
+      disable_form_helper(forms_container.querySelector('[body] > .email'));
+    });
+
+    // Disable form inputs helper
+    let disable_form_helper = (container) => {
+      SUtility.each(container.querySelectorAll('.form-control'), (el) => {
+        SUtility.attr(el, 'disabled', '');
+      });
+    };
+    // Enable form inputs helper
+    let enable_form_helper = (container) => {
+      SUtility.each(container.querySelectorAll('.form-control'), (el) => {
+        // Enable input
+        SUtility.removeAttr(el, 'disabled');
+        // Empty input
+        el.value = '';
+      });
+
+      // Focus first input
+      setTimeout(function () {
+        container.querySelector('.form-control').focus();
+      }, 1);
+    };
+
+    // Check form validity on form submit
+    forms_container.addEventListener(
+      'submit',
+      function (event) {
+        if (!forms_container.checkValidity()) {
+          // Prevent submit default for test purpose
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        // Add validation class to form
+        if (!forms_container.checkValidity()) {
+          // Add validation class to form
+          forms_container.classList.add('was-validated');
+
+          // Add validation class to form inputs
+          SUtility.each(forms_container.querySelectorAll('.form-control'), (el) => {
+            // Check empty
+            el.value == '' ? el.classList.add('is-empty') : el.classList.remove('is-empty');
+
+            // Check validation
+            !el.checkValidity()
+              ? el.classList.add('is-invalid')
+              : el.classList.remove('is-invalid');
+          });
+        }
+        // Remove validation class to form
+        else forms_container.classList.remove('was-validated');
+      },
+      false
+    );
   }
 }

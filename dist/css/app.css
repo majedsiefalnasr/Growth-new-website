@@ -46,6 +46,9 @@
 @import url('./sections/footer.css'); /* Footer */
 @import url('./sections/404.css'); /* Error 404 */
 
+/* Forms */
+@import url('./sections/forms.css');
+
 /* Pages */
 /* Price */
 @import url('./sections/price.css'); /* Price */

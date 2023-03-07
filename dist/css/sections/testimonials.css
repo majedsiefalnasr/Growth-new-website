@@ -54,6 +54,7 @@
 }
 #testimonials-block [trustpilot] .logo em {
   font-size: 1.5rem;
+  color: #219653;
 }
 #testimonials-block [splide] .splide__track {
   overflow: visible;
