@@ -196,20 +196,23 @@
 #forms-block [form] form .note.big {
   font-size: 1.13rem;
 }
-#forms-block [form] form [body] [actions] .btn {
+#forms-block [form] form [body] > [data-action] .btn {
   padding: 0.5rem 1.25rem;
 }
-#forms-block [form] form [body][email] [actions] .btn[email],
-#forms-block [form] form [body][phone] [actions] .btn[phone],
-#forms-block [form] form [body] [actions] .btn.active {
+#forms-block [form] form [body] > [data-action] .btn.active,
+#forms-block [form] form[data-target='email'] [body] > [data-action] .btn[email],
+#forms-block [form] form[data-target='phone'] [body] > [data-action] .btn[phone] {
   background-color: var(--color-100);
   border-color: var(--color-100);
   color: var(--color-500);
   pointer-events: none;
 }
-#forms-block [form] form [body][email] .phone,
-#forms-block [form] form [body][phone] .email {
+#forms-block [form] form[data-target='email'] [body] .phone,
+#forms-block [form] form[data-target='phone'] [body] .email {
   display: none;
+}
+#forms-block [form] form [body] .phone .iti {
+  display: block;
 }
 #forms-block [form] form [body] .form-control,
 .form-select {
@@ -219,6 +222,22 @@
 #forms-block [form] form [footer] [type='submit'] {
   width: 100%;
   margin: 1rem 0 0.5rem;
+}
+
+/* Feedback */
+[data-feedback] {
+}
+[data-feedback] > * {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+[data-feedback] > *.active {
+  max-height: 10rem;
+}
+[data-feedback] a {
+  text-decoration: none;
+  color: var(--color-600);
 }
 
 /* Responsiveness */

@@ -450,11 +450,16 @@
             </span>
 
             <!-- Form -->
-            <form action="#" class="needs-validation" novalidate>
+            <form
+              action="#"
+              class="needs-validation"
+              data-validation-page="sign up"
+              data-target="email"
+              novalidate>
               <!-- Content -->
-              <div body email>
+              <div body>
                 <!-- Actions -->
-                <div class="d-flex gap-2 mb-3" actions>
+                <div class="d-flex gap-2 mb-3" data-action>
                   <!-- Email -->
                   <button class="btn" type="button" data-cursor-stick email>
                     البريد الالكتروني
@@ -466,24 +471,40 @@
 
                 <!-- Email -->
                 <div class="email">
-                  <input class="form-control" id="sign-up-email" type="email" required />
-                  <!-- Invalid feedback -->
-                  <div class="invalid-feedback">
-                    <!-- Empty -->
-                    <div empty>برجاء ادخال بريد الكتروني وعدم ترك الحقل فارغ.</div>
+                  <div>
+                    <!-- Input -->
+                    <input class="form-control" id="sign-up-email" type="email" required />
 
-                    <!-- Not empty -->
-                    <div>
-                      <span class="me-2">البريد الالكتروني مستخدم من قبل.</span>
+                    <!-- Feedback -->
+                    <div class="feedback" data-feedback data-feedback-target="sign-up-email">
+                      <!-- Empty state -->
+                      <div data-feedback-empty>
+                        <div class="text-danger">البريد الالكتروني مطلوب لانشاء حساب</div>
+                        <div class="mt-2">
+                          <span>
+                            فى حالة عدم وجود بريد الكتروني, بامكانك استخدام
+                            <a
+                              href="javascript:void(0)"
+                              onclick="document.querySelector('#forms-block [form] form [body] [data-action] [phone]').click();">
+                              رقم الجوال
+                            </a>
+                            لانشاء حساب
+                          </span>
+                        </div>
+                      </div>
 
-                      <a href="#" data-cursor-magnify-sm> تسجيل الدخول </a>
+                      <!-- Used state -->
+                      <div data-feedback-used>
+                        <span class="text-danger"> البريد الالكتروني مستخدم من قبل. </span>
 
-                      <!-- Note -->
-                      <div class="note">
-                        <span class="me-2">
-                          لم يعد بامكاني تسجيل الدخول باستخدام بريدي الالكتروني.
+                        <a href="#"> تسجيل الدخول </a>
+                      </div>
+
+                      <!-- Invalid state -->
+                      <div data-feedback-invalid>
+                        <span class="text-danger">
+                          البريد الالكتروني غير صحيح, تاكد من ادخال بريد الكتروني صحيح.
                         </span>
-                        <a href="#" data-cursor-magnify-sm> استرداد الوصول ببريدك الالكتروني </a>
                       </div>
                     </div>
                   </div>
@@ -491,21 +512,53 @@
 
                 <!-- Phone number -->
                 <div class="phone">
-                  <input class="form-control" id="sign-up-phone" type="phone" required disabled />
-                  <!-- Invalid feedback -->
-                  <div class="invalid-feedback">
-                    <div>
-                      <span class="me-2">رقم الجوال مستخدم من قبل.</span>
-                      <a href="#" data-cursor-magnify-sm> تسجيل الدخول </a>
-                    </div>
+                  <div>
+                    <!-- Input -->
+                    <input
+                      class="form-control"
+                      id="sign-up-phone"
+                      type="tel"
+                      autocomplete="tel"
+                      required
+                      disabled />
 
-                    <!-- Note -->
-                    <div class="note">
-                      <span class="me-2">لم يعد بامكاني تسجيل الدخول باستخدام رقم جوالي. </span>
-                      <a href="#" data-cursor-magnify-sm>استرداد الوصول برقم جوالك</a>
+                    <!-- Feedback -->
+                    <div class="feedback" data-feedback data-feedback-target="sign-up-phone">
+                      <!-- Empty state -->
+                      <div data-feedback-empty>
+                        <div class="text-danger">رقم الجوال مطلوب لانشاء حساب</div>
+                        <div class="mt-2">
+                          <span>
+                            فى حالة عدم وجود رقم للجوال, بامكانك استخدام
+                            <a
+                              href="javascript:void(0)"
+                              onclick="document.querySelector('#forms-block [form] form [body] [data-action] [email]').click();">
+                              البريد الالكتروني
+                            </a>
+                            لانشاء حساب
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Used state -->
+                      <div data-feedback-used>
+                        <span class="text-danger"> رقم الجوال مستخدم من قبل. </span>
+
+                        <a href="#"> تسجيل الدخول </a>
+                      </div>
+
+                      <!-- Invalid state -->
+                      <div data-feedback-invalid>
+                        <span class="text-danger">
+                          رقم الجوال غير صحيح, تاكد من ادخال رقم جوال صحيح.
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Feedback -->
+                <div class="feedback" data-feedback></div>
               </div>
 
               <!-- Submit -->
@@ -598,6 +651,13 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"
       integrity="sha512-byAcNWVEzFfu+tZItctr+WIMUJvpzT2kokkqcBq+VsrM3OrC5Aj9E2gh+hHpU0XNA3wDmX4sDbV5/nkhvTrj4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+
+    <!-- intl-tel-input -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"
+      integrity="sha512-+gShyB8GWoOiXNwOlBaYXdLTiZt10Iy6xjACGadpqMs20aJOoh+PJt3bwUVA6Cefe7yF7vblX6QwyXZiVwTWGg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
 

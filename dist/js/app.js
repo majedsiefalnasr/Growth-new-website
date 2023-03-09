@@ -1164,7 +1164,8 @@ function mouse_followe() {
             [navbar-main-list] .nav-link,
             .links-list .links .link,
             .topic--category-content > * .links > *,
-            #toc .tocify-item a`,
+            #toc .tocify-item a,
+            [data-feedback] a`,
         '-magnify-lg -color-burn': `
             [data-cursor-magnify-lg],
             [data-cursor-magnify-lg-inner] > *`,
@@ -1348,87 +1349,276 @@ function forms() {
   // Check if target is exist
   if (forms_container) {
     // Change form Email/Phone
+    switchers_helper(forms_container);
+
+    // Init Phone countries dropdown
+    phone_countries_helper(forms_container);
+
+    // Check form validity on form submit
+    form_validation_helper(forms_container);
+  }
+
+  /////////////////////////////////////////
+  // Helpers
+  /////////////////////////////////////////
+  // Switch between tabs ( Email / Phone number )
+  function switchers_helper(forms_container) {
     let form_body = forms_container.querySelector('[body]'),
-      email_switcher = forms_container.querySelector('[body] [actions] [email]'),
-      phone_switcher = forms_container.querySelector('[body] [actions] [phone]');
+      email_switcher = forms_container.querySelector('[body]> [data-action] [email]'),
+      phone_switcher = forms_container.querySelector('[body] >[data-action] [phone]');
 
     // Email switcher click
     SUtility.addEvent(email_switcher, 'click', () => {
-      // Add email state to form body
-      SUtility.attr(form_body, 'email', '');
-      // Enable form inputs helper
+      // Change form type to email
+      SUtility.attr(forms_container, 'data-target', 'email');
+
+      // Disable
+      // Form inputs
+      disable_form_helper(form_body);
+
+      // Enable
+      // Form inputs
       enable_form_helper(forms_container.querySelector('[body] > .email'));
 
-      // Remove phone state from form body
-      SUtility.removeAttr(form_body, 'phone');
-      // Disable form inputs helper
-      disable_form_helper(forms_container.querySelector('[body] > .phone'));
+      // Reset validation
+      form_validation_helper(forms_container, 'reset');
     });
 
-    // Email switcher click
+    // Phone switcher click
     SUtility.addEvent(phone_switcher, 'click', () => {
-      // Add phone state to form body
-      SUtility.attr(form_body, 'phone', '');
-      // Enable form inputs helper
+      // Change form type to email
+      SUtility.attr(forms_container, 'data-target', 'phone');
+
+      // Disable
+      // Form inputs
+      disable_form_helper(form_body);
+
+      // Enable
+      // Form inputs
       enable_form_helper(forms_container.querySelector('[body] > .phone'));
 
-      // Remove email state from form body
-      SUtility.removeAttr(form_body, 'email');
-      // Disable form inputs helper
-      disable_form_helper(forms_container.querySelector('[body] > .email'));
+      // Reset validation
+      form_validation_helper(forms_container, 'reset');
+    });
+  }
+
+  // Disable form inputs helper
+  function disable_form_helper(container) {
+    SUtility.each(container.querySelectorAll('.form-control'), (el) => {
+      SUtility.attr(el, 'disabled', '');
+    });
+  }
+
+  // Enable form inputs helper
+  function enable_form_helper(container) {
+    SUtility.each(container.querySelectorAll('.form-control'), (el) => {
+      // Enable input
+      SUtility.removeAttr(el, 'disabled');
+      // Empty input
+      el.value = '';
     });
 
-    // Disable form inputs helper
-    let disable_form_helper = (container) => {
-      SUtility.each(container.querySelectorAll('.form-control'), (el) => {
-        SUtility.attr(el, 'disabled', '');
-      });
-    };
-    // Enable form inputs helper
-    let enable_form_helper = (container) => {
-      SUtility.each(container.querySelectorAll('.form-control'), (el) => {
-        // Enable input
-        SUtility.removeAttr(el, 'disabled');
-        // Empty input
-        el.value = '';
-      });
+    // Focus first input
+    setTimeout(function () {
+      container.querySelector('.form-control').focus();
+    }, 1);
+  }
 
-      // Focus first input
-      setTimeout(function () {
-        container.querySelector('.form-control').focus();
-      }, 1);
-    };
+  // Init Phone countries dropdown
+  function phone_countries_helper(forms_container) {
+    // Phone number
+    var input = forms_container.querySelector('#sign-up-phone');
+    window.intlTelInput(input, {
+      autoHideDialCode: false,
+      preferredCountries: ['eg', 'sa', 'ae', 'qa', 'ye', 'om', 'bh', 'kw', 'ma'],
+      utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.min.js',
+    });
 
-    // Check form validity on form submit
-    forms_container.addEventListener(
-      'submit',
-      function (event) {
+    var iti = window.intlTelInputGlobals.getInstance(input);
+
+    iti.promise.then(function () {
+      console.log('dasdasdasdasda');
+    });
+
+    /////////////////////////////
+
+    // // on keyup / change flag: reset
+    SUtility.addEvent(input, 'change', () => {
+      console.log(iti.getValidationError());
+    });
+
+    input.addEventListener('countrychange', function () {
+      // do something with iti.getSelectedCountryData()
+      console.log(iti.getSelectedCountryData());
+    });
+  }
+
+  // Check form validation
+  function form_validation_helper(forms_container, action) {
+    var feedback_container = forms_container.querySelectorAll('[body] [data-feedback]');
+
+    // Action
+    if (!action) {
+      // - Set
+      SUtility.addEvent(forms_container, 'submit', () => {
+        // For test purpose
         if (!forms_container.checkValidity()) {
           // Prevent submit default for test purpose
           event.preventDefault();
           event.stopPropagation();
         }
 
-        // Add validation class to form
-        if (!forms_container.checkValidity()) {
-          // Add validation class to form
-          forms_container.classList.add('was-validated');
+        ///////////////////////////
+        // Check validation
+        // Add validation class from form
+        forms_container.classList.add('was-validated');
 
-          // Add validation class to form inputs
-          SUtility.each(forms_container.querySelectorAll('.form-control'), (el) => {
-            // Check empty
-            el.value == '' ? el.classList.add('is-empty') : el.classList.remove('is-empty');
+        // Check page
+        if (SUtility.attr(forms_container, 'data-validation-page') == 'sign up')
+          sign_up_validation(forms_container);
+      });
+    } else if (action == 'reset') {
+      // - Reset
+      // Remove validation class from form
+      forms_container.classList.remove('was-validated');
 
-            // Check validation
-            !el.checkValidity()
-              ? el.classList.add('is-invalid')
-              : el.classList.remove('is-invalid');
-          });
-        }
-        // Remove validation class to form
-        else forms_container.classList.remove('was-validated');
-      },
-      false
-    );
+      // Clear feedback validation
+      SUtility.each(feedback_container, (el) => {
+        SUtility.attr(el, 'data-feedback', '');
+        SUtility.each(el.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+      });
+    }
+  }
+
+  // Sign up validation
+  function sign_up_validation(forms_container) {
+    let data_target = SUtility.attr(forms_container, 'data-target');
+
+    // Email
+    if (data_target == 'email') {
+      let email_form_container = forms_container.querySelector('[body] > .email'),
+        email_form_input = email_form_container.querySelector('input[type="email"]'),
+        email_form_input_id = SUtility.attr(email_form_input, 'id'),
+        email_form_input_feedback = document.querySelector(
+          '[data-feedback-target="' + email_form_input_id + '"]'
+        ),
+        feedback_empty = email_form_input_feedback.querySelector('[data-feedback-empty]'),
+        feedback_invalid = email_form_input_feedback.querySelector('[data-feedback-invalid]'),
+        feedback_used = email_form_input_feedback.querySelector('[data-feedback-used]'),
+        state = 'empty';
+
+      // Check if empty
+      if (email_form_input.value == '') {
+        // Focus input
+        email_form_input.focus();
+        email_form_input.select();
+
+        // Set state
+        state = 'empty';
+
+        // Clear feedback
+        SUtility.each(email_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(feedback_empty, 'active');
+      }
+      // Check if valid
+      else if (!email_form_input.checkValidity()) {
+        // Focus input
+        email_form_input.focus();
+        email_form_input.select();
+
+        // Set state
+        state = 'inValid';
+
+        // Clear feedback
+        SUtility.each(email_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(feedback_invalid, 'active');
+      } else {
+        // Check if used
+        // This an ajax request
+
+        // Clear state
+        state = '';
+
+        // Clear feedback
+        SUtility.each(email_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+      }
+
+      // Set feedback state
+      SUtility.attr(email_form_input_feedback, 'data-feedback', state);
+    }
+
+    // Phone
+    if (data_target == 'phone') {
+      let phone_form_container = forms_container.querySelector('[body] > .phone'),
+        phone_form_input = phone_form_container.querySelector('input[type="tel"]'),
+        phone_form_input_id = SUtility.attr(phone_form_input, 'id'),
+        phone_form_input_feedback = document.querySelector(
+          '[data-feedback-target="' + phone_form_input_id + '"]'
+        ),
+        feedback_empty = phone_form_input_feedback.querySelector('[data-feedback-empty]'),
+        feedback_invalid = phone_form_input_feedback.querySelector('[data-feedback-invalid]'),
+        feedback_used = phone_form_input_feedback.querySelector('[data-feedback-used]'),
+        state = 'empty';
+
+      // Get instance of phone input
+      var iti = window.intlTelInputGlobals.getInstance(phone_form_input);
+
+      // Check if empty
+      if (iti.getNumber() == '') {
+        // Focus input
+        phone_form_input.focus();
+        phone_form_input.select();
+
+        // Set state
+        state = 'empty';
+
+        // Clear feedback
+        SUtility.each(phone_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(feedback_empty, 'active');
+      }
+      // Check if valid
+      else if (!iti.isValidNumber()) {
+        // Focus input
+        phone_form_input.focus();
+        phone_form_input.select();
+
+        // Set state
+        state = 'inValid';
+
+        // Clear feedback
+        SUtility.each(phone_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(feedback_invalid, 'active');
+      } else {
+        // Check if used
+        // This an ajax request
+
+        // Clear state
+        state = '';
+
+        // Clear feedback
+        SUtility.each(phone_form_input_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+      }
+
+      // Set feedback state
+      SUtility.attr(phone_form_input_feedback, 'data-feedback', state);
+    }
   }
 }
