@@ -1462,11 +1462,9 @@ function forms() {
       // - Set
       SUtility.addEvent(forms_container, 'submit', () => {
         // For test purpose
-        if (!forms_container.checkValidity()) {
-          // Prevent submit default for test purpose
-          event.preventDefault();
-          event.stopPropagation();
-        }
+        // Prevent submit default for test purpose
+        event.preventDefault();
+        event.stopPropagation();
 
         ///////////////////////////
         // Check validation
@@ -1493,7 +1491,7 @@ function forms() {
   }
 
   // Sign up validation
-  function sign_up_validation(forms_container) {
+  async function sign_up_validation(forms_container) {
     let data_target = SUtility.attr(forms_container, 'data-target');
 
     // Email
@@ -1542,15 +1540,37 @@ function forms() {
         SUtility.addClass(feedback_invalid, 'active');
       } else {
         // Check if used
+        let email_used = false;
         // This an ajax request
+        await fetch('../dist/temp/data.json')
+          .then((response) => response.json())
+          .then((json) => {
+            if (json.find((element) => element.email == email_form_input.value)) email_used = true;
+          });
 
-        // Clear state
-        state = '';
+        if (email_used) {
+          // Focus input
+          email_form_input.focus();
+          email_form_input.select();
 
-        // Clear feedback
-        SUtility.each(email_form_input_feedback.children, (child) => {
-          SUtility.removeClass(child, 'active');
-        });
+          // Set state
+          state = 'used';
+
+          // Clear feedback
+          SUtility.each(email_form_input_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+          // View current feedback
+          SUtility.addClass(feedback_used, 'active');
+        } else {
+          // Clear state
+          state = '';
+
+          // Clear feedback
+          SUtility.each(email_form_input_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+        }
       }
 
       // Set feedback state
@@ -1606,15 +1626,37 @@ function forms() {
         SUtility.addClass(feedback_invalid, 'active');
       } else {
         // Check if used
+        let phone_used = false;
         // This an ajax request
+        await fetch('../dist/temp/data.json')
+          .then((response) => response.json())
+          .then((json) => {
+            if (json.find((element) => element.phone == iti.getNumber())) phone_used = true;
+          });
 
-        // Clear state
-        state = '';
+        if (phone_used) {
+          // Focus input
+          phone_form_input.focus();
+          phone_form_input.select();
 
-        // Clear feedback
-        SUtility.each(phone_form_input_feedback.children, (child) => {
-          SUtility.removeClass(child, 'active');
-        });
+          // Set state
+          state = 'used';
+
+          // Clear feedback
+          SUtility.each(phone_form_input_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+          // View current feedback
+          SUtility.addClass(feedback_used, 'active');
+        } else {
+          // Clear state
+          state = '';
+
+          // Clear feedback
+          SUtility.each(phone_form_input_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+        }
       }
 
       // Set feedback state
