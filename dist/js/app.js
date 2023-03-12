@@ -1489,43 +1489,42 @@ function forms() {
     // Email
     if (data_target == 'email') {
       let email_form_container = forms_container.querySelector('[body] > .email'),
-        email_form_input = email_form_container.querySelector('input[type="email"]'),
-        email_form_input_id = SUtility.attr(email_form_input, 'id'),
-        email_form_input_feedback = document.querySelector(
-          '[data-feedback-target="' + email_form_input_id + '"]'
+        form_input_email = email_form_container.querySelector('#sign-up-email'),
+        form_input_email_feedback = document.querySelector(
+          '[data-feedback-target="' + SUtility.attr(form_input_email, 'id') + '"]'
         ),
-        feedback_empty = email_form_input_feedback.querySelector('[data-feedback-empty]'),
-        feedback_invalid = email_form_input_feedback.querySelector('[data-feedback-invalid]'),
-        feedback_used = email_form_input_feedback.querySelector('[data-feedback-used]'),
+        feedback_empty = form_input_email_feedback.querySelector('[data-feedback-empty]'),
+        feedback_invalid = form_input_email_feedback.querySelector('[data-feedback-invalid]'),
+        feedback_used = form_input_email_feedback.querySelector('[data-feedback-used]'),
         state = 'empty';
 
       // Check if empty
-      if (email_form_input.value == '') {
+      if (form_input_email.value == '') {
         // Focus input
-        email_form_input.focus();
-        email_form_input.select();
+        form_input_email.focus();
+        form_input_email.select();
 
         // Set state
         state = 'empty';
 
         // Clear feedback
-        SUtility.each(email_form_input_feedback.children, (child) => {
+        SUtility.each(form_input_email_feedback.children, (child) => {
           SUtility.removeClass(child, 'active');
         });
         // View current feedback
         SUtility.addClass(feedback_empty, 'active');
       }
       // Check if valid
-      else if (!email_form_input.checkValidity()) {
+      else if (!form_input_email.checkValidity()) {
         // Focus input
-        email_form_input.focus();
-        email_form_input.select();
+        form_input_email.focus();
+        form_input_email.select();
 
         // Set state
         state = 'inValid';
 
         // Clear feedback
-        SUtility.each(email_form_input_feedback.children, (child) => {
+        SUtility.each(form_input_email_feedback.children, (child) => {
           SUtility.removeClass(child, 'active');
         });
         // View current feedback
@@ -1537,20 +1536,20 @@ function forms() {
         await fetch('../dist/temp/data.json')
           .then((response) => response.json())
           .then((json) => {
-            if (json.find((element) => element.email == email_form_input.value)) email_used = true;
+            if (json.find((element) => element.email == form_input_email.value)) email_used = true;
           });
 
         // Email already used
         if (email_used) {
           // Focus input
-          email_form_input.focus();
-          email_form_input.select();
+          form_input_email.focus();
+          form_input_email.select();
 
           // Set state
           state = 'used';
 
           // Clear feedback
-          SUtility.each(email_form_input_feedback.children, (child) => {
+          SUtility.each(form_input_email_feedback.children, (child) => {
             SUtility.removeClass(child, 'active');
           });
           // View current feedback
@@ -1564,43 +1563,140 @@ function forms() {
           state = '';
 
           // Clear feedback
-          SUtility.each(email_form_input_feedback.children, (child) => {
+          SUtility.each(form_input_email_feedback.children, (child) => {
             SUtility.removeClass(child, 'active');
           });
         }
       }
 
       // Set feedback state
-      SUtility.attr(email_form_input_feedback, 'data-feedback', state);
+      SUtility.attr(form_input_email_feedback, 'data-feedback', state);
+    }
+
+    // Email - password
+    if (data_target == 'email-password') {
+      let email_form_container = forms_container.querySelector('[body] > .email'),
+        form_input_pass = email_form_container.querySelector('#sign-up-pass'),
+        form_input_pass_feedback = document.querySelector(
+          '[data-feedback-target="' + SUtility.attr(form_input_pass, 'id') + '"]'
+        ),
+        pass_feedback_empty = form_input_pass_feedback.querySelector('[data-feedback-empty]'),
+        pass_state = 'empty',
+        form_input_repass = email_form_container.querySelector('#sign-up-pass-repeat'),
+        form_input_repass_feedback = document.querySelector(
+          '[data-feedback-target="' + SUtility.attr(form_input_repass, 'id') + '"]'
+        ),
+        repass_feedback_empty = form_input_repass_feedback.querySelector('[data-feedback-empty]'),
+        repass_feedback_invalid =
+          form_input_repass_feedback.querySelector('[data-feedback-invalid]'),
+        repass_state = 'empty';
+
+      // Check if empty
+      if (form_input_pass.value == '') {
+        // Focus input
+        form_input_pass.focus();
+        form_input_pass.select();
+
+        // Set state
+        pass_state = 'empty';
+
+        // Clear password feedback
+        SUtility.each(form_input_pass_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(pass_feedback_empty, 'active');
+
+        // Clear password repeat input
+        SUtility.each(form_input_repass_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+      } else {
+        // Clear password feedback
+        SUtility.each(form_input_pass_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+
+        // Set state
+        pass_state = '';
+
+        // Check if password repeat is empty
+        if (form_input_repass.value == '') {
+          // Focus input
+          form_input_repass.focus();
+          form_input_repass.select();
+
+          // Set state
+          repass_state = 'empty';
+
+          // Clear password feedback
+          SUtility.each(form_input_repass_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+          // View current feedback
+          SUtility.addClass(repass_feedback_empty, 'active');
+        }
+        // Check if password and password repeat is equal
+        else if (form_input_pass.value != form_input_repass.value) {
+          // Focus input
+          form_input_repass.focus();
+          form_input_repass.select();
+
+          // Set state
+          repass_state = 'invalid';
+
+          // Clear password feedback
+          SUtility.each(form_input_repass_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+          // View current feedback
+          SUtility.addClass(repass_feedback_invalid, 'active');
+        } else {
+          // Email not used
+          // Create new account and go to password page
+          window.location.replace('./create-account-email.html');
+
+          // Clear state
+          repass_state = '';
+
+          // Clear password feedback
+          SUtility.each(form_input_repass_feedback.children, (child) => {
+            SUtility.removeClass(child, 'active');
+          });
+        }
+      }
+
+      // Set feedback state
+      SUtility.attr(form_input_pass_feedback, 'data-feedback', pass_state);
+      SUtility.attr(form_input_repass_feedback, 'data-feedback', repass_state);
     }
 
     // Phone
     if (data_target == 'phone') {
       let phone_form_container = forms_container.querySelector('[body] > .phone'),
-        phone_form_input = phone_form_container.querySelector('input[type="tel"]'),
-        phone_form_input_id = SUtility.attr(phone_form_input, 'id'),
-        phone_form_input_feedback = document.querySelector(
-          '[data-feedback-target="' + phone_form_input_id + '"]'
+        form_input_phone = phone_form_container.querySelector('input[type="tel"]'),
+        form_input_phone_feedback = document.querySelector(
+          '[data-feedback-target="' + SUtility.attr(form_input_phone, 'id') + '"]'
         ),
-        feedback_empty = phone_form_input_feedback.querySelector('[data-feedback-empty]'),
-        feedback_invalid = phone_form_input_feedback.querySelector('[data-feedback-invalid]'),
-        feedback_used = phone_form_input_feedback.querySelector('[data-feedback-used]'),
+        feedback_empty = form_input_phone_feedback.querySelector('[data-feedback-empty]'),
+        feedback_invalid = form_input_phone_feedback.querySelector('[data-feedback-invalid]'),
+        feedback_used = form_input_phone_feedback.querySelector('[data-feedback-used]'),
         state = 'empty';
 
       // Get instance of phone input
-      var iti = window.intlTelInputGlobals.getInstance(phone_form_input);
+      var iti = window.intlTelInputGlobals.getInstance(form_input_phone);
 
       // Check if empty
       if (iti.getNumber() == '') {
         // Focus input
-        phone_form_input.focus();
-        phone_form_input.select();
+        form_input_phone.focus();
+        form_input_phone.select();
 
         // Set state
         state = 'empty';
 
         // Clear feedback
-        SUtility.each(phone_form_input_feedback.children, (child) => {
+        SUtility.each(form_input_phone_feedback.children, (child) => {
           SUtility.removeClass(child, 'active');
         });
         // View current feedback
@@ -1609,14 +1705,14 @@ function forms() {
       // Check if valid
       else if (!iti.isValidNumber()) {
         // Focus input
-        phone_form_input.focus();
-        phone_form_input.select();
+        form_input_phone.focus();
+        form_input_phone.select();
 
         // Set state
         state = 'inValid';
 
         // Clear feedback
-        SUtility.each(phone_form_input_feedback.children, (child) => {
+        SUtility.each(form_input_phone_feedback.children, (child) => {
           SUtility.removeClass(child, 'active');
         });
         // View current feedback
@@ -1634,14 +1730,14 @@ function forms() {
         // Phone already used
         if (phone_used) {
           // Focus input
-          phone_form_input.focus();
-          phone_form_input.select();
+          form_input_phone.focus();
+          form_input_phone.select();
 
           // Set state
           state = 'used';
 
           // Clear feedback
-          SUtility.each(phone_form_input_feedback.children, (child) => {
+          SUtility.each(form_input_phone_feedback.children, (child) => {
             SUtility.removeClass(child, 'active');
           });
           // View current feedback
@@ -1655,14 +1751,14 @@ function forms() {
           state = '';
 
           // Clear feedback
-          SUtility.each(phone_form_input_feedback.children, (child) => {
+          SUtility.each(form_input_phone_feedback.children, (child) => {
             SUtility.removeClass(child, 'active');
           });
         }
       }
 
       // Set feedback state
-      SUtility.attr(phone_form_input_feedback, 'data-feedback', state);
+      SUtility.attr(form_input_phone_feedback, 'data-feedback', state);
     }
   }
 
