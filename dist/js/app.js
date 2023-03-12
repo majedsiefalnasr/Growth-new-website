@@ -1460,17 +1460,15 @@ function forms() {
 
         ///////////////////////////
         // Check validation
-        // Add validation class from form
-        forms_container.classList.add('was-validated');
-
         // Check page
         if (SUtility.attr(forms_container, 'data-validation-page') == 'sign up')
           sign_up_validation(forms_container);
       });
     } else if (action == 'reset') {
       // - Reset
-      // Remove validation class from form
-      forms_container.classList.remove('was-validated');
+      SUtility.each(forms_container.querySelectorAll('.is-invalid'), (invalid) => {
+        SUtility.removeClass(invalid, 'is-invalid');
+      });
 
       // Clear feedback validation
       SUtility.each(feedback_container, (el) => {
@@ -1503,6 +1501,8 @@ function forms() {
         // Focus input
         form_input_email.focus();
         form_input_email.select();
+        // Set validation focus
+        SUtility.addClass(form_input_email, 'is-invalid');
 
         // Set state
         state = 'empty';
@@ -1519,6 +1519,8 @@ function forms() {
         // Focus input
         form_input_email.focus();
         form_input_email.select();
+        // Set validation focus
+        SUtility.addClass(form_input_email, 'is-invalid');
 
         // Set state
         state = 'inValid';
@@ -1544,6 +1546,8 @@ function forms() {
           // Focus input
           form_input_email.focus();
           form_input_email.select();
+          // Set validation focus
+          SUtility.addClass(form_input_email, 'is-invalid');
 
           // Set state
           state = 'used';
@@ -1596,6 +1600,8 @@ function forms() {
         // Focus input
         form_input_pass.focus();
         form_input_pass.select();
+        // Set validation focus
+        SUtility.addClass(form_input_pass, 'is-invalid');
 
         // Set state
         pass_state = 'empty';
@@ -1625,6 +1631,9 @@ function forms() {
           // Focus input
           form_input_repass.focus();
           form_input_repass.select();
+          // Set validation focus
+          SUtility.removeClass(form_input_pass, 'is-invalid');
+          SUtility.addClass(form_input_repass, 'is-invalid');
 
           // Set state
           repass_state = 'empty';
@@ -1641,6 +1650,9 @@ function forms() {
           // Focus input
           form_input_repass.focus();
           form_input_repass.select();
+          // Set validation focus
+          SUtility.removeClass(form_input_pass, 'is-invalid');
+          SUtility.addClass(form_input_repass, 'is-invalid');
 
           // Set state
           repass_state = 'invalid';
@@ -1691,6 +1703,8 @@ function forms() {
         // Focus input
         form_input_phone.focus();
         form_input_phone.select();
+        // Set validation focus
+        SUtility.addClass(form_input_phone, 'is-invalid');
 
         // Set state
         state = 'empty';
@@ -1707,6 +1721,8 @@ function forms() {
         // Focus input
         form_input_phone.focus();
         form_input_phone.select();
+        // Set validation focus
+        SUtility.addClass(form_input_phone, 'is-invalid');
 
         // Set state
         state = 'inValid';
@@ -1732,6 +1748,8 @@ function forms() {
           // Focus input
           form_input_phone.focus();
           form_input_phone.select();
+          // Set validation focus
+          SUtility.addClass(form_input_phone, 'is-invalid');
 
           // Set state
           state = 'used';
