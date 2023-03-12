@@ -481,6 +481,41 @@
                       </div>
                     </div>
                   </div>
+
+                  <div resend-verify-code class="d-flex flex-column gap-4">
+                    <div>
+                      <span class="me-2">لم يصلك رمز التحقق؟ </span>
+                      <span>
+                        اعادة ارسال بعد
+
+                        <span countdown-timer="1.5" class="ms-1"></span>
+                      </span>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-4 align-items-center">
+                      <div>اعادة ارسال رمز التحقق</div>
+
+                      <div class="d-flex gap-2 align-items-center">
+                        <!-- SMS -->
+                        <button
+                          class="btn btn-secondary btn-sm fw-bolder"
+                          type="button"
+                          data-action="SMS"
+                          data-cursor-stick
+                          disabled>
+                          SMS
+                        </button>
+                        <button
+                          class="btn btn-secondary btn-sm fw-bolder"
+                          type="button"
+                          data-action="whatsapp"
+                          data-cursor-stick
+                          disabled>
+                          whatsapp
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Feedback -->

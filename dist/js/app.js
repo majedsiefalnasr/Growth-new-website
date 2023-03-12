@@ -1366,6 +1366,9 @@ function forms() {
     // Verify code helper
     verify_code_helper();
 
+    // Countdown Timer helper
+    countdown_timer(document.querySelector('[countdown-timer]'));
+
     // Check form validity on form submit
     form_validation_helper(forms_container);
   }
@@ -1869,83 +1872,6 @@ function forms() {
         }
       }
 
-      // // Check if empty
-      // if (iti.getNumber() == '') {
-      //   // Focus input
-      //   form_input_phone.focus();
-      //   form_input_phone.select();
-      //   // Set validation focus
-      //   SUtility.addClass(form_input_phone, 'is-invalid');
-
-      //   // Set state
-      //   state = 'empty';
-
-      //   // Clear feedback
-      //   SUtility.each(form_input_phone_feedback.children, (child) => {
-      //     SUtility.removeClass(child, 'active');
-      //   });
-      //   // View current feedback
-      //   SUtility.addClass(feedback_empty, 'active');
-      // }
-      // // Check if valid
-      // else if (!iti.isValidNumber()) {
-      //   // Focus input
-      //   form_input_phone.focus();
-      //   form_input_phone.select();
-      //   // Set validation focus
-      //   SUtility.addClass(form_input_phone, 'is-invalid');
-
-      //   // Set state
-      //   state = 'inValid';
-
-      //   // Clear feedback
-      //   SUtility.each(form_input_phone_feedback.children, (child) => {
-      //     SUtility.removeClass(child, 'active');
-      //   });
-      //   // View current feedback
-      //   SUtility.addClass(feedback_invalid, 'active');
-      // } else {
-      //   // Check if used
-      //   let phone_used = false;
-      //   // This an ajax request
-      //   await fetch('../dist/temp/data.json')
-      //     .then((response) => response.json())
-      //     .then((json) => {
-      //       if (json.find((element) => element.phone == iti.getNumber())) phone_used = true;
-      //     });
-
-      //   // Phone already used
-      //   if (phone_used) {
-      //     // Focus input
-      //     form_input_phone.focus();
-      //     form_input_phone.select();
-      //     // Set validation focus
-      //     SUtility.addClass(form_input_phone, 'is-invalid');
-
-      //     // Set state
-      //     state = 'used';
-
-      //     // Clear feedback
-      //     SUtility.each(form_input_phone_feedback.children, (child) => {
-      //       SUtility.removeClass(child, 'active');
-      //     });
-      //     // View current feedback
-      //     SUtility.addClass(feedback_used, 'active');
-      //   } else {
-      //     // Phone not used
-      //     // Create new account and go to check code page
-      //     window.location.replace('./create-account-phone.html');
-
-      //     // Clear state
-      //     state = '';
-
-      //     // Clear feedback
-      //     SUtility.each(form_input_phone_feedback.children, (child) => {
-      //       SUtility.removeClass(child, 'active');
-      //     });
-      //   }
-      // }
-
       // Set feedback state
       SUtility.attr(form_input_phone_code_feedback, 'data-feedback', state);
     }
@@ -2100,5 +2026,59 @@ function forms() {
         }
       });
     });
+  }
+
+  // Countdown Timer helper
+  function countdown_timer(timer_el) {
+    // Check if required
+    if (!timer_el) return;
+
+    let timer = 0,
+      intervalHandle = void 0,
+      secondsRemaining = void 0;
+
+    // Get timer from data attribute if timer is empty
+    if (!timer) timer = SUtility.attr(timer_el, 'countdown-timer');
+
+    // Check if timer presented
+    if (!timer) return;
+
+    console.log(timer);
+
+    //check to make sure the value is a number
+    if (isNaN(timer)) return;
+    //how many seconds remaining?
+    secondsRemaining = timer * 60;
+    //every second, call the "tick" function
+
+    intervalHandle = setInterval(() => {
+      //convert seconds into mm:ss
+      let min = Math.floor(secondsRemaining / 60),
+        sec = secondsRemaining - min * 60;
+
+      //add a leading zero (as a string value) if sec is less than 10
+      if (sec < 10) {
+        sec = '0' + sec;
+      }
+      //concatenate min and sec with a colon
+      let message = min.toString() + ':' + sec;
+      //display the concatenated result
+      timer_el.innerHTML = message;
+
+      //stop if down to zero
+      if (secondsRemaining === 0) {
+        // Clear interval
+        clearInterval(intervalHandle);
+
+        // Enable actions
+        let SMS = document.querySelector('[data-action="SMS"]'),
+          whatsapp = document.querySelector('[data-action="whatsapp"]');
+
+        SUtility.removeAttr(SMS, 'disabled');
+        SUtility.removeAttr(whatsapp, 'disabled');
+      }
+      //subtract one second from secondsRemaining
+      return secondsRemaining--;
+    }, 1000);
   }
 }
