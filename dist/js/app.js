@@ -1678,6 +1678,9 @@ function forms() {
     SUtility.each(password_inputs, (pass_el) => {
       let pass_el_input = pass_el.querySelector('input'),
         pass_el_toggler = pass_el.querySelector('.show-pass em'),
+        pass_el_related = document.querySelector(
+          '#' + SUtility.attr(pass_el, 'data-form-pass-related') + ''
+        ),
         state = false;
 
       // Toggler action on click
@@ -1689,12 +1692,18 @@ function forms() {
           SUtility.addClass(pass_el_toggler, 'ph-icon-eye');
           SUtility.removeClass(pass_el_toggler, 'ph-icon-eyeslash');
           state = false;
+
+          // Hide related password if exist
+          if (pass_el_related) pass_el_related.setAttribute('type', 'password');
         } else {
           // View password
           pass_el_input.setAttribute('type', 'text');
           SUtility.addClass(pass_el_toggler, 'ph-icon-eyeslash');
           SUtility.removeClass(pass_el_toggler, 'ph-icon-eye');
           state = true;
+
+          // View related password if exist
+          if (pass_el_related) pass_el_related.setAttribute('type', 'text');
         }
       });
     });

@@ -460,7 +460,7 @@
                     <div
                       class="position-relative form-control-pass"
                       data-form-pass
-                      data-form-pass-related="">
+                      data-form-pass-related="sign-up-pass-repeat">
                       <input class="form-control" id="sign-up-pass" type="password" required />
                       <span class="show-pass">
                         <em class="ph-icon-eye" aria-hidden="true"></em>
@@ -490,32 +490,26 @@
                     <div class="feedback" data-feedback data-feedback-target="sign-up-pass">
                       <!-- Empty state -->
                       <div data-feedback-empty>
-                        <div class="text-danger">البريد الالكتروني مطلوب لانشاء حساب</div>
-                        <div class="mt-2">
-                          <span>
-                            فى حالة عدم وجود بريد الكتروني, بامكانك استخدام
-                            <a
-                              href="javascript:void(0)"
-                              onclick="document.querySelector('#forms-block [form] form [body] [data-action] [phone]').click();">
-                              رقم الجوال
-                            </a>
-                            لانشاء حساب
-                          </span>
-                        </div>
+                        <div class="text-danger">كلمة المرور مطلوبة.</div>
                       </div>
+                    </div>
+                  </div>
 
-                      <!-- Used state -->
-                      <div data-feedback-used>
-                        <span class="text-danger"> البريد الالكتروني مستخدم من قبل. </span>
+                  <div>
+                    <!-- Input -->
+                    <label for="sign-up-pass-repeat" class="form-label"> تاكيد كلمة المرور </label>
+                    <input class="form-control" id="sign-up-pass-repeat" type="password" required />
 
-                        <a href="#"> تسجيل الدخول </a>
+                    <!-- Feedback -->
+                    <div class="feedback" data-feedback data-feedback-target="sign-up-pass-repeat">
+                      <!-- Empty state -->
+                      <div data-feedback-empty>
+                        <div class="text-danger">تاكيد كلمة المرور مطلوبة.</div>
                       </div>
 
                       <!-- Invalid state -->
                       <div data-feedback-invalid>
-                        <span class="text-danger">
-                          البريد الالكتروني غير صحيح, تاكد من ادخال بريد الكتروني صحيح.
-                        </span>
+                        <span class="text-danger"> كلمة المرور غير متطابقة. </span>
                       </div>
                     </div>
                   </div>
@@ -625,8 +619,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
 
-    <!-- jquery.tocify -->
-    <script src="../dist/js/plugins/passwrd.js"></script>
+    <!-- zxcvbn password cheker -->
+    <script src="../dist/js/plugins/zxcvbn.js"></script>
 
     <!-- Global Javascript Bundle(used by all pages) -->
     <script type="module" src="../dist/js/app.js" name="app"></script>
