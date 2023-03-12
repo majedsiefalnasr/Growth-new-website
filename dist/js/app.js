@@ -1354,6 +1354,12 @@ function forms() {
     // Init Phone countries dropdown
     phone_countries_helper(forms_container);
 
+    // Password input toggler
+    password_toggler();
+
+    // Password input strength checker
+    password_strength_checker();
+
     // Check form validity on form submit
     form_validation_helper(forms_container);
   }
@@ -1428,28 +1434,14 @@ function forms() {
   function phone_countries_helper(forms_container) {
     // Phone number
     var input = forms_container.querySelector('#sign-up-phone');
+
+    // Check if required
+    if (!input) return;
+
     window.intlTelInput(input, {
       autoHideDialCode: false,
       preferredCountries: ['eg', 'sa', 'ae', 'qa', 'ye', 'om', 'bh', 'kw', 'ma'],
       utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.min.js',
-    });
-
-    var iti = window.intlTelInputGlobals.getInstance(input);
-
-    iti.promise.then(function () {
-      console.log('dasdasdasdasda');
-    });
-
-    /////////////////////////////
-
-    // // on keyup / change flag: reset
-    SUtility.addEvent(input, 'change', () => {
-      console.log(iti.getValidationError());
-    });
-
-    input.addEventListener('countrychange', function () {
-      // do something with iti.getSelectedCountryData()
-      console.log(iti.getSelectedCountryData());
     });
   }
 
@@ -1548,6 +1540,7 @@ function forms() {
             if (json.find((element) => element.email == email_form_input.value)) email_used = true;
           });
 
+        // Email already used
         if (email_used) {
           // Focus input
           email_form_input.focus();
@@ -1563,6 +1556,10 @@ function forms() {
           // View current feedback
           SUtility.addClass(feedback_used, 'active');
         } else {
+          // Email not used
+          // Create new account and go to password page
+          window.location.replace('./create-account-email.html');
+
           // Clear state
           state = '';
 
@@ -1634,6 +1631,7 @@ function forms() {
             if (json.find((element) => element.phone == iti.getNumber())) phone_used = true;
           });
 
+        // Phone already used
         if (phone_used) {
           // Focus input
           phone_form_input.focus();
@@ -1649,6 +1647,10 @@ function forms() {
           // View current feedback
           SUtility.addClass(feedback_used, 'active');
         } else {
+          // Phone not used
+          // Create new account and go to check code page
+          window.location.replace('./create-account-phone.html');
+
           // Clear state
           state = '';
 
@@ -1662,5 +1664,111 @@ function forms() {
       // Set feedback state
       SUtility.attr(phone_form_input_feedback, 'data-feedback', state);
     }
+  }
+
+  // Password input toggler
+  function password_toggler() {
+    // Get all forms
+    let password_inputs = document.querySelectorAll('[data-form-pass]');
+
+    // Check if required
+    if (!password_inputs) return;
+
+    // Loop all forms
+    SUtility.each(password_inputs, (pass_el) => {
+      let pass_el_input = pass_el.querySelector('input'),
+        pass_el_toggler = pass_el.querySelector('.show-pass em'),
+        state = false;
+
+      // Toggler action on click
+      SUtility.addEvent(pass_el_toggler, 'click', () => {
+        // Check if password is shown
+        if (state) {
+          // Hide password
+          pass_el_input.setAttribute('type', 'password');
+          SUtility.addClass(pass_el_toggler, 'ph-icon-eye');
+          SUtility.removeClass(pass_el_toggler, 'ph-icon-eyeslash');
+          state = false;
+        } else {
+          // View password
+          pass_el_input.setAttribute('type', 'text');
+          SUtility.addClass(pass_el_toggler, 'ph-icon-eyeslash');
+          SUtility.removeClass(pass_el_toggler, 'ph-icon-eye');
+          state = true;
+        }
+      });
+    });
+  }
+
+  // Password input strength checker
+  function password_strength_checker() {
+    // Get all forms
+    let password_inputs = document.querySelectorAll('[data-pass-strength]');
+
+    // Check if required
+    if (!password_inputs) return;
+
+    // Loop all forms
+    SUtility.each(password_inputs, (pass_el) => {
+      let pass_el_id = SUtility.attr(pass_el, 'data-pass-strength'),
+        pass_el_input = document.querySelector('input[id="' + pass_el_id + '"]');
+
+      // Check if password strength field has target
+      if (!pass_el_input) return;
+
+      let password_progress = pass_el.querySelector('.progress-bar'),
+        password_note = pass_el.querySelector('.notes'),
+        feedback_warning_container = password_note.querySelector('[warning]'),
+        feedback_suggestions_container = password_note.querySelector('[suggestions]');
+
+      pass_el_input.addEventListener('keyup', function () {
+        // Score
+        let score = zxcvbn(pass_el_input.value).score;
+        let feedback_warning = zxcvbn(pass_el_input.value).feedback.warning;
+        let feedback_suggestions = zxcvbn(pass_el_input.value).feedback.suggestions;
+
+        // Check score
+        if (pass_el_input.value == '') {
+          password_progress.setAttribute('aria-valuenow', '0');
+          password_progress.style = '';
+        } else if (score == 0) {
+          password_progress.setAttribute('aria-valuenow', '20');
+          password_progress.style = 'width: 20%;';
+          feedback_warning_container.style = '';
+        } else if (score < 3) {
+          password_progress.setAttribute('aria-valuenow', '40');
+          password_progress.style = 'width: 40%; background-color: #F6A848';
+          feedback_warning_container.style = 'color: #F6A848';
+        } else if (score == 3) {
+          password_progress.setAttribute('aria-valuenow', '60');
+          password_progress.style = 'width: 60%; background-color: #D7D030';
+          feedback_warning_container.style = ' color: #D7D030';
+        } else if (score == 4) {
+          password_progress.setAttribute('aria-valuenow', '100');
+          password_progress.style = 'width: 100%; background-color: #24AA8E';
+          feedback_warning_container.style = 'color: #24AA8E';
+        }
+
+        // Check warnings
+        feedback_warning_container.innerHTML = feedback_warning;
+
+        // Check suggestions
+        if (pass_el_input.value == '') {
+          // Reset
+          feedback_suggestions_container.innerHTML = '';
+        } else if (feedback_suggestions) {
+          // Reset
+          feedback_suggestions_container.innerHTML = '';
+          // Loop suggestions
+          SUtility.each(feedback_suggestions, (suggestion) => {
+            let li = document.createElement('li');
+
+            li.innerHTML = suggestion;
+            // Append to view
+            feedback_suggestions_container.append(li);
+          });
+        }
+      });
+    });
   }
 }
