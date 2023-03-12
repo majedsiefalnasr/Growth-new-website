@@ -3,6 +3,7 @@
     "id": 1,
     "email": "majedsiefalnasr@outlook.com",
     "phone": "+201142293292",
-    "pass": "123"
+    "pass": "123",
+    "verify_code": "1234"
   }
 ]

@@ -159,4 +159,12 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal):not(.g-cursor) {
   transform: rotate(-5deg);
 }
 
+/* RTL / LTR */
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
+
 /* #endregion */
