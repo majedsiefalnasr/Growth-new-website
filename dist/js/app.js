@@ -1979,6 +1979,11 @@ function forms() {
           feedback_warning_container.style = 'color: #24AA8E';
         }
 
+        // View notes
+        feedback_warning || feedback_suggestions.length != 0
+          ? SUtility.removeClass(password_note, 'd-none')
+          : SUtility.addClass(password_note, 'd-none');
+
         // Check warnings
         feedback_warning_container.innerHTML = feedback_warning;
 
