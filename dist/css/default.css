@@ -17,9 +17,6 @@ html {
   font-size: var(--root-font-size);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  /* position: fixed;
-  height: 100%;
-  overflow: hidden; */
   overflow-x: hidden;
 }
 body {
@@ -33,12 +30,6 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
-  /* margin: 0;
-  width: 100vw;
-  height: 100%;
-  overflow-y: overlay; */
-  overflow-x: hidden;
-  /* -webkit-overflow-scrolling: touch; */
 }
 body > *:not(.tooltip):not(.modal-backdrop):not(.modal):not(.g-cursor) {
   position: relative;
