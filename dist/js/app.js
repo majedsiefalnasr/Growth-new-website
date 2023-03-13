@@ -1703,7 +1703,7 @@ function forms() {
     // Phone
     if (data_target == 'phone') {
       let phone_form_container = forms_container.querySelector('[body] > .phone'),
-        form_input_phone = phone_form_container.querySelector('#sign-up-phone"]'),
+        form_input_phone = phone_form_container.querySelector('#sign-up-phone'),
         form_input_phone_feedback = document.querySelector(
           '[data-feedback-target="sign-up-phone"]'
         ),
