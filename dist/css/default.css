@@ -20,6 +20,7 @@ html {
   /* position: fixed;
   height: 100%;
   overflow: hidden; */
+  overflow-x: hidden;
 }
 body {
   font-family: var(--root-font-family);
