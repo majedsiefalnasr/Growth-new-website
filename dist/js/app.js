@@ -427,7 +427,6 @@ function navbar() {
 
   // Actions on scroll
   document.addEventListener('scroll', (event) => {
-    console.log('gg');
     scrollAction();
   });
 
@@ -2043,8 +2042,6 @@ function forms() {
 
     // Check if timer presented
     if (!timer) return;
-
-    console.log(timer);
 
     //check to make sure the value is a number
     if (isNaN(timer)) return;
