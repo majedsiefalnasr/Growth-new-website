@@ -222,6 +222,7 @@
   border-radius: 50%;
 }
 #price-block .plans > .item .btn,
+#price-block .plans--table .table--all-plans .btn,
 #price-block .plans--table .table--plane .table--header .btn {
   margin-top: 1rem;
   width: 100%;
@@ -232,6 +233,7 @@
   color: var(--color-white);
   background-color: var(--color-500);
 }
+#price-block .plans--table .table--all-plans .btn,
 #price-block .plans--table .table--plane .table--header .btn {
   width: auto;
   padding: 0.63rem 4.25rem;
@@ -250,6 +252,9 @@
 #price-block .plans > .item.recommended .btn:hover,
 #price-block .plans > .item.recommended .btn:active,
 #price-block .plans > .item.recommended .btn.active,
+#price-block .plans--table .table--all-plans .btn:hover,
+#price-block .plans--table .table--all-plans .btn:active,
+#price-block .plans--table .table--all-plans .btn.active,
 #price-block .plans--table .table--plane .table--header .btn:hover,
 #price-block .plans--table .table--plane .table--header .btn:active,
 #price-block .plans--table .table--plane .table--header .btn.active {
