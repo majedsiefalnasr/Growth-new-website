@@ -379,7 +379,7 @@ function animation() {
     SUtility.each(document.querySelectorAll('[data-scrolled-into-view]'), function (target) {
       actions();
 
-      document.addEventListener('scroll', (event) => {
+      document.body.addEventListener('scroll', (event) => {
         // Main script
         actions();
       });
@@ -394,7 +394,7 @@ function animation() {
           SUtility.attr(target, 'data-has-intersected', 'false');
 
         if (SUtility.hasAttr(target, 'data-scrolled-past-view'))
-          if (window.scrollY > target.offsetTop + target.offsetHeight)
+          if (document.body.scrollTop > target.offsetTop + target.offsetHeight)
             SUtility.attr(target, 'data-scrolled-past-view', 'true');
           else SUtility.attr(target, 'data-scrolled-past-view', 'false');
       }
@@ -426,7 +426,8 @@ function navbar() {
   scrollAction();
 
   // Actions on scroll
-  document.addEventListener('scroll', (event) => {
+  document.body.addEventListener('scroll', (event) => {
+    console.log('gg');
     scrollAction();
   });
 
@@ -442,7 +443,7 @@ function navbar() {
 
   // Scroll actions
   function scrollAction() {
-    if (window.scrollY == 0) SUtility.removeClass(navbar, 'is-scrolled');
+    if (document.body.scrollTop == 0) SUtility.removeClass(navbar, 'is-scrolled');
     else SUtility.addClass(navbar, 'is-scrolled');
   }
 
@@ -687,7 +688,7 @@ function pricing_plan_switcher_actions() {
     });
 
     // Active on scroll to target
-    document.addEventListener('scroll', (event) => {
+    document.body.addEventListener('scroll', (event) => {
       // Target element
       let target = document.querySelector(SUtility.attr(item, 'href'));
 
