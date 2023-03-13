@@ -407,140 +407,153 @@
               </div>
             </div>
 
-            <!-- Header -->
-            <div class="header mt-5">
-              <h2
-                data-cursor-magnify-sm-inner
-                data-reveal-self="rotate"
-                data-scrolled-into-view="false"
-                data-scrolled-past-view="false">
-                <span> أنشئ حساب جديد </span>
-              </h2>
+            <div class="inner">
+              <!-- Header -->
+              <div class="header mt-5">
+                <h2
+                  data-cursor-magnify-sm-inner
+                  data-reveal-self="rotate"
+                  data-scrolled-into-view="false"
+                  data-scrolled-past-view="false">
+                  <span> أنشئ حساب جديد </span>
+                </h2>
 
-              <div
-                class="text"
-                data-reveal-self="translate-up"
-                data-scrolled-into-view="false"
-                data-scrolled-past-view="false">
-                خطوة واحدة تفصلك لانشاء حسابك المجاني
+                <div
+                  class="text"
+                  data-reveal-self="translate-up"
+                  data-scrolled-into-view="false"
+                  data-scrolled-past-view="false">
+                  خطوة واحدة تفصلك لانشاء حسابك المجاني
+                </div>
               </div>
+
+              <!-- Form -->
+              <form
+                action="#"
+                class="needs-validation"
+                data-validation-page="sign up"
+                data-target="email-password"
+                novalidate>
+                <!-- Selected email -->
+                <div
+                  class="d-flex gap-4 flex-wrap justify-content-between align-items-center"
+                  data-selected-email>
+                  <!-- Email -->
+                  <div data-email>example@email.com</div>
+
+                  <!-- Action -->
+                  <button
+                    class="btn btn-secondary btn-sm"
+                    type="button"
+                    data-action
+                    data-cursor-stick>
+                    تعديل البريد الالكتروني
+                  </button>
+                </div>
+
+                <!-- Content -->
+                <div body>
+                  <!-- Email -->
+                  <div class="email">
+                    <div class="mb-2">
+                      <!-- Input -->
+                      <label for="sign-up-pass" class="form-label"> كلمة المرور </label>
+                      <div
+                        class="position-relative form-control-pass"
+                        data-form-pass
+                        data-form-pass-related="sign-up-pass-repeat">
+                        <input class="form-control" id="sign-up-pass" type="password" required />
+                        <span class="show-pass">
+                          <em class="ph-icon-eye" aria-hidden="true"></em>
+                        </span>
+                      </div>
+
+                      <!-- Password strength -->
+                      <div data-pass-strength="sign-up-pass">
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="0"
+                            aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                        </div>
+
+                        <!-- Note -->
+                        <div class="notes d-none">
+                          <div warning></div>
+                          <ul suggestions></ul>
+                        </div>
+                      </div>
+
+                      <!-- Feedback -->
+                      <div class="feedback" data-feedback data-feedback-target="sign-up-pass">
+                        <!-- Empty state -->
+                        <div data-feedback-empty>
+                          <div class="text-danger">كلمة المرور مطلوبة.</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <!-- Input -->
+                      <label for="sign-up-pass-repeat" class="form-label">
+                        تاكيد كلمة المرور
+                      </label>
+                      <input
+                        class="form-control"
+                        id="sign-up-pass-repeat"
+                        type="password"
+                        required />
+
+                      <!-- Feedback -->
+                      <div
+                        class="feedback"
+                        data-feedback
+                        data-feedback-target="sign-up-pass-repeat">
+                        <!-- Empty state -->
+                        <div data-feedback-empty>
+                          <div class="text-danger">تاكيد كلمة المرور مطلوبة.</div>
+                        </div>
+
+                        <!-- Invalid state -->
+                        <div data-feedback-invalid>
+                          <span class="text-danger"> كلمة المرور غير متطابقة. </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Feedback -->
+                  <div class="feedback" data-feedback></div>
+                </div>
+
+                <!-- Submit -->
+                <div footer>
+                  <!-- Note -->
+                  <div class="note">
+                    <span class="me-1"> بمتابعتك، فإنك توافق على </span>
+                    <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
+                    <span class="mx-1"> و </span>
+                    <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
+                  </div>
+
+                  <!-- submit action -->
+                  <button class="btn btn-primary" type="submit" data-cursor-hidden>
+                    أنشئ حسابك
+                  </button>
+
+                  <!-- Note -->
+                  <div class="note big">
+                    <span class="me-2">لديك حساب بالفعل؟</span>
+                    <a href="#" data-cursor-magnify-sm>
+                      <strong>تسجيل الدخول</strong>
+                    </a>
+                  </div>
+                </div>
+              </form>
             </div>
-
-            <!-- Form -->
-            <form
-              action="#"
-              class="needs-validation"
-              data-validation-page="sign up"
-              data-target="email-password"
-              novalidate>
-              <!-- Selected email -->
-              <div
-                class="d-flex gap-4 flex-wrap justify-content-between align-items-center"
-                data-selected-email>
-                <!-- Email -->
-                <div data-email>example@email.com</div>
-
-                <!-- Action -->
-                <button
-                  class="btn btn-secondary btn-sm"
-                  type="button"
-                  data-action
-                  data-cursor-stick>
-                  تعديل البريد الالكتروني
-                </button>
-              </div>
-
-              <!-- Content -->
-              <div body>
-                <!-- Email -->
-                <div class="email">
-                  <div class="mb-2">
-                    <!-- Input -->
-                    <label for="sign-up-pass" class="form-label"> كلمة المرور </label>
-                    <div
-                      class="position-relative form-control-pass"
-                      data-form-pass
-                      data-form-pass-related="sign-up-pass-repeat">
-                      <input class="form-control" id="sign-up-pass" type="password" required />
-                      <span class="show-pass">
-                        <em class="ph-icon-eye" aria-hidden="true"></em>
-                      </span>
-                    </div>
-
-                    <!-- Password strength -->
-                    <div data-pass-strength="sign-up-pass">
-                      <!-- Progress -->
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          aria-valuenow="0"
-                          aria-valuemin="0"
-                          aria-valuemax="100"></div>
-                      </div>
-
-                      <!-- Note -->
-                      <div class="notes d-none">
-                        <div warning></div>
-                        <ul suggestions></ul>
-                      </div>
-                    </div>
-
-                    <!-- Feedback -->
-                    <div class="feedback" data-feedback data-feedback-target="sign-up-pass">
-                      <!-- Empty state -->
-                      <div data-feedback-empty>
-                        <div class="text-danger">كلمة المرور مطلوبة.</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <!-- Input -->
-                    <label for="sign-up-pass-repeat" class="form-label"> تاكيد كلمة المرور </label>
-                    <input class="form-control" id="sign-up-pass-repeat" type="password" required />
-
-                    <!-- Feedback -->
-                    <div class="feedback" data-feedback data-feedback-target="sign-up-pass-repeat">
-                      <!-- Empty state -->
-                      <div data-feedback-empty>
-                        <div class="text-danger">تاكيد كلمة المرور مطلوبة.</div>
-                      </div>
-
-                      <!-- Invalid state -->
-                      <div data-feedback-invalid>
-                        <span class="text-danger"> كلمة المرور غير متطابقة. </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Feedback -->
-                <div class="feedback" data-feedback></div>
-              </div>
-
-              <!-- Submit -->
-              <div footer>
-                <!-- Note -->
-                <div class="note">
-                  <span class="me-1"> بمتابعتك، فإنك توافق على </span>
-                  <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
-                  <span class="mx-1"> و </span>
-                  <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
-                </div>
-
-                <!-- submit action -->
-                <button class="btn btn-primary" type="submit" data-cursor-hidden>أنشئ حسابك</button>
-
-                <!-- Note -->
-                <div class="note big">
-                  <span class="me-2">لديك حساب بالفعل؟</span>
-                  <a href="#" data-cursor-magnify-sm>
-                    <strong>تسجيل الدخول</strong>
-                  </a>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>

@@ -407,182 +407,186 @@
               </div>
             </div>
 
-            <!-- Header -->
-            <div class="header mt-5">
-              <h2
-                data-cursor-magnify-sm-inner
-                data-reveal-self="rotate"
-                data-scrolled-into-view="false"
-                data-scrolled-past-view="false">
-                <span> أنشئ حساب جديد </span>
-              </h2>
+            <div class="inner">
+              <!-- Header -->
+              <div class="header mt-5">
+                <h2
+                  data-cursor-magnify-sm-inner
+                  data-reveal-self="rotate"
+                  data-scrolled-into-view="false"
+                  data-scrolled-past-view="false">
+                  <span> أنشئ حساب جديد </span>
+                </h2>
 
-              <div
-                class="text"
-                data-reveal-self="translate-up"
-                data-scrolled-into-view="false"
-                data-scrolled-past-view="false">
-                خطوة واحدة تفصلك لانشاء حسابك المجاني
+                <div
+                  class="text"
+                  data-reveal-self="translate-up"
+                  data-scrolled-into-view="false"
+                  data-scrolled-past-view="false">
+                  خطوة واحدة تفصلك لانشاء حسابك المجاني
+                </div>
               </div>
-            </div>
 
-            <!-- Sign in with providers -->
-            <div class="mt-4">
-              <div class="small mb-3">انشاء حسابك باستخدام</div>
+              <!-- Sign in with providers -->
+              <div class="mt-5">
+                <div class="small mb-3">انشاء حسابك باستخدام</div>
 
-              <!-- List -->
-              <div class="providers">
-                <button data-cursor-magnify data-cursor="-reverse">
-                  <img src="../dist/images/forms/apple.svg" alt="Apple" />
-                </button>
-                <button data-cursor-magnify data-cursor="-reverse">
-                  <img src="../dist/images/forms/google.svg" alt="Google" />
-                </button>
-                <button data-cursor-magnify data-cursor="-reverse">
-                  <img src="../dist/images/forms/facebook.svg" alt="Facebook" />
-                </button>
+                <!-- List -->
+                <div class="providers">
+                  <button data-cursor-magnify data-cursor="-reverse">
+                    <img src="../dist/images/forms/apple.svg" alt="Apple" />
+                  </button>
+                  <button data-cursor-magnify data-cursor="-reverse">
+                    <img src="../dist/images/forms/google.svg" alt="Google" />
+                  </button>
+                  <button data-cursor-magnify data-cursor="-reverse">
+                    <img src="../dist/images/forms/facebook.svg" alt="Facebook" />
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Separator -->
-            <span class="separator">
-              <span>او</span>
-            </span>
+              <!-- Separator -->
+              <span class="separator">
+                <span>او</span>
+              </span>
 
-            <!-- Form -->
-            <form
-              action="#"
-              class="needs-validation"
-              data-validation-page="sign up"
-              data-target="email"
-              novalidate>
-              <!-- Content -->
-              <div body>
-                <!-- Actions -->
-                <div class="d-flex gap-2 mb-3" data-action>
+              <!-- Form -->
+              <form
+                action="#"
+                class="needs-validation"
+                data-validation-page="sign up"
+                data-target="email"
+                novalidate>
+                <!-- Content -->
+                <div body>
+                  <!-- Actions -->
+                  <div class="d-flex gap-2 mb-3" data-action>
+                    <!-- Email -->
+                    <button class="btn" type="button" data-cursor-stick email>
+                      البريد الالكتروني
+                    </button>
+
+                    <!-- Phone -->
+                    <button class="btn" type="button" data-cursor-stick phone>رقم الجوال</button>
+                  </div>
+
                   <!-- Email -->
-                  <button class="btn" type="button" data-cursor-stick email>
-                    البريد الالكتروني
+                  <div class="email">
+                    <div>
+                      <!-- Input -->
+                      <input class="form-control" id="sign-up-email" type="email" required />
+
+                      <!-- Feedback -->
+                      <div class="feedback" data-feedback data-feedback-target="sign-up-email">
+                        <!-- Empty state -->
+                        <div data-feedback-empty>
+                          <div class="text-danger">البريد الالكتروني مطلوب لانشاء حساب</div>
+                          <div class="mt-2">
+                            <span>
+                              فى حالة عدم وجود بريد الكتروني, بامكانك استخدام
+                              <a
+                                href="javascript:void(0)"
+                                onclick="document.querySelector('#forms-block [form] form [body] [data-action] [phone]').click();">
+                                رقم الجوال
+                              </a>
+                              لانشاء حساب
+                            </span>
+                          </div>
+                        </div>
+
+                        <!-- Used state -->
+                        <div data-feedback-used>
+                          <span class="text-danger"> البريد الالكتروني مستخدم من قبل. </span>
+
+                          <a href="#"> تسجيل الدخول </a>
+                        </div>
+
+                        <!-- Invalid state -->
+                        <div data-feedback-invalid>
+                          <span class="text-danger">
+                            البريد الالكتروني غير صحيح, تاكد من ادخال بريد الكتروني صحيح.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Phone number -->
+                  <div class="phone">
+                    <div>
+                      <!-- Input -->
+                      <input
+                        class="form-control"
+                        id="sign-up-phone"
+                        type="tel"
+                        autocomplete="tel"
+                        required
+                        disabled />
+
+                      <!-- Feedback -->
+                      <div class="feedback" data-feedback data-feedback-target="sign-up-phone">
+                        <!-- Empty state -->
+                        <div data-feedback-empty>
+                          <div class="text-danger">رقم الجوال مطلوب لانشاء حساب</div>
+                          <div class="mt-2">
+                            <span>
+                              فى حالة عدم وجود رقم للجوال, بامكانك استخدام
+                              <a
+                                href="javascript:void(0)"
+                                onclick="document.querySelector('#forms-block [form] form [body] [data-action] [email]').click();">
+                                البريد الالكتروني
+                              </a>
+                              لانشاء حساب
+                            </span>
+                          </div>
+                        </div>
+
+                        <!-- Used state -->
+                        <div data-feedback-used>
+                          <span class="text-danger"> رقم الجوال مستخدم من قبل. </span>
+
+                          <a href="#"> تسجيل الدخول </a>
+                        </div>
+
+                        <!-- Invalid state -->
+                        <div data-feedback-invalid>
+                          <span class="text-danger">
+                            رقم الجوال غير صحيح, تاكد من ادخال رقم جوال صحيح.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Feedback -->
+                  <div class="feedback" data-feedback></div>
+                </div>
+
+                <!-- Submit -->
+                <div footer>
+                  <!-- Note -->
+                  <div class="note">
+                    <span class="me-1"> بمتابعتك، فإنك توافق على </span>
+                    <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
+                    <span class="mx-1"> و </span>
+                    <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
+                  </div>
+
+                  <!-- submit action -->
+                  <button class="btn btn-primary" type="submit" data-cursor-hidden>
+                    أنشئ حسابك
                   </button>
 
-                  <!-- Phone -->
-                  <button class="btn" type="button" data-cursor-stick phone>رقم الجوال</button>
-                </div>
-
-                <!-- Email -->
-                <div class="email">
-                  <div>
-                    <!-- Input -->
-                    <input class="form-control" id="sign-up-email" type="email" required />
-
-                    <!-- Feedback -->
-                    <div class="feedback" data-feedback data-feedback-target="sign-up-email">
-                      <!-- Empty state -->
-                      <div data-feedback-empty>
-                        <div class="text-danger">البريد الالكتروني مطلوب لانشاء حساب</div>
-                        <div class="mt-2">
-                          <span>
-                            فى حالة عدم وجود بريد الكتروني, بامكانك استخدام
-                            <a
-                              href="javascript:void(0)"
-                              onclick="document.querySelector('#forms-block [form] form [body] [data-action] [phone]').click();">
-                              رقم الجوال
-                            </a>
-                            لانشاء حساب
-                          </span>
-                        </div>
-                      </div>
-
-                      <!-- Used state -->
-                      <div data-feedback-used>
-                        <span class="text-danger"> البريد الالكتروني مستخدم من قبل. </span>
-
-                        <a href="#"> تسجيل الدخول </a>
-                      </div>
-
-                      <!-- Invalid state -->
-                      <div data-feedback-invalid>
-                        <span class="text-danger">
-                          البريد الالكتروني غير صحيح, تاكد من ادخال بريد الكتروني صحيح.
-                        </span>
-                      </div>
-                    </div>
+                  <!-- Note -->
+                  <div class="note big">
+                    <span class="me-2">لديك حساب بالفعل؟</span>
+                    <a href="#" data-cursor-magnify-sm>
+                      <strong>تسجيل الدخول</strong>
+                    </a>
                   </div>
                 </div>
-
-                <!-- Phone number -->
-                <div class="phone">
-                  <div>
-                    <!-- Input -->
-                    <input
-                      class="form-control"
-                      id="sign-up-phone"
-                      type="tel"
-                      autocomplete="tel"
-                      required
-                      disabled />
-
-                    <!-- Feedback -->
-                    <div class="feedback" data-feedback data-feedback-target="sign-up-phone">
-                      <!-- Empty state -->
-                      <div data-feedback-empty>
-                        <div class="text-danger">رقم الجوال مطلوب لانشاء حساب</div>
-                        <div class="mt-2">
-                          <span>
-                            فى حالة عدم وجود رقم للجوال, بامكانك استخدام
-                            <a
-                              href="javascript:void(0)"
-                              onclick="document.querySelector('#forms-block [form] form [body] [data-action] [email]').click();">
-                              البريد الالكتروني
-                            </a>
-                            لانشاء حساب
-                          </span>
-                        </div>
-                      </div>
-
-                      <!-- Used state -->
-                      <div data-feedback-used>
-                        <span class="text-danger"> رقم الجوال مستخدم من قبل. </span>
-
-                        <a href="#"> تسجيل الدخول </a>
-                      </div>
-
-                      <!-- Invalid state -->
-                      <div data-feedback-invalid>
-                        <span class="text-danger">
-                          رقم الجوال غير صحيح, تاكد من ادخال رقم جوال صحيح.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Feedback -->
-                <div class="feedback" data-feedback></div>
-              </div>
-
-              <!-- Submit -->
-              <div footer>
-                <!-- Note -->
-                <div class="note">
-                  <span class="me-1"> بمتابعتك، فإنك توافق على </span>
-                  <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
-                  <span class="mx-1"> و </span>
-                  <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
-                </div>
-
-                <!-- submit action -->
-                <button class="btn btn-primary" type="submit" data-cursor-hidden>أنشئ حسابك</button>
-
-                <!-- Note -->
-                <div class="note big">
-                  <span class="me-2">لديك حساب بالفعل؟</span>
-                  <a href="#" data-cursor-magnify-sm>
-                    <strong>تسجيل الدخول</strong>
-                  </a>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -20,6 +20,7 @@
 }
 #forms-block > *:not(.background) {
   min-height: 100%;
+  flex: 1 0 0%;
   z-index: 1;
 }
 #forms-block > .background > * {
@@ -114,11 +115,15 @@
   height: 2rem;
 }
 #forms-block [form] {
-  padding: 2.5rem 0;
+  padding: 2.5rem 1rem;
 }
 #forms-block [form] > * {
-  position: sticky;
-  top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+#forms-block [form] > * > .inner {
+  margin: auto 0;
 }
 #forms-block [form] .btn:hover {
   transform: none;
@@ -159,7 +164,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin: 2.5rem 0;
+  margin: 3.5rem 0;
   font-weight: 400;
   font-size: 1rem;
   white-space: nowrap;
@@ -360,6 +365,15 @@
   }
   #forms-block > .background > .bg-1 {
     width: 200%;
+  }
+  #forms-block [form] {
+    padding: 2.5rem 1rem;
+  }
+  #forms-block [form] > * {
+    display: block;
+    min-height: unset;
+    position: sticky;
+    top: 2.5rem;
   }
 }
 
