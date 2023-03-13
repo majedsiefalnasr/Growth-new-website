@@ -379,14 +379,24 @@ function animation() {
     SUtility.each(document.querySelectorAll('[data-scrolled-into-view]'), function (target) {
       actions();
 
-      document.addEventListener('scroll', (event) => {
+      // Scroll
+      let scrollEvent = document.addEventListener('scroll', (event) => {
+        // Main script
+        actions();
+      });
+
+      // Resize
+      let resizeEvent = document.addEventListener('resize', (event) => {
         // Main script
         actions();
       });
 
       // Main script
       function actions() {
-        if (SUtility.isPartInViewport(target))
+        if (
+          SUtility.isPartInViewport(target) &&
+          SUtility.attr(target, 'data-scrolled-into-view') == 'false'
+        )
           SUtility.attr(target, 'data-scrolled-into-view', 'true'),
             SUtility.attr(target, 'data-has-intersected', 'true');
 
