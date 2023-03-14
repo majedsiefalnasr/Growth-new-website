@@ -30,7 +30,7 @@
     <meta charset="utf-8" />
 
     <!-- Title -->
-    <title>Growth | Create account</title>
+    <title>Growth | Sign-in account</title>
 
     <!-- #region / Required meta tags -->
     <meta
@@ -417,23 +417,15 @@
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
-                  <span> أنشئ حساب جديد </span>
+                  <span> مرحبًا بعودتك! </span>
                 </h2>
-
-                <div
-                  class="text"
-                  data-reveal-self="translate-up"
-                  data-scrolled-into-view="false"
-                  data-scrolled-past-view="false">
-                  خطوة واحدة تفصلك لانشاء حسابك المجاني
-                </div>
               </div>
 
               <!-- Form -->
               <form
                 action="#"
                 class="needs-validation"
-                data-validation-page="sign up"
+                data-validation-page="sign in"
                 data-target="phone-confirm-code"
                 novalidate>
                 <!-- Selected phone -->
@@ -459,9 +451,9 @@
                   <div class="phone">
                     <div>
                       <!-- Input -->
-                      <label for="sign-up-verify-code" class="form-label mb-0"> رمز التحقق </label>
+                      <label for="sign-in-verify-code" class="form-label mb-0"> رمز التحقق </label>
 
-                      <div verify-code id="sign-up-verify-code" data-form-verify-code>
+                      <div verify-code id="sign-in-verify-code" data-form-verify-code>
                         <input type="number" class="code" min="0" max="9" required />
                         <input type="number" class="code" min="0" max="9" required />
                         <input type="number" class="code" min="0" max="9" required />
@@ -472,7 +464,7 @@
                       <div
                         class="feedback text-center"
                         data-feedback
-                        data-feedback-target="sign-up-verify-code">
+                        data-feedback-target="sign-in-verify-code">
                         <!-- Empty state -->
                         <div data-feedback-empty>
                           <div class="text-danger">رمز التاكيد مطلوب.</div>
@@ -527,24 +519,16 @@
 
                 <!-- Submit -->
                 <div footer>
-                  <!-- Note -->
-                  <div class="note">
-                    <span class="me-1"> بمتابعتك، فإنك توافق على </span>
-                    <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
-                    <span class="mx-1"> و </span>
-                    <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
-                  </div>
-
                   <!-- submit action -->
                   <button class="btn btn-primary" type="submit" data-cursor-hidden>
-                    أنشئ حسابك
+                    تسجيل الدخول
                   </button>
 
                   <!-- Note -->
                   <div class="note big">
-                    <span class="me-2">لديك حساب بالفعل؟</span>
-                    <a href="#" data-cursor-magnify-sm>
-                      <strong>تسجيل الدخول</strong>
+                    <span class="me-2">ليس لديك حساب؟</span>
+                    <a href="./create-account.html" data-cursor-magnify-sm>
+                      <strong>أنشئ حساب</strong>
                     </a>
                   </div>
                 </div>

@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "email": "majedsiefalnasr@outlook.com",
+    "email": "example@email.com",
     "phone": "+201142293292",
-    "pass": "123",
+    "password": "1234",
     "verify_code": "1234"
   }
 ]

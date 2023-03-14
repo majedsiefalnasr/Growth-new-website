@@ -30,7 +30,7 @@
     <meta charset="utf-8" />
 
     <!-- Title -->
-    <title>Growth | Create account</title>
+    <title>Growth | Sign-in account</title>
 
     <!-- #region / Required meta tags -->
     <meta
@@ -417,31 +417,23 @@
                   data-reveal-self="rotate"
                   data-scrolled-into-view="false"
                   data-scrolled-past-view="false">
-                  <span> أنشئ حساب جديد </span>
+                  <span> مرحبًا بعودتك! </span>
                 </h2>
-
-                <div
-                  class="text"
-                  data-reveal-self="translate-up"
-                  data-scrolled-into-view="false"
-                  data-scrolled-past-view="false">
-                  خطوة واحدة تفصلك لانشاء حسابك المجاني
-                </div>
               </div>
 
               <!-- Form -->
               <form
                 action="#"
                 class="needs-validation"
-                data-validation-page="sign up"
-                data-target="phone-confirm-code"
+                data-validation-page="sign in"
+                data-target="email-password"
                 novalidate>
-                <!-- Selected phone -->
+                <!-- Selected email -->
                 <div
                   class="d-flex gap-4 flex-wrap justify-content-between align-items-center"
-                  data-selected-phone>
-                  <!-- Phone -->
-                  <div data-phone class="ltr">+201142293292</div>
+                  data-selected-email>
+                  <!-- Email -->
+                  <div data-email>example@email.com</div>
 
                   <!-- Action -->
                   <button
@@ -449,73 +441,47 @@
                     type="button"
                     data-action
                     data-cursor-stick>
-                    تعديل رقم الجوال
+                    تغيير البريد الالكتروني
                   </button>
                 </div>
 
                 <!-- Content -->
                 <div body>
-                  <!-- Phone -->
-                  <div class="phone">
-                    <div>
+                  <!-- Email -->
+                  <div class="email">
+                    <div class="mb-2">
                       <!-- Input -->
-                      <label for="sign-up-verify-code" class="form-label mb-0"> رمز التحقق </label>
-
-                      <div verify-code id="sign-up-verify-code" data-form-verify-code>
-                        <input type="number" class="code" min="0" max="9" required />
-                        <input type="number" class="code" min="0" max="9" required />
-                        <input type="number" class="code" min="0" max="9" required />
-                        <input type="number" class="code" min="0" max="9" required />
+                      <label for="sign-in-pass" class="form-label"> كلمة المرور </label>
+                      <div class="position-relative form-control-pass" data-form-pass>
+                        <input class="form-control" id="sign-in-pass" type="password" required />
+                        <span class="show-pass">
+                          <em class="ph-icon-eye" aria-hidden="true"></em>
+                        </span>
                       </div>
 
                       <!-- Feedback -->
-                      <div
-                        class="feedback text-center"
-                        data-feedback
-                        data-feedback-target="sign-up-verify-code">
+                      <div class="feedback" data-feedback data-feedback-target="sign-in-pass">
                         <!-- Empty state -->
                         <div data-feedback-empty>
-                          <div class="text-danger">رمز التاكيد مطلوب.</div>
+                          <div class="text-danger">كلمة المرور مطلوبة.</div>
                         </div>
 
                         <!-- Invalid state -->
                         <div data-feedback-invalid>
-                          <div class="text-danger">رمز التاكيد غير صحيح.</div>
-                        </div>
-                      </div>
-                    </div>
+                          <div class="text-danger">
+                            كلمة المرور غير صحيح, تاكد من ادخال كلمة المرور الصحيحة.
+                          </div>
 
-                    <div resend-verify-code class="d-flex flex-column gap-4 mt-4">
-                      <div>
-                        <span class="me-2">لم يصلك رمز التحقق؟ </span>
-                        <span>
-                          اعادة ارسال بعد
+                          <div class="mt-2">
+                            لم يعد بامكانك تذكر كلمة المرور؟
+                            <a href="./create-account.html"> استعادة كلمة المرور </a>
+                          </div>
 
-                          <span countdown-timer="1.5" class="ms-1"></span>
-                        </span>
-                      </div>
-
-                      <div class="d-flex flex-wrap gap-4 align-items-center">
-                        <div>اعادة ارسال رمز التحقق</div>
-
-                        <div class="d-flex gap-2 align-items-center">
-                          <!-- SMS -->
-                          <button
-                            class="btn btn-secondary btn-sm fw-bolder"
-                            type="button"
-                            data-action="SMS"
-                            data-cursor-stick
-                            disabled>
-                            SMS
-                          </button>
-                          <button
-                            class="btn btn-secondary btn-sm fw-bolder"
-                            type="button"
-                            data-action="whatsapp"
-                            data-cursor-stick
-                            disabled>
-                            whatsapp
-                          </button>
+                          <div class="mt-2">
+                            لم يعد بامكاني تسجيل الدخول باستخدام بريدي الالكتروني. استخدم
+                            <a href="./create-account.html"> رقم الجوال </a>
+                            لتسجيل الدخول.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -527,24 +493,16 @@
 
                 <!-- Submit -->
                 <div footer>
-                  <!-- Note -->
-                  <div class="note">
-                    <span class="me-1"> بمتابعتك، فإنك توافق على </span>
-                    <a href="#" data-cursor-magnify-sm> الشروط والأحكام </a>
-                    <span class="mx-1"> و </span>
-                    <a href="#" data-cursor-magnify-sm> سياسة الخصوصية </a>
-                  </div>
-
                   <!-- submit action -->
-                  <button class="btn btn-primary" type="submit" data-cursor-hidden>
-                    أنشئ حسابك
+                  <button class="btn btn-primary" type="submit" data-cursor-hidden="">
+                    تسجيل الدخول
                   </button>
 
                   <!-- Note -->
                   <div class="note big">
-                    <span class="me-2">لديك حساب بالفعل؟</span>
-                    <a href="#" data-cursor-magnify-sm>
-                      <strong>تسجيل الدخول</strong>
+                    <span class="me-2">ليس لديك حساب؟</span>
+                    <a href="./create-account.html" data-cursor-magnify-sm>
+                      <strong>أنشئ حساب</strong>
                     </a>
                   </div>
                 </div>
