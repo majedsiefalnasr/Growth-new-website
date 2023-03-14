@@ -1863,7 +1863,7 @@ function forms() {
         await fetch('../dist/temp/data.json')
           .then((response) => response.json())
           .then((json) => {
-            if (json.find((element) => element.verify_code == verify_code)) code_correct = true;
+            if (json.find((element) => element.verifyCode == verify_code)) code_correct = true;
           });
 
         if (!code_correct) {
@@ -2219,7 +2219,7 @@ function forms() {
         await fetch('../dist/temp/data.json')
           .then((response) => response.json())
           .then((json) => {
-            if (json.find((element) => element.verify_code == verify_code)) code_correct = true;
+            if (json.find((element) => element.verifyCode == verify_code)) code_correct = true;
           });
 
         if (!code_correct) {

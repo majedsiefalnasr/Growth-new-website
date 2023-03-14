@@ -4,6 +4,6 @@
     "email": "example@email.com",
     "phone": "+201142293292",
     "password": "1234",
-    "verify_code": "1234"
+    "verifyCode": "1234"
   }
 ]
