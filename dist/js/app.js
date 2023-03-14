@@ -1366,8 +1366,8 @@ function HC_Sticky() {
   if (HC_Sticky_containers) {
     // Loop all HC Sticky
     SUtility.each(HC_Sticky_containers, (container) => {
-      let HC_Sticky_top = SUtility.attr(container, 'data-HC-Sticky-top') || 0,
-        HC_Sticky_bottom = SUtility.attr(container, 'data-HC-Sticky-bottom') || 0,
+      let HC_Sticky_top = SUtility.attr(container, 'data-HC-Sticky-top') || 40,
+        HC_Sticky_bottom = SUtility.attr(container, 'data-HC-Sticky-bottom') || 40,
         HC_Sticky_innerTop = SUtility.attr(container, 'data-HC-Sticky-innerTop') || 0,
         HC_Sticky_bottomEnd = SUtility.attr(container, 'data-HC-Sticky-bottomEnd') || 0,
         HC_Sticky_disable = SUtility.hasAttr(container, 'data-HC-Sticky-disable') || false,
@@ -1398,7 +1398,7 @@ function HC_Sticky() {
         // Classname of wrapper
         // wrapperClassName: 'wrapper-sticky',
         // Element that represents the reference for height instead of height of the container. recalculate
-        // stickTo: null,
+        // stickTo: container.parentNode,
         // Object containing responsive breakpoints
         responsive: {
           576: {
