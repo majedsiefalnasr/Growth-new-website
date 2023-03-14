@@ -1379,6 +1379,9 @@ function forms() {
     // Countdown Timer helper
     countdown_timer(document.querySelector('[countdown-timer]'));
 
+    // Sign in/up selected email/phone
+    sign_in_up_selected_email_phone(forms_container);
+
     // Check form validity on form submit
     form_validation_helper(forms_container);
   }
@@ -2464,5 +2467,87 @@ function forms() {
       //subtract one second from secondsRemaining
       return secondsRemaining--;
     }, 1000);
+  }
+
+  // Sign in/up selected email/phone
+  function sign_in_up_selected_email_phone(forms_container) {
+    // Check page / Sign Up
+    if (SUtility.attr(forms_container, 'data-validation-page') == 'sign up')
+      sign_up_selected_email_phone(forms_container);
+    // Check page / Sign In
+    if (SUtility.attr(forms_container, 'data-validation-page') == 'sign in')
+      sign_in_selected_email_phone(forms_container);
+  }
+
+  // Sign in selected email/phone
+  function sign_in_selected_email_phone(forms_container) {
+    let selected_email_container = forms_container.querySelector('[data-selected-email]'),
+      selected_phone_container = forms_container.querySelector('[data-selected-phone]');
+
+    // Check if email selected exist
+    if (selected_email_container) {
+      let email_container = selected_email_container.querySelector('[data-email]'),
+        change_action = selected_email_container.querySelector('[data-action]');
+
+      // Set email
+      // Get email from previous step
+
+      // Change email action
+      SUtility.addEvent(change_action, 'click', () => {
+        // Back to previous step with current email
+        window.location.replace('./signin-account.html');
+      });
+    }
+
+    // Check if phone selected exist
+    if (selected_phone_container) {
+      let phone_container = selected_phone_container.querySelector('[data-email]'),
+        change_action = selected_phone_container.querySelector('[data-action]');
+
+      // Set phone
+      // Get phone from previous step
+
+      // Change phone action
+      SUtility.addEvent(change_action, 'click', () => {
+        // Back to previous step with current email
+        window.location.replace('./signin-account.html');
+      });
+    }
+  }
+
+  // Sign up selected email/phone
+  function sign_up_selected_email_phone(forms_container) {
+    let selected_email_container = forms_container.querySelector('[data-selected-email]'),
+      selected_phone_container = forms_container.querySelector('[data-selected-phone]');
+
+    // Check if email selected exist
+    if (selected_email_container) {
+      let email_container = selected_email_container.querySelector('[data-email]'),
+        change_action = selected_email_container.querySelector('[data-action]');
+
+      // Set email
+      // Get email from previous step
+
+      // Change email action
+      SUtility.addEvent(change_action, 'click', () => {
+        // Back to previous step with current email
+        window.location.replace('./create-account.html');
+      });
+    }
+
+    // Check if phone selected exist
+    if (selected_phone_container) {
+      let phone_container = selected_phone_container.querySelector('[data-email]'),
+        change_action = selected_phone_container.querySelector('[data-action]');
+
+      // Set phone
+      // Get phone from previous step
+
+      // Change phone action
+      SUtility.addEvent(change_action, 'click', () => {
+        // Back to previous step with current email
+        window.location.replace('./create-account.html');
+      });
+    }
   }
 }
