@@ -395,10 +395,7 @@
     padding: 2.5rem 1rem;
   }
   #forms-block [form] > * {
-    display: block;
     min-height: unset;
-    position: sticky;
-    top: 2.5rem;
   }
 }
 
