@@ -2994,6 +2994,10 @@ function restore_account() {
         navigator_main(container);
         break;
 
+      case 'email':
+        navigator_email(container);
+        break;
+
       default:
         break;
     }
@@ -3005,37 +3009,74 @@ function restore_account() {
     var restore_options = container.querySelectorAll('[name="restore-main"]');
 
     // Check options exist
-    if (restore_options) {
-      // Get actions
-      let submit_action = container.querySelector('#buttonRestoreSubmit'),
-        cancel_action = container.querySelector('#buttonRestoreCancel');
+    if (!restore_options) return;
 
-      // Submit action
-      SUtility.addEvent(submit_action, 'click', () => {
-        // Get active option
-        let active_option;
-        SUtility.each(restore_options, (option) => {
-          if (option.checked) active_option = option;
-        });
+    // Get actions
+    let submit_action = container.querySelector('#buttonRestoreSubmit'),
+      cancel_action = container.querySelector('#buttonRestoreCancel');
 
-        // Get restore data option
-        let data_restore_option = SUtility.attr(active_option, 'data-restore-option');
-
-        // Check data restore option
-        if (data_restore_option == 'email') window.location.href = './restore-account-email.html';
-        if (data_restore_option == 'phone')
-          window.location.href = './restore-account-identity-questions.html';
+    // Submit action
+    SUtility.addEvent(submit_action, 'click', () => {
+      // Get active option
+      let active_option;
+      SUtility.each(restore_options, (option) => {
+        if (option.checked) active_option = option;
       });
 
-      // Cancel action
-      SUtility.addEvent(cancel_action, 'click', () => {
-        // Navigate to Home page
-        // console.log(window.location.origin);
-        // console.log(window.location.host);
-        // console.log(window.location.pathname);
-        // console.log(window.location.pathname.split('/'));
-        window.location.href = window.location.origin;
+      // Get restore data option
+      let data_restore_option = SUtility.attr(active_option, 'data-restore-option');
+
+      // Check data restore option
+      if (data_restore_option == 'email') window.location.href = './restore-account-email.html';
+      if (data_restore_option == 'phone')
+        window.location.href = './restore-account-identity-questions.html';
+    });
+
+    // Cancel action
+    SUtility.addEvent(cancel_action, 'click', () => {
+      // Navigate to Home page
+      // console.log(window.location.origin);
+      // console.log(window.location.host);
+      // console.log(window.location.pathname);
+      // console.log(window.location.pathname.split('/'));
+      window.location.href = window.location.origin;
+    });
+  }
+
+  // Navigator email
+  function navigator_email(container) {
+    // Get options
+    var restore_options = container.querySelectorAll('[name="restore-email"]');
+
+    // Check options exist
+    if (!restore_options) return;
+
+    // Get actions
+    let submit_action = container.querySelector('#buttonRestoreSubmit'),
+      back_action = container.querySelector('#buttonRestoreBack');
+
+    // Submit action
+    SUtility.addEvent(submit_action, 'click', () => {
+      // Get active option
+      let active_option;
+      SUtility.each(restore_options, (option) => {
+        if (option.checked) active_option = option;
       });
-    }
+
+      // Get restore data option
+      let data_restore_option = SUtility.attr(active_option, 'data-restore-option');
+
+      // Check data restore option
+      if (data_restore_option == 'email-access')
+        window.location.href = './restore-account-identity-questions.html';
+      if (data_restore_option == 'email-password')
+        window.location.href = './restore-account-password.html';
+    });
+
+    // Back action
+    SUtility.addEvent(back_action, 'click', () => {
+      // Navigate to back
+      window.location.href = './restore-account.html';
+    });
   }
 }
