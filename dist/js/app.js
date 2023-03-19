@@ -1481,7 +1481,7 @@ function forms() {
     password_toggler();
 
     // Verify code helper
-    verify_code_helper();
+    verify_code_helper(forms_container);
 
     // Countdown Timer helper
     countdown_timer(document.querySelector('[countdown-timer]'));
@@ -2411,94 +2411,6 @@ function forms() {
     });
   }
 
-  // Verify code helper
-  function verify_code_helper() {
-    let verify_code_container = document.querySelector('[verify-code]');
-
-    // Check if required
-    if (!verify_code_container) return;
-
-    // Loop all inputs
-    let verify_code_list = verify_code_container.querySelectorAll('input.code');
-    SUtility.each(verify_code_list, (input, index) => {
-      // Change focus to first empty input
-      input.addEventListener('focusin', () => {
-        if (input.value == '')
-          if (verify_code_list[index - 1] && verify_code_list[index - 1].value == '')
-            verify_code_list[index - 1].focus();
-      });
-
-      // Change focus on keydown
-      input.addEventListener('keydown', (e) => {
-        if (e.key >= 0 && e.key <= 9) {
-          input.value = '';
-          if (verify_code_list[index + 1])
-            setTimeout(() => {
-              verify_code_list[index + 1].focus();
-            }, 10);
-        } else if (e.key === 'Backspace') {
-          input.value = '';
-          if (verify_code_list[index - 1])
-            setTimeout(() => {
-              verify_code_list[index - 1].focus();
-            }, 10);
-        }
-      });
-    });
-  }
-
-  // Countdown Timer helper
-  function countdown_timer(timer_el) {
-    // Check if required
-    if (!timer_el) return;
-
-    let timer = 0,
-      intervalHandle = void 0,
-      secondsRemaining = void 0;
-
-    // Get timer from data attribute if timer is empty
-    if (!timer) timer = SUtility.attr(timer_el, 'countdown-timer');
-
-    // Check if timer presented
-    if (!timer) return;
-
-    //check to make sure the value is a number
-    if (isNaN(timer)) return;
-    //how many seconds remaining?
-    secondsRemaining = timer * 60;
-    //every second, call the "tick" function
-
-    intervalHandle = setInterval(() => {
-      //convert seconds into mm:ss
-      let min = Math.floor(secondsRemaining / 60),
-        sec = secondsRemaining - min * 60;
-
-      //add a leading zero (as a string value) if sec is less than 10
-      if (sec < 10) {
-        sec = '0' + sec;
-      }
-      //concatenate min and sec with a colon
-      let message = min.toString() + ':' + sec;
-      //display the concatenated result
-      timer_el.innerHTML = message;
-
-      //stop if down to zero
-      if (secondsRemaining === 0) {
-        // Clear interval
-        clearInterval(intervalHandle);
-
-        // Enable actions
-        let SMS = document.querySelector('[data-action="SMS"]'),
-          whatsapp = document.querySelector('[data-action="whatsapp"]');
-
-        SUtility.removeAttr(SMS, 'disabled');
-        SUtility.removeAttr(whatsapp, 'disabled');
-      }
-      //subtract one second from secondsRemaining
-      return secondsRemaining--;
-    }, 1000);
-  }
-
   // Sign in/up selected email/phone
   function sign_in_up_selected_email_phone(forms_container) {
     // Check page / Sign Up
@@ -2580,6 +2492,115 @@ function forms() {
       });
     }
   }
+}
+
+//    _____                  _      _
+//   / ____|                | |    | |
+//  | |     ___  _   _ _ __ | |_ __| | _____      ___ __
+//  | |    / _ \| | | | '_ \| __/ _` |/ _ \ \ /\ / / '_ \
+//  | |___| (_) | |_| | | | | || (_| | (_) \ V  V /| | | |
+//   \_____\___/ \__,_|_| |_|\__\__,_|\___/ \_/\_/ |_| |_|
+//  |__   __(_)                     | |        | |
+//     | |   _ _ __ ___   ___ _ __  | |__   ___| |_ __   ___ _ __
+//     | |  | | '_ ` _ \ / _ \ '__| | '_ \ / _ \ | '_ \ / _ \ '__|
+//     | |  | | | | | | |  __/ |    | | | |  __/ | |_) |  __/ |
+//     |_|  |_|_| |_| |_|\___|_|    |_| |_|\___|_| .__/ \___|_|
+//                                               | |
+//                                               |_|
+// Countdown Timer helper
+function countdown_timer(timer_el) {
+  // Check if required
+  if (!timer_el) return;
+
+  let timer = 0,
+    intervalHandle = void 0,
+    secondsRemaining = void 0;
+
+  // Get timer from data attribute if timer is empty
+  if (!timer) timer = SUtility.attr(timer_el, 'countdown-timer');
+
+  // Check if timer presented
+  if (!timer) return;
+
+  //check to make sure the value is a number
+  if (isNaN(timer)) return;
+  //how many seconds remaining?
+  secondsRemaining = timer * 60;
+  //every second, call the "tick" function
+
+  intervalHandle = setInterval(() => {
+    //convert seconds into mm:ss
+    let min = Math.floor(secondsRemaining / 60),
+      sec = secondsRemaining - min * 60;
+
+    //add a leading zero (as a string value) if sec is less than 10
+    if (sec < 10) {
+      sec = '0' + sec;
+    }
+    //concatenate min and sec with a colon
+    let message = min.toString() + ':' + sec;
+    //display the concatenated result
+    timer_el.innerHTML = message;
+
+    //stop if down to zero
+    if (secondsRemaining === 0) {
+      // Clear interval
+      clearInterval(intervalHandle);
+
+      // Enable actions
+      let SMS = document.querySelector('[data-action="SMS"]'),
+        whatsapp = document.querySelector('[data-action="whatsapp"]');
+
+      SUtility.removeAttr(SMS, 'disabled');
+      SUtility.removeAttr(whatsapp, 'disabled');
+    }
+    //subtract one second from secondsRemaining
+    return secondsRemaining--;
+  }, 1000);
+}
+
+//  __      __       _  __                       _        _          _
+//  \ \    / /      (_)/ _|                     | |      | |        | |
+//   \ \  / /__ _ __ _| |_ _   _    ___ ___   __| | ___  | |__   ___| |_ __   ___ _ __
+//    \ \/ / _ \ '__| |  _| | | |  / __/ _ \ / _` |/ _ \ | '_ \ / _ \ | '_ \ / _ \ '__|
+//     \  /  __/ |  | | | | |_| | | (_| (_) | (_| |  __/ | | | |  __/ | |_) |  __/ |
+//      \/ \___|_|  |_|_|  \__, |  \___\___/ \__,_|\___| |_| |_|\___|_| .__/ \___|_|
+//                          __/ |                                     | |
+//                         |___/                                      |_|
+// Verify code helper
+function verify_code_helper(container) {
+  let verify_code_container = container.querySelector('[verify-code]');
+
+  // Check if required
+  if (!verify_code_container) return;
+
+  // Loop all inputs
+  let verify_code_list = verify_code_container.querySelectorAll('input.code');
+  SUtility.each(verify_code_list, (input, index) => {
+    // Change focus to first empty input
+    input.addEventListener('focusin', () => {
+      if (input.value == '')
+        if (verify_code_list[index - 1] && verify_code_list[index - 1].value == '')
+          verify_code_list[index - 1].focus();
+    });
+
+    // Change focus on keydown
+    input.addEventListener('keydown', (e) => {
+      if (e.key >= 0 && e.key <= 9) {
+        input.value = '';
+        if (verify_code_list[index + 1])
+          setTimeout(() => {
+            verify_code_list[index + 1].focus();
+          }, 10);
+      } else if (e.key === 'Backspace') {
+        input.value = '';
+        if (verify_code_list[index - 1])
+          setTimeout(() => {
+            verify_code_list[index - 1].focus();
+          }, 10);
+      }
+    });
+  });
 }
 
 //   _____                                    _       _                        _   _
@@ -3002,6 +3023,10 @@ function restore_account() {
         navigator_identity_questions(container);
         break;
 
+      case 'reset password':
+        navigator_reset_password(container);
+        break;
+
       default:
         break;
     }
@@ -3180,6 +3205,126 @@ function restore_account() {
             }
           });
       }
+    });
+
+    // Back action
+    SUtility.addEvent(back_action, 'click', () => {
+      // Navigate to back
+      window.location.href = './restore-account-email.html';
+    });
+  }
+
+  // Navigator reset password
+  function navigator_reset_password(container) {
+    // Get questions
+    var restore_reset_password = container.querySelector('.restore-pass-code');
+
+    // Check questions exist
+    if (!restore_reset_password) return;
+
+    // Get actions
+    let submit_action = container.querySelector('#buttonRestoreSubmit'),
+      back_action = container.querySelector('#buttonRestoreBack');
+
+    // Countdown Timer helper
+    countdown_timer(container.querySelector('[countdown-timer]'));
+
+    // Verify code helper
+    verify_code_helper(container);
+
+    // Submit action
+    SUtility.addEvent(submit_action, 'click', () => {
+      let restore_account_pass_code_container = container.querySelector(
+          '#restore-account-pass-verify-code'
+        ),
+        restore_account_pass_code =
+          restore_account_pass_code_container.querySelectorAll('input.code'),
+        restore_account_pass_code_feedback = document.querySelector(
+          '[data-feedback-target="restore-account-pass-verify-code"]'
+        ),
+        feedback_empty = restore_account_pass_code_feedback.querySelector('[data-feedback-empty]'),
+        feedback_invalid =
+          restore_account_pass_code_feedback.querySelector('[data-feedback-invalid]'),
+        state = 'empty';
+
+      // Check if any input is empty
+      let empty_code = false;
+      SUtility.each(restore_account_pass_code, (input) => {
+        if (input.value == '') empty_code = true;
+      });
+
+      // If their is an empty input
+      if (empty_code) {
+        // Focus input
+        restore_account_pass_code[restore_account_pass_code.length - 1].focus();
+        restore_account_pass_code[restore_account_pass_code.length - 1].select();
+        // Set validation focus
+        SUtility.each(restore_account_pass_code, (input) => {
+          SUtility.addClass(input, 'is-invalid');
+        });
+
+        // Set state
+        state = 'empty';
+
+        // Clear feedback
+        SUtility.each(restore_account_pass_code_feedback.children, (child) => {
+          SUtility.removeClass(child, 'active');
+        });
+        // View current feedback
+        SUtility.addClass(feedback_empty, 'active');
+      } else {
+        // Get verify code
+        let verify_code = '';
+        SUtility.each(restore_account_pass_code, (input) => {
+          verify_code += input.value;
+        });
+
+        // Check if correct
+        let code_correct = false;
+        // This an ajax request
+        fetch('../dist/temp/data.json')
+          .then((response) => response.json())
+          .then((json) => {
+            if (json.find((element) => element.verifyCode == verify_code)) code_correct = true;
+
+            console.log(code_correct);
+
+            if (!code_correct) {
+              console.log(code_correct);
+
+              // Focus input
+              restore_account_pass_code[0].focus();
+              restore_account_pass_code[0].select();
+              // Set validation focus
+              SUtility.each(restore_account_pass_code, (input) => {
+                SUtility.addClass(input, 'is-invalid');
+              });
+
+              // Set state
+              state = 'invalid';
+
+              // Clear feedback
+              SUtility.each(restore_account_pass_code_feedback.children, (child) => {
+                SUtility.removeClass(child, 'active');
+              });
+              // View current feedback
+              SUtility.addClass(feedback_invalid, 'active');
+            } else {
+              // Verify code is correct
+              // Create new account and go to check code page
+              window.location.replace('./restore-account-password-set.html');
+              // Clear state
+              state = '';
+              // Clear feedback
+              SUtility.each(restore_account_pass_code_feedback.children, (child) => {
+                SUtility.removeClass(child, 'active');
+              });
+            }
+          });
+      }
+
+      // Set feedback state
+      SUtility.attr(restore_account_pass_code_feedback, 'data-feedback', state);
     });
 
     // Back action
