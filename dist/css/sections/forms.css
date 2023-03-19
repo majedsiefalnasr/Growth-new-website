@@ -39,9 +39,9 @@
   z-index: -1;
 }
 #forms-block > .background > .bg-1 {
-  width: 300%;
   top: 0;
   left: 50%;
+  width: 100%;
   transform: translateX(-50%) translateY(-50%);
 }
 #forms-block > .background > .bg-dotted {
@@ -436,9 +436,6 @@
   #forms-block [text] h1 {
     font-size: 3.5rem;
   }
-  #forms-block > .background > .bg-1 {
-    width: 200%;
-  }
   #forms-block [form] {
     padding: 2.5rem 1rem;
   }
@@ -458,9 +455,6 @@
 @media (min-width: 1400px) {
   #forms-block [text] h1 {
     font-size: 3.5rem;
-  }
-  #forms-block > .background > .bg-1 {
-    width: 100%;
   }
 }
 /* #endregion */
