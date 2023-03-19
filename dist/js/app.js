@@ -2998,6 +2998,10 @@ function restore_account() {
         navigator_email(container);
         break;
 
+      case 'identity questions':
+        identity_questions(container);
+        break;
+
       default:
         break;
     }
@@ -3077,6 +3081,111 @@ function restore_account() {
     SUtility.addEvent(back_action, 'click', () => {
       // Navigate to back
       window.location.href = './restore-account.html';
+    });
+  }
+
+  // Identity questions
+  function identity_questions(container) {
+    // Get questions
+    var restore_questions = container.querySelectorAll('.restore-questions-list input');
+
+    // Check questions exist
+    if (!restore_questions) return;
+
+    // Get actions
+    let submit_action = container.querySelector('#buttonRestoreSubmit'),
+      back_action = container.querySelector('#buttonRestoreBack');
+
+    // Alert
+    let alert_container = container.querySelector('.restore-questions-list .alert'),
+      alert_number = container.querySelector('.restore-questions-list .alert [value]'),
+      alert_value = 3;
+
+    // Submit action
+    SUtility.addEvent(submit_action, 'click', () => {
+      // Check if alert enabled
+      if (alert_value <= 0) {
+        // Disable submit action
+        SUtility.attr(submit_action, 'disabled', '');
+        alert_number.innerHTML = alert_value;
+        return;
+      }
+
+      // Get all inputs
+      let q1 = container.querySelector('#restore-questions-1'),
+        q1_feedback = container.querySelector('[data-feedback-target="restore-questions-1"]'),
+        q2 = container.querySelector('#restore-questions-2'),
+        q2_feedback = container.querySelector('[data-feedback-target="restore-questions-2"]'),
+        q3 = container.querySelector('#restore-questions-3'),
+        q3_feedback = container.querySelector('[data-feedback-target="restore-questions-3"]');
+
+      // Check feedback
+      // Q1
+      if (q1.value == '') {
+        SUtility.addClass(q1, 'is-invalid');
+        SUtility.attr(q1_feedback, 'data-feedback', 'empty');
+      } else {
+        SUtility.removeClass(q1, 'is-invalid');
+        SUtility.attr(q1_feedback, 'data-feedback', '');
+      }
+      // Q2
+      if (q2.value == '') {
+        SUtility.addClass(q2, 'is-invalid');
+        SUtility.attr(q2_feedback, 'data-feedback', 'empty');
+      } else {
+        SUtility.removeClass(q2, 'is-invalid');
+        SUtility.attr(q2_feedback, 'data-feedback', '');
+      }
+      // Q3
+      if (q3.value == '') {
+        SUtility.addClass(q3, 'is-invalid');
+        SUtility.attr(q3_feedback, 'data-feedback', 'empty');
+      } else {
+        SUtility.removeClass(q3, 'is-invalid');
+        SUtility.attr(q3_feedback, 'data-feedback', '');
+      }
+
+      // Focus input on error
+      if (q1.value == '') q1.focus();
+      else if (q2.value == '') q2.focus();
+      else if (q3.value == '') q3.focus();
+
+      // Check data restore option
+      if (q1.value != '' && q2.value != '' && q3.value != '') {
+        // This an ajax request
+        fetch('../dist/temp/data.json')
+          .then((response) => response.json())
+          .then((json) => {
+            // Check question values
+            if (
+              json.find((element) => element.QUESTIONS.Q1 == q1.value) &&
+              json.find((element) => element.QUESTIONS.Q2 == q2.value) &&
+              json.find((element) => element.QUESTIONS.Q3 == q3.value)
+            )
+              window.location.href = './restore-account-new-signin.html';
+            else {
+              // View alert
+              SUtility.removeClass(alert_container, 'd-none');
+              // Set alert number
+              alert_number.innerHTML = alert_value;
+              alert_value--;
+
+              // Select first input
+              q1.select();
+
+              // Set invalid to inputs
+              SUtility.addClass(q1, 'is-invalid');
+              SUtility.addClass(q2, 'is-invalid');
+              SUtility.addClass(q3, 'is-invalid');
+            }
+          });
+      }
+    });
+
+    // Back action
+    SUtility.addEvent(back_action, 'click', () => {
+      // Navigate to back
+      window.location.href = './restore-account-email.html';
     });
   }
 }
