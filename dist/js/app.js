@@ -2999,11 +2999,7 @@ function restore_account() {
         break;
 
       case 'identity questions':
-<<<<<<< HEAD
         navigator_identity_questions(container);
-=======
-        identity_questions(container);
->>>>>>> 4e78fa969606c09deeef8270ba77f79992420b8f
         break;
 
       default:
@@ -3088,13 +3084,8 @@ function restore_account() {
     });
   }
 
-<<<<<<< HEAD
   // Navigator identity questions
   function navigator_identity_questions(container) {
-=======
-  // Identity questions
-  function identity_questions(container) {
->>>>>>> 4e78fa969606c09deeef8270ba77f79992420b8f
     // Get questions
     var restore_questions = container.querySelectorAll('.restore-questions-list input');
 
