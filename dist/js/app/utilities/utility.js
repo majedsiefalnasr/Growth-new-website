@@ -8,7 +8,6 @@
 //  |_____/|_| |_|\__,_|\__,_|\___/ \_/\_/    \____/ \__|_|_|_|\__|\__, |
 //                                                                  __/ |
 //                                                                 |___/
-
 // Shadow Utility
 export var SUtility = (function () {
   return {
