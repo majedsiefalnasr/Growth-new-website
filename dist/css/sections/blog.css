@@ -561,14 +561,16 @@
     transform: translateY(-50%) !important;
   }
   .blog--hero-list .splide__arrow--prev {
-    left: 0 !important;
+    left: 1rem !important;
+    right: unset !important;
   }
   .blog--hero-list .splide__arrows--rtl .splide__arrow--prev {
     left: auto !important;
     right: -1.5rem !important;
   }
   .blog--hero-list .splide__arrow--next {
-    right: 0 !important;
+    right: 1rem !important;
+    left: unset !important;
   }
   .blog--hero-list .splide__arrows--rtl .splide__arrow--next {
     right: auto !important;
