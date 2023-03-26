@@ -30,4 +30,11 @@ export var pages = async function () {
     import('./help-center/help_center.js')
       .then(({ help_center }) => help_center())
       .catch((err) => console.log('error:', err));
+
+  // Pricing page
+  // Load script only on needed
+  document.body.getAttribute('data-page') == 'pricing' &&
+    import('./pricing/pricing.js')
+      .then(({ pricing }) => pricing())
+      .catch((err) => console.log('error:', err));
 };

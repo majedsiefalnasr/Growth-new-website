@@ -12,15 +12,6 @@ import { utilities } from './app/utilities/utilities.js';
 // Pages
 import { pages } from './app/pages/pages.js';
 
-// Pricing switcher
-import { pricing_switcher_actions } from './app/pricing_switcher_actions.js';
-
-// Pricing plan mobile switcher
-import { pricing_plan_switcher_actions } from './app/pricing_plan_switcher_actions.js';
-
-// Pricing accordion mobile
-import { pricing_accordion_mobile } from './app/pricing_accordion_mobile.js';
-
 // Forms
 import { forms } from './app/forms.js';
 
@@ -51,15 +42,6 @@ SUtility.onDOMContentLoaded(() => {
 
   // Pages
   pages();
-
-  // Pricing switcher
-  pricing_switcher_actions();
-
-  // Pricing plan mobile switcher
-  pricing_plan_switcher_actions();
-
-  // Pricing accordion mobile
-  pricing_accordion_mobile();
 
   // Password input strength checker
   // Load only on needed
