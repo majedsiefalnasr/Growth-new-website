@@ -12,12 +12,6 @@ import { utilities } from './app/utilities/utilities.js';
 // Pages
 import { pages } from './app/pages/pages.js';
 
-// Forms
-import { forms } from './app/forms.js';
-
-// Restore account
-import { restore_account } from './app/restore_account.js';
-
 //    _____                   _   _
 //   / ____|                 | | | |
 //  | |  __ _ __ _____      _| |_| |__
@@ -42,7 +36,4 @@ SUtility.onDOMContentLoaded(() => {
 
   // Pages
   pages();
-
-  // Restore account
-  restore_account();
 });
