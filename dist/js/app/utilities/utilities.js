@@ -65,4 +65,25 @@ export var utilities = async function () {
     import('./password_strength_checker.js')
       .then(({ password_strength_checker }) => password_strength_checker())
       .catch((err) => console.log('error:', err));
+
+  // Password input view
+  // Load script only on needed
+  document.querySelector('[data-form-pass]') &&
+    import('./password_input_view.js')
+      .then(({ password_input_view }) => password_input_view())
+      .catch((err) => console.log('error:', err));
+
+  // Phone countries dropdown input
+  // Load script only on needed
+  document.querySelector('[data-form-phone]') &&
+    import('./phone_countries_dropdown_input.js')
+      .then(({ phone_countries_dropdown_input }) => phone_countries_dropdown_input())
+      .catch((err) => console.log('error:', err));
+
+  // Verify phone code
+  // Load script only on needed
+  document.querySelector('[verify-code]') &&
+    import('./verify_phone_code.js')
+      .then(({ verify_phone_code }) => verify_phone_code())
+      .catch((err) => console.log('error:', err));
 };

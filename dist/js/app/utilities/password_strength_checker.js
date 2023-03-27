@@ -1,10 +1,10 @@
 ('use strict');
 
 // zxcvbn@v4.4.2
-// Local call (Server-side):               url => '../../package/zxcvbn/v4.4.2/zxcvbn.min.jc'
+// Local call (Server-side):               url => '../../package/zxcvbn/v4.4.2/zxcvbn.min.js'
 // Pinned URL (Optimized for Production):  url => 'https://cdn.skypack.dev/pin/zxcvbn@v4.4.2-VmKv93IldtowCOoHi1aX/mode=imports,min/optimized/zxcvbn.js'
 // Default (Not good for Production):      url => 'https://cdn.skypack.dev/zxcvbn@4.4.2'
-import zxcvbn from '../../package/zxcvbn/v4.4.2/zxcvbn.min.jc';
+import zxcvbn from '../../package/zxcvbn/v4.4.2/zxcvbn.min.js';
 
 // Utilities
 import { SUtility } from './utility.js';

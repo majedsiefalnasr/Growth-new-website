@@ -43,16 +43,6 @@ SUtility.onDOMContentLoaded(() => {
   // Pages
   pages();
 
-  // Password input strength checker
-  // Load only on needed
-  document.querySelector('[data-pass-strength]') &&
-    import('./app/password_strength_checker.js')
-      .then(({ password_strength_checker }) => password_strength_checker())
-      .catch((err) => console.log('error:', err));
-
-  // Forms
-  forms();
-
   // Restore account
   restore_account();
 });

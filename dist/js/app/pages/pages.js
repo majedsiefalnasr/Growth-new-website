@@ -37,4 +37,11 @@ export var pages = async function () {
     import('./pricing/pricing.js')
       .then(({ pricing }) => pricing())
       .catch((err) => console.log('error:', err));
+
+  // Forms pages
+  // Load script only on needed
+  document.body.getAttribute('data-page') == 'form' &&
+    import('./forms/forms.js')
+      .then(({ forms }) => forms())
+      .catch((err) => console.log('error:', err));
 };
