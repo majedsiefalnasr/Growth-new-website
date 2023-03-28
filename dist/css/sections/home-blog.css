@@ -1,0 +1,77 @@
+/* #region / Partners */
+/*   ____  _             
+/*  |  _ \| |            
+/*  | |_) | | ___   __ _ 
+/*  |  _ <| |/ _ \ / _` |
+/*  | |_) | | (_) | (_| |
+/*  |____/|_|\___/ \__, |
+/*                  __/ |
+/*                 |___/  */
+/* -----------------------------------------------
+  Blog - home screen
+-------------------------------------------------*/
+
+#blog-block {
+  position: relative;
+  margin-bottom: 8.75rem;
+  z-index: 0;
+}
+#blog-block > *:not(.background) {
+  z-index: 1;
+}
+#partners-block .header {
+  margin-bottom: 5rem;
+}
+#blog-block .header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-500);
+  margin-bottom: 1.25rem;
+}
+#blog-block .header .subtitle {
+  font-size: 1.25rem;
+}
+.blog--hero-list .content > .item > .content .header {
+  margin-bottom: 0 !important;
+}
+
+/* Responsiveness */
+/******************* */
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #blog-block .header h2 {
+    font-size: 2.5rem;
+  }
+  #blog-block .header .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #blog-block {
+    margin-bottom: 12.5rem;
+  }
+  #blog-block .header {
+    margin-bottom: 7.5rem;
+  }
+  #blog-block .header h2 {
+    font-size: 3rem;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+/* #endregion */

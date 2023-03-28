@@ -46,6 +46,7 @@
 @import url('./sections/footer-cta.css'); /* Footer CAT */
 @import url('./sections/footer.css'); /* Footer */
 @import url('./sections/404.css'); /* Error 404 */
+@import url('./sections/home-blog.css'); /* Blog - home screen */
 
 /* Forms */
 @import url('./sections/forms.css');
