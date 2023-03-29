@@ -876,12 +876,12 @@
                   <!-- Feedback Actions -->
                   <div class="feedback-buttons">
                     <!-- Article Helpful -->
-                    <button class="btn" thumbs-up data-cursor-magnify>
+                    <button class="btn" thumbs-up data-cursor-magnify data-cursor="-inverse">
                       <em class="ph-icon-thumbsup"></em>
                     </button>
 
                     <!-- Article Not Helpful -->
-                    <button class="btn" thumbs-down data-cursor-magnify>
+                    <button class="btn" thumbs-down data-cursor-magnify data-cursor="-inverse">
                       <em class="ph-icon-thumbsdown"></em>
                     </button>
                   </div>
@@ -1008,12 +1008,16 @@
                       id="buttonFeedbackVerbatimSubmit"
                       class="btn btn-primary"
                       type="submit"
+                      data-cursor-stick
                       disabled>
                       إرسال ملاحظات
                     </button>
 
                     <!-- Cancel -->
-                    <button id="buttonFeedbackVerbatimCancel" class="btn btn-secondary">
+                    <button
+                      id="buttonFeedbackVerbatimCancel"
+                      class="btn btn-secondary"
+                      data-cursor-stick>
                       الغاء
                     </button>
                   </div>
