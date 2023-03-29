@@ -162,13 +162,18 @@
   transition: all 0.3s ease-in-out;
 }
 .blog--hero-list .splide__arrow:hover {
-  height: 4rem;
   opacity: 1;
   transform: scale(1.1);
 }
 .blog--hero-list .splide__arrow svg {
   height: 2.2em;
   width: 2.2em;
+}
+.blog--hero-list .splide__arrow--prev svg {
+  transform: rotate(0);
+}
+.blog--hero-list .splide__arrow--next svg {
+  transform: rotate(180deg);
 }
 .blog--hero-list .splide__arrow--prev:disabled,
 .blog--hero-list .splide__arrows--rtl .splide__arrow--prev:disabled,
@@ -561,20 +566,23 @@
     transform: translateY(-50%) !important;
   }
   .blog--hero-list .splide__arrow--prev {
-    left: 1rem !important;
-    right: unset !important;
-  }
-  .blog--hero-list .splide__arrows--rtl .splide__arrow--prev {
-    left: auto !important;
-    right: -1.5rem !important;
-  }
-  .blog--hero-list .splide__arrow--next {
     right: 1rem !important;
     left: unset !important;
   }
-  .blog--hero-list .splide__arrows--rtl .splide__arrow--next {
+  .blog--hero-list .splide__arrows--rtl .splide__arrow--prev {
     right: auto !important;
     left: -1.5rem !important;
+  }
+  .blog--hero-list .splide__arrow--next {
+    left: 1rem !important;
+    right: unset !important;
+  }
+  .blog--hero-list .splide__arrows--rtl .splide__arrow--next {
+    left: auto !important;
+    right: -1.5rem !important;
+  }
+  .blog--hero-list .splide__arrow:hover {
+    height: 4rem;
   }
 }
 
