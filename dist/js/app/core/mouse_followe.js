@@ -31,20 +31,19 @@ export var mouse_followe = function () {
   var cursor = null;
 
   // Run once
-  if (!cursor && window.innerWidth >= 992) cursor = init();
+  !cursor && window.innerWidth >= 992 && (cursor = init());
 
   // Attaching the event listener function to window's resize event
   window.addEventListener('resize', () => {
     // Run only on desktop
-    if (!cursor && window.innerWidth >= 992) cursor = init();
-    else if (window.innerWidth < 992) cursor = destroy(cursor);
+    cursor = !cursor && window.innerWidth >= 992 ? init() : destroy(cursor);
   });
 };
 
 // Init
-async function init() {
+function init() {
   MouseFollower.registerGSAP(gsap);
-  const cursor = new MouseFollower({
+  return new MouseFollower({
     el: null,
     container: document.body,
     className: 'g-cursor',
@@ -113,12 +112,10 @@ async function init() {
     hideTimeout: 300,
     hideMediaTimeout: 300,
   });
-
-  return cursor;
 }
 
 // Destroy
 function destroy(cursor) {
-  if (cursor) cursor.destroy();
+  cursor && cursor.destroy();
   return null;
 }
