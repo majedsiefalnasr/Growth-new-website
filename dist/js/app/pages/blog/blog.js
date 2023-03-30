@@ -25,6 +25,13 @@ export var blog = function () {
       .then(({ change_view }) => change_view(change_view_container))
       .catch((err) => console.log('error:', err));
 
+  // Load category content from DB on selected tab
+  // Load script only on needed
+  blog_container.querySelector('.header .categories') &&
+    import('./load_category_content.js')
+      .then(({ load_category_content }) => load_category_content())
+      .catch((err) => console.log('error:', err));
+
   // Add deep anchor links to blog content (h2, h3, h4)
   // Load script only on needed
   blog_container.querySelector('.blog--content') &&

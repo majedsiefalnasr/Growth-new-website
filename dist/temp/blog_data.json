@@ -1,0 +1,128 @@
+[
+  {
+    "categories": ["category 1", "category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex1.png"
+  },
+  {
+    "categories": ["category 1", "category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex2.png"
+  },
+  {
+    "categories": ["category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex3.png"
+  },
+  {
+    "categories": ["category 2", "category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex4.png"
+  },
+  {
+    "categories": ["category 3", "category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex5.png"
+  },
+  {
+    "categories": ["category 1", "category 2"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex6.png"
+  },
+  {
+    "categories": ["category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex7.png"
+  },
+  {
+    "categories": ["category 2", "category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex1.png"
+  },
+  {
+    "categories": ["category 1", "category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex2.png"
+  },
+  {
+    "categories": ["category 1"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex3.png"
+  },
+  {
+    "categories": ["category 2", "category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex4.png"
+  },
+  {
+    "categories": ["category 3", "category 1"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex5.png"
+  },
+  {
+    "categories": ["category 2"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex6.png"
+  },
+  {
+    "categories": ["category 4", "category 2"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex7.png"
+  },
+  {
+    "categories": ["category 2", "category 4", "category 1"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex1.png"
+  },
+  {
+    "categories": ["category 2", "category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex2.png"
+  },
+  {
+    "categories": ["category 1"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex3.png"
+  },
+  {
+    "categories": ["category 2", "category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex4.png"
+  },
+  {
+    "categories": ["category 1", "category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex5.png"
+  },
+  {
+    "categories": ["category 3"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex6.png"
+  },
+  {
+    "categories": ["category 4"],
+    "title": "مرحبا بك في منصة حلول!",
+    "subtitle": "بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية",
+    "image": "./dist/images/blog/blog-ex7.png"
+  }
+]

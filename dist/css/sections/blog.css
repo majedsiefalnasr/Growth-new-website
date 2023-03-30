@@ -278,6 +278,11 @@
   scroll-snap-align: start;
   transition: all 0.3s ease-in-out;
 }
+#blog-block .categories .item.active {
+  background-color: var(--color-500);
+  color: var(--color-white);
+  pointer-events: none;
+}
 #blog-hero-block [text] .categories .item:hover,
 .blog--hero-list .categories .item:hover,
 #blog-block .categories .item:hover {
@@ -356,6 +361,7 @@
   flex-direction: column;
   align-items: start;
   gap: 0.5rem;
+  margin-bottom: 0 !important;
 }
 .blog--hero-list .content > .item > .content .header .title,
 .blog--list > .item > .content .header .title {
