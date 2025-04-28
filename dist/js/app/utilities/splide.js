@@ -17,11 +17,10 @@ import Splide from '../../package/splidejs/v3.6.12/splide.min.js';
 // Splide
 export var splide = function (target, options) {
   // Style
-  import('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', {
-    assert: { type: 'css' },
-  })
-    .then((obj) => (document.adoptedStyleSheets = [obj.default]))
-    .catch((err) => console.log('error:', err));
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
+  document.head.appendChild(link);
 
   // Check if run for target
   target && options ? new Splide(target, options).mount() : new Splide(target).mount();
